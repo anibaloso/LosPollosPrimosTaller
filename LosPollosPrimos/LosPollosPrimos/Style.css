@@ -1,0 +1,25 @@
+﻿body {
+}
+
+#texto {
+    display: inline-block;
+    vertical-align: central;
+    align-items:center;
+    justify-content:center;
+}
+#btn-clases {
+    display: inline-block;
+    vertical-align: central;
+    align-items: center;
+    justify-content: center;
+    
+}
+#btn-armado {
+   
+    width: 200px;
+    height: 50px;
+    align-items: flex-end;
+}
+#botones-alfinal{
+    padding-left:2000px;
+}
