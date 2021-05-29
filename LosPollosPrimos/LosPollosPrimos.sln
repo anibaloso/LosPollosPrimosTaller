@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LosPollosPrimosWeb", "LosPo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LosPollosPrimosModel", "LosPollosPrimosModel\LosPollosPrimosModel.csproj", "{9F5984E5-8AE9-4DAA-AC25-7060EABDB82A}"
 EndProject
+Project("{A0786B88-2ADB-4C21-ABE8-AA2D79766269}") = "LosPollosPrimosPHP", "..\LosPollosPrimosPHP.phpproj", "{509C2F6A-B7BD-47F0-AFB1-BEC475E0D08B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{9F5984E5-8AE9-4DAA-AC25-7060EABDB82A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F5984E5-8AE9-4DAA-AC25-7060EABDB82A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F5984E5-8AE9-4DAA-AC25-7060EABDB82A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{509C2F6A-B7BD-47F0-AFB1-BEC475E0D08B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{509C2F6A-B7BD-47F0-AFB1-BEC475E0D08B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

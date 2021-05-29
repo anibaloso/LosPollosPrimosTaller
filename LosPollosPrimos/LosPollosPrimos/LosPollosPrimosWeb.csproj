@@ -67,7 +67,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagenes\1-4pollo-papas.jpg" />
+    <Content Include="Imagenes\completo-con-papas.jpg" />
+    <Content Include="Imagenes\completo-sin-palta.jpg" />
+    <Content Include="Imagenes\completo.jpg" />
+    <Content Include="Imagenes\hot-dog.jpg" />
+    <Content Include="Imagenes\mapa.jpg" />
+    <Content Include="Imagenes\mapa2.jpg" />
+    <Content Include="Imagenes\papas-fritas.jpg" />
+    <Content Include="Imagenes\pollo-asado.gif" />
+    <Content Include="Imagenes\Pollo-asado-1-4.jpg" />
+    <Content Include="Imagenes\Pollo-asado-entero.jpg" />
+    <Content Include="Imagenes\Pollo-asado-medio.jpg" />
+    <Content Include="Imagenes\pollo-entero-papas-fritas.jpg" />
+    <Content Include="Imagenes\pollo-medio-papas-fritas.jpg" />
+    <Content Include="MenuCompletos.aspx" />
+    <Content Include="MenuPapasFritas.aspx" />
+    <Content Include="MenuMenus.aspx" />
+    <Content Include="MenuPollo.aspx" />
+    <Content Include="phpConexion.php" />
+    <Content Include="Imagenes\coca-cola.jpg" />
+    <Content Include="Imagenes\fanta.jpg" />
+    <Content Include="Imagenes\orange.jpg" />
+    <Content Include="Imagenes\pepsi.jpg" />
     <Content Include="Imagenes\pollos primos.jpg" />
+    <Content Include="Imagenes\seven-up.jpg" />
+    <Content Include="Imagenes\sprite.jpg" />
     <Content Include="Imagenes\texto pollos.jpg" />
     <Content Include="Contacto.aspx" />
     <Content Include="CrearCuenta.aspx" />
@@ -121,6 +146,34 @@
     </Compile>
     <Compile Include="Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuCompletos.aspx.cs">
+      <DependentUpon>MenuCompletos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuCompletos.aspx.designer.cs">
+      <DependentUpon>MenuCompletos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPapasFritas.aspx.cs">
+      <DependentUpon>MenuPapasFritas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuPapasFritas.aspx.designer.cs">
+      <DependentUpon>MenuPapasFritas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuMenus.aspx.cs">
+      <DependentUpon>MenuMenus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuMenus.aspx.designer.cs">
+      <DependentUpon>MenuMenus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPollo.aspx.cs">
+      <DependentUpon>MenuPollo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuPollo.aspx.designer.cs">
+      <DependentUpon>MenuPollo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

@@ -6,6 +6,7 @@
     vertical-align: central;
     align-items:center;
     justify-content:center;
+    padding-top:100px;
 }
 #btn-clases {
     display: inline-block;
@@ -23,3 +24,30 @@
 #botones-alfinal{
     padding-left:2000px;
 }
+#card-footer{
+    display:inline-block;
+    align-items:center;
+}
+#fotos{
+    align-self:auto;
+    padding:0px 0px 0px 20px;
+    width:200px;
+    height:200px;
+}
+#mapas {
+    align-self: auto;
+    width: 550px;
+    height: 400px;
+}
+#lista {
+
+    display: inline-grid;
+    width: 200px;
+    height: auto;
+}
+#foto-central{
+    vertical-align:central;
+    padding:0px 0px 0px 10px;
+}
+
+
