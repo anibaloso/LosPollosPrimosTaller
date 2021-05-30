@@ -75,9 +75,9 @@
     <Content Include="Imagenes\mapa.jpg" />
     <Content Include="Imagenes\mapa2.jpg" />
     <Content Include="Imagenes\papas-fritas.jpg" />
+    <Content Include="Imagenes\Pollo-asado-entero.jpg" />
     <Content Include="Imagenes\pollo-asado.gif" />
     <Content Include="Imagenes\Pollo-asado-1-4.jpg" />
-    <Content Include="Imagenes\Pollo-asado-entero.jpg" />
     <Content Include="Imagenes\Pollo-asado-medio.jpg" />
     <Content Include="Imagenes\pollo-entero-papas-fritas.jpg" />
     <Content Include="Imagenes\pollo-medio-papas-fritas.jpg" />
@@ -85,6 +85,7 @@
     <Content Include="MenuPapasFritas.aspx" />
     <Content Include="MenuMenus.aspx" />
     <Content Include="MenuPollo.aspx" />
+    <Content Include="PantallaVenta.aspx" />
     <Content Include="phpConexion.php" />
     <Content Include="Imagenes\coca-cola.jpg" />
     <Content Include="Imagenes\fanta.jpg" />
@@ -174,6 +175,13 @@
     </Compile>
     <Compile Include="MenuPollo.aspx.designer.cs">
       <DependentUpon>MenuPollo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaVenta.aspx.cs">
+      <DependentUpon>PantallaVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PantallaVenta.aspx.designer.cs">
+      <DependentUpon>PantallaVenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

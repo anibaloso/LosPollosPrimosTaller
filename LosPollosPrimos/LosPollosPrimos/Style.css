@@ -49,5 +49,23 @@
     vertical-align:central;
     padding:0px 0px 0px 10px;
 }
+#textoVentas{
+    padding-top:2em;
+}
+#fotos-menu-pequeño {
+    align-self: auto;
+    width: 110px;
+    height: 110px;
+}
+.abs-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+#btn-venta {
+    width: 150px;
+    height: 150px;
+}
 
 
