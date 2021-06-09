@@ -15,7 +15,11 @@
                 </ul>
             </div>
         </div>
-        
+        <?php
+            include 'db.php';
+            $sql="select * from productoventas";
+            $resultado=mysql_query($sql);
+            ?>
             <%--<div class="row-4 float-end p-3">--%>
                 <%String[] bebidas = { "Coca Cola 1/2", "Fanta 1/2", "Sprite 1/2", "Pepsi 1/2", "Crush 1/2", "Seven Up" };
                     String[] fotos = { "Imagenes/coca-cola.jpg","Imagenes/fanta.jpg","Imagenes/sprite.jpg","Imagenes/pepsi.jpg",

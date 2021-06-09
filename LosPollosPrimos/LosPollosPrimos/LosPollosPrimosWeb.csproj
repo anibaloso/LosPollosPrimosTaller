@@ -86,7 +86,6 @@
     <Content Include="MenuMenus.aspx" />
     <Content Include="MenuPollo.aspx" />
     <Content Include="PantallaVenta.aspx" />
-    <Content Include="phpConexion.php" />
     <Content Include="Imagenes\coca-cola.jpg" />
     <Content Include="Imagenes\fanta.jpg" />
     <Content Include="Imagenes\orange.jpg" />

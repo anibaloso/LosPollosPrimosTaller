@@ -68,6 +68,7 @@
     <Compile Include="LosPollosPrimos\LosPollosPrimos\bin\LosPollosPrimosModel.pdb" />
     <Compile Include="LosPollosPrimos\LosPollosPrimos\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Compile Include="LosPollosPrimos\LosPollosPrimos\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Compile Include="LosPollosPrimos\LosPollosPrimos\db.php" />
     <Compile Include="LosPollosPrimos\LosPollosPrimos\Imagenes\coca-cola - copia.jpg" />
     <Compile Include="LosPollosPrimos\LosPollosPrimos\Imagenes\coca-cola.jpg" />
     <Compile Include="LosPollosPrimos\LosPollosPrimos\Imagenes\fanta.jpg" />
