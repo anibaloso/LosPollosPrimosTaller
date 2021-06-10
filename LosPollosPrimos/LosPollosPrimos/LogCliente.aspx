@@ -9,8 +9,8 @@
         <div class="col-5 col-md-6 col-lg-4 mx-auto">
 
             <div class="card">
-                <div class="card-header bg-dark text-white text-center">
-                    <h5 class="p-2">Ingresar</h5>
+                <div class="card-header bg-warning text-dark text-center">
+                    <h3 class="p-2">Ingresar</h3>
                 </div>
                 <div class="card-body">
                     
@@ -23,7 +23,7 @@
                         <asp:TextBox ID="ClaveTxt" textMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
                     <div class="card-footer d-grip gap-1 text-center">
-                    <asp:Button ID="AccederBtn" runat="server" Text="Acceder"  CssClass="btn btn-primary" />
+                    <asp:Button ID="AccederBtn" runat="server" Text="Acceder"  CssClass="btn btn-danger" />
                 </div>
                     
 
@@ -34,8 +34,8 @@
         <div class="col-5 col-md-6 col-lg-4 mx-auto">
 
             <div class="card">
-                <div class="card-header bg-dark text-white text-center">
-                    <h5 class="p-2">Registrar cliente</h5>
+                <div class="card-header bg-warning text-dark text-center">
+                    <h3 class="p-2">Registrar cliente</h3>
                 </div>
                 <div class="card-body">
                     
@@ -66,7 +66,7 @@
 
                 </div>
                 <div class="card-footer d-grip gap-1 text-center">
-                    <asp:Button ID="GuardarBtn" runat="server" Text="Registrar"  CssClass="btn btn-primary" />
+                    <asp:Button ID="GuardarBtn" runat="server" Text="Registrar"  CssClass="btn btn-danger" />
                 </div>
             </div>
         </div>

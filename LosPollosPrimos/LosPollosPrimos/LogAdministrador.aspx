@@ -6,8 +6,8 @@
     <div class="row mt-5">
         <div class="col-5 col-md-6 col-lg-4 mx-auto">
             <div class="card text-center">
-                <div class="card-header bg-dark text-white ">
-                    <h5 class="p-2">Acceder</h5>
+                <div class="card-header bg-warning text-dark">
+                    <h3 class="p-2">Acceder</h3>
                 </div>
                 <div class="card-body">
                     <div class="mb-3">
@@ -19,7 +19,7 @@
                         <asp:TextBox ID="ClaveTxt" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
                     <div class="card-footer d-grip gap-1 text-center">
-                        <asp:Button ID="AccederBtn" runat="server" Text="Acceder" CssClass="btn btn-primary" />
+                        <asp:Button ID="AccederBtn" runat="server" Text="Acceder" CssClass="btn btn-danger" />
                     </div>
                 </div>
             </div>

@@ -6,8 +6,8 @@
     <div class="row mt-5">
         <div class="col-5 col-md-6 col-lg-4 mx-auto">
             <div class="card">
-                <div class="card-header bg-dark text-white text-center">
-                    <h5 class="p-2">Registrar cliente</h5>
+                <div class="card-header bg-warning text-black text-center">
+                    <h3 class="p-2"> Registrar cliente</h3>
                 </div>
                 <div class="card-body">
                     <div class="mb-3">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="card-footer d-grip gap-1 text-center">
-                    <asp:Button ID="GuardarBtn" runat="server" Text="Registrar"  CssClass="btn btn-primary" />
+                    <asp:Button ID="GuardarBtn" runat="server" Text="Registrar"  CssClass="btn btn-danger" />
                 </div>
             </div>
         </div>

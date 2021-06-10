@@ -14,9 +14,9 @@
     </asp:ContentPlaceHolder>
 </head>
 
-<body class="bg-dark">
+<body class="">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"></nav>
+    <nav class="navbar navbar-expand-lg bg-dark "></nav>
     <div class="container-fluid bg-dark">
         <div class="row align-items-start">
             <div class="col">
@@ -27,17 +27,17 @@
             </div>
             <div class="col-1"></div>
             <div class="col-2"></div>
-            <div class="col order-last bg-dark order ">
-                <div class="card  btn-group-vertical  bg-dark ">
+            <div class="col order-last  order ">
+                <div class="card  btn-group-vertical   bg-dark">
                     <div class="card mt-2 mt-md-0"></div>
                     <a href="LogAdministrador.aspx">
-                        <button id="btn-armado" type="button" class="btn btn-warning text-white"><strong>Administrador</strong></button>
+                        <button id="btn-armado" type="button" class="btn btn-warning text-dark"><strong>Administrador</strong></button>
                     </a>
                     <a href="LogVentas.aspx">
-                        <button id="btn-armado" type="button" class="btn btn-warning text-white"><strong>Venta</strong></button>
+                        <button id="btn-armado" type="button" class="btn btn-warning text-dark"><strong>Venta</strong></button>
                     </a>
                     <a href="LogCliente.aspx">
-                        <button id="btn-armado" type="button" class="btn btn-warning text-white"><strong>Cliente</strong></button>
+                        <button id="btn-armado" type="button" class="btn btn-warning text-dark"><strong>Cliente</strong></button>
                     </a>
                 </div>
             </div>
@@ -46,32 +46,32 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark"></nav>
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
         <div class="container-fluid">
-            <a class="navbar-brand" href="Menu.aspx">Menu</a>
+            <a class="navbar-brand text-dark" href="Menu.aspx"><strong>Menu</strong></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="Default.aspx">Home</a>
+                        <a class="nav-link active text-dark" aria-current="page" href="Default.aspx"><strong>Home</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="Contacto.aspx">Contacto</a>
+                        <a class="nav-link active text-dark" aria-current="page" href="Contacto.aspx"><strong>Contacto</strong></a>
                     </li>
 
 
                 </ul>
             </div>
-            <a class="navbar-brand" href="CrearCuenta.aspx">Crear Cuenta</a>
+            <a class="navbar-brand text-dark" href="CrearCuenta.aspx"><strong>Crear Cuenta</strong></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
 
     </nav>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"></nav>
+    <nav class="navbar navbar-expand-lg navbar-dark "></nav>
     <form id="form1" runat="server">
 
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

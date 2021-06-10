@@ -9,7 +9,7 @@
                 <h1><strong>Bienvenidos</strong></h1>
             </div>
             <div class="card-body align-content-around p-5">
-                <img class="card-img"src="Imagenes/pollo-asado.gif" />
+                <img class="card-img"src="Imagenes/pollo-asado.gif" height="600" />
             </div>
         </div>
     </div>
