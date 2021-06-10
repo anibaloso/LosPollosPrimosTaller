@@ -19,7 +19,7 @@
                         <asp:TextBox ID="ClaveTxt" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
                     <div class="card-footer d-grip gap-1 text-center">
-                        <asp:Button ID="AccederBtn" runat="server" Text="Acceder" CssClass="btn btn-danger" />
+                        <asp:Button ID="AccederBtn" OnClick="AccederBtn_Click" runat="server" Text="Acceder" CssClass="btn btn-danger" />
                     </div>
                 </div>
             </div>
