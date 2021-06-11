@@ -11,15 +11,24 @@ namespace LosPollosPrimos.Paginas
     {
         private String usuario = "Admin";
         private String contraseña = "1234";
-   
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
-        protected void AccederBtn_Click(object sender, EventArgs e)
+        public void Validacion()
         {
-            
+            String mensaje = "No valida la wea";
+            if (UsuarioAdministradorTxt.Text.ToString() == String.Empty || ClaveTxt.Text == String.Empty)
+            {
+                LB.CssClass = "alert alert-danger";
+                mensaje = "bla bla";
+            }
+            else if(UsuarioAdministradorTxt.Text != usuario && ClaveTxt.Text != contraseña)
+            {
+                LB.CssClass = "alert alert-danger";
+                mensaje = "asdsad";
+            }
+            LB.Text = mensaje;
         }
     }
 }

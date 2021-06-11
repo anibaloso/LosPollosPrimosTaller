@@ -20,8 +20,24 @@
                     </div>
 
                     <div class="card-footer d-grip gap-1 text-center">
-                        <asp:Button ID="AccederBtn" runat="server" Text="Acceder" CssClass="btn btn-danger" OnClick="AccederBtn_Click" />
+                        <button onclick="<%Validacion();%>" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Acceder</button>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <asp:Label runat="server" ID="LB"></asp:Label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
