@@ -17,13 +17,13 @@ namespace LosPollosPrimos.Paginas
         }
         public void Validacion()
         {
+            string vacio = "";
             String mensaje = "No valida la wea";
-            if (UsuarioAdministradorTxt.Text.ToString() == String.Empty || ClaveTxt.Text == String.Empty)
+            if (UsuarioAdministradorTxt.Text.ToString() == vacio || ClaveTxt.Text == vacio)
             {
                 LB.CssClass = "alert alert-danger";
                 mensaje = "bla bla";
-            }
-            else if(UsuarioAdministradorTxt.Text != usuario && ClaveTxt.Text != contraseña)
+            }else if(UsuarioAdministradorTxt.Text != usuario && ClaveTxt.Text != contraseña)
             {
                 LB.CssClass = "alert alert-danger";
                 mensaje = "asdsad";

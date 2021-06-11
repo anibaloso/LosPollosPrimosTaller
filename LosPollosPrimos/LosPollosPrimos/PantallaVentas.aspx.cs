@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace LosPollosPrimos
 {
-    public partial class PantallaVenta : System.Web.UI.Page
+    public partial class PantallaVentas : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

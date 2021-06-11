@@ -21,6 +21,16 @@
     height: 50px;
     align-items: flex-end;
 }
+#btn-armado-confirmar {
+    width: 200px;
+    height: 50px;
+    align-items: flex-end;
+}
+#btn-armado {
+    width: 200px;
+    height: 50px;
+    align-items: flex-end;
+}
 #botones-alfinal{
     padding-left:2000px;
 }
@@ -63,9 +73,79 @@
     justify-content: center;
     min-height: 100vh;
 }
+#btn-venta-sprite {
+    width: 150px;
+    height: 150px;
+}
 #btn-venta {
     width: 150px;
     height: 150px;
 }
-
-
+#btn-venta-fanta {
+    width: 150px;
+    height: 150px;
+}
+#btn-venta-pepsi {
+    width: 150px;
+    height: 150px;
+}
+#btn-venta-crush {
+    width: 150px;
+    height: 150px;
+}
+#btn-venta-seven {
+    width: 150px;
+    height: 150px;
+}
+#btn-venta-pollo4 {
+    width: 150px;
+    height: 150px;
+}
+#btn-venta-pollo2 {
+    width: 150px;
+    height: 150px;
+}
+#btn-venta-pollo {
+    width: 150px;
+    height: 150px;
+}
+#btn-venta-hot {
+    width: 150px;
+    height: 150px;
+}
+#btn-venta-comp{
+    width:150px;
+    height:150px;
+}
+#btn-venta-tomate{
+    width: 150px;
+    height: 150px;
+}
+#btn-venta-papas4 {
+    width: 150px;
+    height: 150px;
+}
+#btn-venta-papas2 {
+    width: 150px;
+    height: 150px;
+}
+#btn-venta-papas {
+    width: 150px;
+    height: 150px;
+}
+#btn-venta-pollo4-papas {
+    width: 150px;
+    height: 150px;
+}
+#btn-venta-pollo2-papas {
+    width: 150px;
+    height: 150px;
+}
+#btn-venta-pollo-papas{
+    width: 150px;
+    height: 150px;
+}
+#btn-venta-comp-papas{
+    width: 150px;
+    height: 150px;
+}

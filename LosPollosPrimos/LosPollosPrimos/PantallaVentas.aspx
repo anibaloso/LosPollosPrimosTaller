@@ -1,9 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PantallaVenta.aspx.cs" Inherits="LosPollosPrimos.PantallaVenta" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PantallaVentas.aspx.cs" Inherits="LosPollosPrimos.PantallaVentas" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="Style.css" rel="stylesheet" />
+</head>
+<body>
     <link
       rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"/>
@@ -69,7 +76,7 @@
                 <div class="card float-end text-center m-0" >
                     <div class="card-header text-center">
                         <button id="btn-armado-confirmar"type="button">Confirmar</button>
-                        <button  id="btn-armado" class="float-end">Borrar todo</button>
+                        <button  id="btn-armado" >Borrar todo</button>
                         
                         
                         <h3>Compra</h3>
@@ -536,4 +543,5 @@
             
         </div>
     </div>
-</asp:Content>
+</body>
+</html>

@@ -28,7 +28,7 @@
                             , "Medio pollo asado mas porcion mediana de papas fritasideal para 2 personas"
                             , "1/4 de pollo asado mas porcion individual de papas fritas"
                             , "Pan de mesa con vienesa tomate y palta y porcion de papas fritas" };
-                    String[] precio = { "$10.000.-","$4.500.-","$2.000.-","$1.800.-" };
+                    String[] precio = { "$10.000.-","$5.500.-","$3.000.-","$2.500.-" };
                     for (int i = 0; i < menu.Length; ++i)
                     {
                 %>
