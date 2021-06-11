@@ -19,21 +19,6 @@ namespace LosPollosPrimos.Paginas
 
         protected void AccederBtn_Click(object sender, EventArgs e)
         {
-            String mensaje = "Los campos no deben estar vacíos";
-            
-            if (UsuarioAdministradorTxt.Text.ToString() == String.Empty && ClaveTxt.Text == String.Empty )
-            {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('" + mensaje + "');", true);
-            }
-            else if(UsuarioAdministradorTxt.Text != usuario && ClaveTxt.Text != contraseña)
-            {
-                mensaje = "Ingrese correctamente los datos";  
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('" + mensaje + "');", true);
-            }
-            else
-            {
-                Response.Redirect("HomeAdministrador.aspx");
-            }
             
         }
     }

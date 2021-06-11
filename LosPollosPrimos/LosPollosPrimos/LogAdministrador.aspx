@@ -3,7 +3,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <div class="row mt-5">
         <div class="col-5 col-md-6 col-lg-4 mx-auto">
             <div class="card text-center">
@@ -19,6 +18,7 @@
                         <label class="form-label" for="ClaveTxt">Clave</label>
                         <asp:TextBox ID="ClaveTxt" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
+
                     <div class="card-footer d-grip gap-1 text-center">
                         <asp:Button ID="AccederBtn" runat="server" Text="Acceder" CssClass="btn btn-danger" OnClick="AccederBtn_Click" />
                     </div>
