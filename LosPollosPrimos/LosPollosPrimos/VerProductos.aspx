@@ -4,9 +4,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid mt-3 p-md-4 col-lg-8">
-     <div class="p-md-4 d-grid gap-4 col-6 mx-auto btn-group">
-              <asp:Button ID="AgregarProBtn" OnClick="AgregarProBtn_Click" runat="server" type="button" class="btn btn-success" Text="Ingresar Producto" />
-                <asp:Button ID="VolverBtn" OnClick="VolverBtn_Click" runat="server" Text="Volver" CssClass="btn btn-danger" />
+        <div class="p-md-4 d-grid gap-4 col-6 mx-auto btn-group">
+            <asp:Button ID="AgregarProBtn" OnClick="AgregarProBtn_Click" runat="server" type="button" class="btn btn-success" Text="Ingresar Producto" />
+            <asp:Button ID="VolverBtn" OnClick="VolverBtn_Click" runat="server" Text="Volver" CssClass="btn btn-danger" />
         </div>
         <table class="table table-responsive table-hover table-bordered border-warning">
             <thead class="bg-warning    ">
