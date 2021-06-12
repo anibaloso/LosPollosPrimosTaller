@@ -33,8 +33,9 @@
                             <label class="form-label" for="b">Correo Electrónico</label>
                             <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
-                        <div class="card-footer d-grip gap-1 text-center">
-                            <asp:Button ID="AgregarBtn" runat="server" Text="Agregar" CssClass="btn btn-danger" />
+                        <div class="card-footer d-grid gap-3 text-center">
+                            <asp:Button ID="AgregarBtn" runat="server" Text="Agregar" CssClass="btn btn-success"/>
+                            <asp:Button ID="VolverBtn" OnClick="VolverBtn_Click" runat="server" Text="Volver" CssClass="btn btn-danger" />
                         </div>
                     </div>
                 </div>
