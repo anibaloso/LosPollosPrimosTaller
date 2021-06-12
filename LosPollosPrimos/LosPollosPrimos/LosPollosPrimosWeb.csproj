@@ -85,12 +85,11 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="CrearEmpleado.aspx" />
     <Content Include="CrearProducto.aspx" />
-    <Content Include="EditarEmpleado.aspx" />
-    <Content Include="EditarProducto.aspx" />
+    <Content Include="ModificarEmpleado.aspx" />
+    <Content Include="ModificarProducto.aspx" />
     <Content Include="EliminarEmpleado.aspx" />
     <Content Include="EliminarProducto.aspx" />
     <Content Include="HomeAdministrador.aspx" />
-    <Content Include="HtmlPage1.html" />
     <Content Include="Imagenes\1-4pollo-papas.jpg" />
     <Content Include="Imagenes\completo-con-papas.jpg" />
     <Content Include="Imagenes\completo-sin-palta.jpg" />
@@ -166,19 +165,19 @@
     <Compile Include="CrearProducto.aspx.designer.cs">
       <DependentUpon>CrearProducto.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EditarEmpleado.aspx.cs">
-      <DependentUpon>EditarEmpleado.aspx</DependentUpon>
+    <Compile Include="ModificarEmpleado.aspx.cs">
+      <DependentUpon>ModificarEmpleado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EditarEmpleado.aspx.designer.cs">
-      <DependentUpon>EditarEmpleado.aspx</DependentUpon>
+    <Compile Include="ModificarEmpleado.aspx.designer.cs">
+      <DependentUpon>ModificarEmpleado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EditarProducto.aspx.cs">
-      <DependentUpon>EditarProducto.aspx</DependentUpon>
+    <Compile Include="ModificarProducto.aspx.cs">
+      <DependentUpon>ModificarProducto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EditarProducto.aspx.designer.cs">
-      <DependentUpon>EditarProducto.aspx</DependentUpon>
+    <Compile Include="ModificarProducto.aspx.designer.cs">
+      <DependentUpon>ModificarProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="EliminarEmpleado.aspx.cs">
       <DependentUpon>EliminarEmpleado.aspx</DependentUpon>

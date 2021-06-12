@@ -15,20 +15,13 @@ namespace LosPollosPrimos.Paginas
         {
 
         }
-        public void Validacion()
+
+        protected void BtnAcceder_Click(object sender, EventArgs e)
         {
-            string vacio = "";
-            String mensaje = "No valida la wea";
-            if (UsuarioAdministradorTxt.Text.ToString() == vacio || ClaveTxt.Text == vacio)
+            if(UsuarioAdministradorTxt.Text == usuario && ClaveTxt.Text == contraseña)
             {
-                LB.CssClass = "alert alert-danger";
-                mensaje = "bla bla";
-            }else if(UsuarioAdministradorTxt.Text != usuario && ClaveTxt.Text != contraseña)
-            {
-                LB.CssClass = "alert alert-danger";
-                mensaje = "asdsad";
+                Response.Redirect("HomeAdministrador.aspx");
             }
-            LB.Text = mensaje;
         }
     }
 }

@@ -20,7 +20,7 @@
                     </div>
 
                     <div class="card-footer d-grip gap-1 text-center">
-                        <button onclick="<%Validacion();%>" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Acceder</button>
+                        <asp:Button runat="server" CssClass="btn btn-danger" ID="BtnAcceder" Text="Acceder" OnClick="BtnAcceder_Click"/>
                     </div>
                 </div>
             </div>

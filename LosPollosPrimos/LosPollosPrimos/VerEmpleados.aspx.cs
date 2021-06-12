@@ -18,5 +18,10 @@ namespace LosPollosPrimos
         {
             Response.Redirect("CrearEmpleado.aspx");
         }
+
+        protected void ModificarBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ModificarEmpleado.aspx");
+        }
     }
 }

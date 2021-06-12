@@ -10,7 +10,7 @@
 namespace LosPollosPrimos {
     
     
-    public partial class CrearEmpleado {
+    public partial class EditarEmpleado {
         
         /// <summary>
         /// Control a.

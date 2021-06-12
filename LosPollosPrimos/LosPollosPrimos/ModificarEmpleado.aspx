@@ -1,12 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CrearEmpleado.aspx.cs" Inherits="LosPollosPrimos.CrearEmpleado" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ModificarEmpleado.aspx.cs" Inherits="LosPollosPrimos.EditarEmpleado" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-            <div class="row mt-5">
+         <div class="row mt-5">
             <div class="col-5 col-md-6 col-lg-4 mx-auto">
                 <div class="card">
                     <div class="card-header text-center bg-warning text-dark">
-                        <h3 class="p-2">Crear Empleado</h3>
+                        <h3 class="p-2">Modificar Empleado</h3>
                     </div>
                     <div class="card-body">
                         <div class="mb-3 ">
