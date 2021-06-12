@@ -87,8 +87,6 @@
     <Content Include="CrearProducto.aspx" />
     <Content Include="ModificarEmpleado.aspx" />
     <Content Include="ModificarProducto.aspx" />
-    <Content Include="EliminarEmpleado.aspx" />
-    <Content Include="EliminarProducto.aspx" />
     <Content Include="HomeAdministrador.aspx" />
     <Content Include="Imagenes\1-4pollo-papas.jpg" />
     <Content Include="Imagenes\completo-con-papas.jpg" />
@@ -178,20 +176,6 @@
     </Compile>
     <Compile Include="ModificarProducto.aspx.designer.cs">
       <DependentUpon>ModificarProducto.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="EliminarEmpleado.aspx.cs">
-      <DependentUpon>EliminarEmpleado.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EliminarEmpleado.aspx.designer.cs">
-      <DependentUpon>EliminarEmpleado.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="EliminarProducto.aspx.cs">
-      <DependentUpon>EliminarProducto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EliminarProducto.aspx.designer.cs">
-      <DependentUpon>EliminarProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="HomeAdministrador.aspx.cs">
       <DependentUpon>HomeAdministrador.aspx</DependentUpon>

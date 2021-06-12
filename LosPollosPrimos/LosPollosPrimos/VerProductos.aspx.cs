@@ -18,5 +18,15 @@ namespace LosPollosPrimos
         {
             Response.Redirect("CrearProducto.aspx");
         }
+
+        protected void ModificarProBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ModificarProducto.aspx");
+        }
+
+        protected void VolverBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("HomeAdministrador.aspx");
+        }
     }
 }

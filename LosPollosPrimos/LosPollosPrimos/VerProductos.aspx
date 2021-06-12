@@ -1,29 +1,33 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="VerProductos.aspx.cs" Inherits="LosPollosPrimos.VerProducto" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container-fluid mt-3 p-md-5 col-5 col-md-6 col-lg-4 mx-auto">
-        <table class="table table-light table-responsive">
-            <thead>
+    <div class="container-fluid mt-3 p-md-4 col-lg-8">
+     <div class="p-md-4 d-grid gap-4 col-6 mx-auto btn-group">
+              <asp:Button ID="AgregarProBtn" OnClick="AgregarProBtn_Click" runat="server" type="button" class="btn btn-success" Text="Ingresar Producto" />
+                <asp:Button ID="VolverBtn" OnClick="VolverBtn_Click" runat="server" Text="Volver" CssClass="btn btn-danger" />
+        </div>
+        <table class="table table-responsive table-hover table-bordered border-warning">
+            <thead class="bg-warning    ">
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Acciones</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Valor</th>
+                    <th class="text-center" scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
                     <td>
-                        <div class="btn-group " role="group" aria-label="Basic mixed styles example">
-                            <asp:Button id="AgregarProBtn" OnClick="AgregarProBtn_Click" runat="server" type="button" class="btn btn-success" Text="Agregar" />
-                            <asp:Button runat="server" type="button" class="btn btn-warning" Text="Modificar" />
+                        <div class="btn-group col-lg-12" role="group" aria-label="Basic mixed styles example">
+                            <asp:Button ID="ModificarProBtn" OnClick="ModificarProBtn_Click" runat="server" type="button" class="btn btn-warning" Text="Modificar" />
                             <asp:Button runat="server" type="button" class="btn btn-danger" Text="Eliminar" />
                         </div>
             </tbody>
         </table>
-    </div>      
+    </div>
 </asp:Content>

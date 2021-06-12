@@ -23,5 +23,10 @@ namespace LosPollosPrimos
         {
             Response.Redirect("ModificarEmpleado.aspx");
         }
+
+        protected void VolverBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("HomeAdministrador.aspx");
+        }
     }
 }

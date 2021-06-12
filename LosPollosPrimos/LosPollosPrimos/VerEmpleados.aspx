@@ -4,7 +4,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid mt-3 p-md-4 col-lg-8">
-        <table class="table table-responsive table-hover table-bordered border-warning  ">
+        <div class="p-md-4 d-grid gap-4 col-6 mx-auto btn-group">
+              <asp:Button ID="AgregarEmpBtn" OnClick="AgregarEmpBtn_Click" runat="server" type="button" class="btn btn-success" Text="Ingresar Empleado" />
+                <asp:Button ID="VolverBtn" OnClick="VolverBtn_Click" runat="server" Text="Volver" CssClass="btn btn-danger" />
+        </div>
+        <table class="table table-responsive table-hover table-bordered border-warning">
             <thead class="bg-warning">
                 <tr>
                     <th scope="col">Rut</th>
@@ -24,7 +28,6 @@
                     <td></td>
                     <td>
                         <div class="btn-group col-lg-12" role="group" aria-label="Basic mixed styles example">
-                            <asp:Button ID="AgregarEmpBtn" OnClick="AgregarEmpBtn_Click" runat="server" type="button" class="btn btn-success" Text="Agregar" />
                             <asp:Button ID="ModificarBtn" OnClick="ModificarBtn_Click" runat="server" type="button" class="btn btn-warning" Text="Modificar" />
                             <asp:Button runat="server" type="button" class="btn btn-danger" Text="Eliminar" />
                         </div>
