@@ -1,4 +1,7 @@
-﻿using System;
+﻿using LosPollosPrimosModel.DAO;
+using LosPollosPrimosModel.DTO;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,5 +21,35 @@ namespace LosPollosPrimos
         {
             Response.Redirect("VerEmpleados.aspx");
         }
+
+        protected void Validar_Click(object sender, EventArgs e)
+        {            
+            try
+            {
+
+                string rut = rutTxt.Value.ToString().Trim();
+                string nombre = nombreTxt.Value.ToString().Trim();
+                int telefono = int.Parse(TelefonoTxt.Value.ToString().Trim());
+                string contraseña = ContraseñaTxt.Value.ToString().Trim();
+                int local = (LocalBox.SelectedIndex);
+                int cargo = (CargoBox.SelectedIndex);
+
+                Personal p = new Personal(rut, nombre, telefono, contraseña, local, cargo);
+                PersonalDAO pDao = new PersonalDAO();
+
+                //cargamos los datos para ser enviados a la sentencia SQL y sale bien vamos a la pagina de empleados
+                pDao.cargarBDPersonal(p);
+                Response.Redirect("VerEmpleados.aspx");
+            }
+            catch (Exception ex)
+            {
+                //errorTxt.CssClass = "alert alert-info";
+                //errorTxt.Text = ex.ToString();
+                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+            }
+            
+
+        }
+
     }
 }

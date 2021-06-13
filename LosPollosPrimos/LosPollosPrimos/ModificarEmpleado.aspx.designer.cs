@@ -13,75 +13,75 @@ namespace LosPollosPrimos {
     public partial class EditarEmpleado {
         
         /// <summary>
-        /// Control a.
+        /// Control r.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox a;
+        protected global::System.Web.UI.WebControls.Label r;
         
         /// <summary>
-        /// Control b.
+        /// Control rutBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox b;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect rutBox;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control bo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.Button bo;
         
         /// <summary>
-        /// Control TextBox2.
+        /// Control nombreTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText nombreTxt;
         
         /// <summary>
-        /// Control TextBox3.
+        /// Control TelefonoTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl TelefonoTxt;
         
         /// <summary>
-        /// Control TextBox4.
+        /// Control ContraseñaTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword ContraseñaTxt;
         
         /// <summary>
-        /// Control AgregarBtn.
+        /// Control LocalBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AgregarBtn;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect LocalBox;
         
         /// <summary>
-        /// Control VolverBtn.
+        /// Control CargoBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button VolverBtn;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect CargoBox;
     }
 }

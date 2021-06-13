@@ -1,5 +1,10 @@
-﻿using System;
+﻿using LosPollosPrimos.Conexion;
+using LosPollosPrimosModel.DAO;
+using LosPollosPrimosModel.DTO;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,7 +16,14 @@ namespace LosPollosPrimos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
+            ConexionBD conexion = new ConexionBD();
 
+            dt = conexion.SelectSQLPersonal();
+            GVVista.DataSource = dt;
+            GVVista.DataBind();
+            
+            
         }
 
         protected void AgregarEmpBtn_Click(object sender, EventArgs e)
