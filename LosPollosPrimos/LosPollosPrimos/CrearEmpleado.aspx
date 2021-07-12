@@ -3,7 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div class="row mt-5">
+
         <div class="col-5 col-md-6 col-lg-4 mx-auto">
             <div class="card">
                 <div class="card-header text-center bg-warning text-dark">
@@ -46,7 +48,7 @@
                         <select runat="server" class="form-select" id="LocalBox" required>
                             <option selected disabled value="">Choose...</option>
                             <option>Pollos Primos Viña</option>
-                            <option>Pollos Primos Quilpue</option>
+                            <option>Pollos Primos Valparaiso</option>
                         </select>
                         <div class="invalid-feedback">
                             Please select a valid state.
@@ -71,37 +73,17 @@
                         <asp:button runat="server" class="btn btn-primary" OnClick="Validar_Click" type="submit" Text="Agregar"></asp:button>
                     </div>
 
-                <div class="mt-3">
-                        <asp:button runat="server" class="btn btn-primary" OnClick="VolverBtn_Click" type="submit" Text="Volver" CssClass="btn btn-danger"></asp:button>
+                    <div class="mt-3 text-center">
+                        <asp:button runat="server" class="btn btn-primary"  onclick="VolverBtn_Click" type="button" CssClass="btn btn-danger" Text="Volver"></asp:button>
                     </div>
+               
+                    </div>                
                 
-                    </div>
-            </div>
+            </div>            
+
         </div>
 
-        <%--<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <asp:label runat="server" class="form-label" id="errorTxt"> prueba </asp:label>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Understood</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
 
-        <script type="text/javascript">
-            function openModal() {
-                $('#staticBackdrop').modal();
-            }
-        </script>
-    --%>
         </div>
 </asp:Content>

@@ -13,31 +13,31 @@ namespace LosPollosPrimos {
     public partial class CrearProducto {
         
         /// <summary>
-        /// Control a.
+        /// Control nombreTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox a;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText nombreTxt;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control valorTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl valorTxt;
         
         /// <summary>
-        /// Control TextBox2.
+        /// Control urlTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText urlTxt;
         
         /// <summary>
         /// Control AgregarBtn.

@@ -20,6 +20,7 @@ namespace LosPollosPrimos
             ConexionBD conexion = new ConexionBD();
 
             dt = conexion.SelectSQLPersonal();
+
             GVVista.DataSource = dt;
             GVVista.DataBind();
             

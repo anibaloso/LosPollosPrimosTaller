@@ -31,15 +31,6 @@ namespace LosPollosPrimos {
         protected global::System.Web.UI.HtmlControls.HtmlSelect rutBox;
         
         /// <summary>
-        /// Control bo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bo;
-        
-        /// <summary>
         /// Control nombreTxt.
         /// </summary>
         /// <remarks>
@@ -64,7 +55,7 @@ namespace LosPollosPrimos {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword ContraseñaTxt;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText ContraseñaTxt;
         
         /// <summary>
         /// Control LocalBox.

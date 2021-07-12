@@ -26,7 +26,6 @@ namespace LosPollosPrimos
         {            
             try
             {
-
                 string rut = rutTxt.Value.ToString().Trim();
                 string nombre = nombreTxt.Value.ToString().Trim();
                 int telefono = int.Parse(TelefonoTxt.Value.ToString().Trim());

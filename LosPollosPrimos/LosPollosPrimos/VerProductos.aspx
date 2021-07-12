@@ -8,26 +8,23 @@
             <asp:Button ID="AgregarProBtn" OnClick="AgregarProBtn_Click" runat="server" type="button" class="btn btn-success" Text="Ingresar Producto" />
             <asp:Button ID="VolverBtn" OnClick="VolverBtn_Click" runat="server" Text="Volver" CssClass="btn btn-danger" />
         </div>
-        <table class="table table-responsive table-hover table-bordered border-warning">
-            <thead class="bg-warning    ">
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Valor</th>
-                    <th class="text-center" scope="col">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <div class="btn-group col-lg-12" role="group" aria-label="Basic mixed styles example">
-                            <asp:Button ID="ModificarProBtn" OnClick="ModificarProBtn_Click" runat="server" type="button" class="btn btn-warning" Text="Modificar" />
-                            <asp:Button runat="server" type="button" class="btn btn-danger" Text="Eliminar" />
+        
+         <asp:Gridview runat="server" class="table table-striped" ID="GVVista" AutoGenerateColumns="false">         
+
+            <Columns>
+                <asp:BoundField HeaderText="ID Producto" DataField="id" />
+                <asp:BoundField HeaderText="Nombre Producto" DataField="Nombre" />
+                <asp:BoundField HeaderText="Valor" DataField="valor" />
+                <asp:BoundField HeaderText="Url" DataField="url" />
+            </Columns>
+
+        </asp:Gridview>
+       
+
+        <div class="btn-group col-lg-12" role="group" aria-label="Basic mixed styles example">
+                            <asp:Button ID="Button1" OnClick="ModificarProBtn_Click" runat="server" type="button" class="btn btn-warning" Text="Modificar Producto" />
                         </div>
-            </tbody>
-        </table>
+
+
     </div>
 </asp:Content>
