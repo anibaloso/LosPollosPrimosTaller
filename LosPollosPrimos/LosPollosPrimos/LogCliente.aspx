@@ -13,24 +13,24 @@
                     <h3 class="p-2">Ingresar</h3>
                 </div>
                 <div class="card-body">
-                    
+
                     <div class="mb-3">
                         <label class="form-label" for="RutTxt">Rut</label>
-                        <asp:TextBox ID="RutTxt" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="Rut" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="ClaveTxt">Clave</label>
-                        <asp:TextBox ID="ClaveTxt" textMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="ClaveTxt" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
                     <div class="card-footer d-grip gap-1 text-center">
-                    <asp:Button ID="AccederBtn" runat="server" Text="Acceder"  CssClass="btn btn-danger" />
-                </div>
-                    
+                        <asp:Button ID="AccederBtn" runat="server" Text="Acceder" CssClass="btn btn-danger" />
+                    </div>
+
 
                 </div>
             </div>
         </div>
-        
+
         <div class="col-5 col-md-6 col-lg-4 mx-auto">
 
             <div class="card">
@@ -38,35 +38,67 @@
                     <h3 class="p-2">Registrar cliente</h3>
                 </div>
                 <div class="card-body">
-                    
-                    <div class="mb-3">
+                    <div class="form-group">
                         <label class="form-label" for="RutTxt">Rut</label>
-                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="RutTxt" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Debe Ingresar el rut"
+                            ControlToValidate="RutTxt" CssClass="text-danger"></asp:RequiredFieldValidator>
+                        <asp:CustomValidator ID="rutCV" runat="server"
+                            ValidateEmptyText="true"
+                            CssClass="text-danger"
+                            ControlToValidate="RutTxt" OnServerValidate="rutCV_ServerValidate"
+                            ErrorMessage="CustomValidator"></asp:CustomValidator>
                     </div>
-                    <div class="mb-3">
+                    <div class="form-group">
                         <label class="form-label" for="ContraseñaTxt">Contraseña</label>
-                        <asp:TextBox ID="ContraseñaTxt" textMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="ContraseñaTxt" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe ingresar la contraseña"
+                            ControlToValidate="ContraseñaTxt" CssClass="text-danger"></asp:RequiredFieldValidator>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="ContraseñaTxt">Confirmar Contraseña</label>
-                        <asp:TextBox ID="ConfirmarContraseñaTxt" textMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
+                    <div class="form-group">
+                        <label class="form-label" for="ContraseñaValTxt">Confirmar Contraseña</label>
+                        <asp:TextBox ID="ConfirmarContraseñaTxt" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Debe confirmar su contraseña"
+                            ControlToValidate="ConfirmarContraseñaTxt" CssClass="text-danger"></asp:RequiredFieldValidator>
+                        <asp:CustomValidator ID="ContraseñaValidacion" runat="server"
+                            ValidateEmptyText="true"
+                            CssClass="text-danger"
+                            ControlToValidate="ConfirmarContraseñaTxt" OnServerValidate="ContraseñaValidacion_ServerValidate"
+                            ErrorMessage="CustomValidator"></asp:CustomValidator>
                     </div>
-                    <div class="mb-3">
+                    <div class="form-group">
                         <label class="form-label" for="NombreTxt">Nombre</label>
                         <asp:TextBox ID="NombreTxt" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Debe ingresar el nombre"
+                            ControlToValidate="NombreTxt" CssClass="text-danger"></asp:RequiredFieldValidator>
                     </div>
-                    <div class="mb-3">
+                    <div class="form-group">
                         <label class="form-label" for="TelefonoTxt">Telefono</label>
-                        <asp:TextBox ID="TelefonoTxt" runat="server" CssClass="form-control"></asp:TextBox>
+                        <div class="row">
+                            <div class="col-2">
+                                <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+                            </div>
+                            <div class="col-10">
+                                <asp:TextBox ID="TelefonoTxt" TextMode="Number" runat="server" CssClass="form-control"></asp:TextBox>
+                            </div>
+                        </div>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Debe ingresar número de telefono"
+                            ControlToValidate="TelefonoTxt" CssClass="text-danger"></asp:RequiredFieldValidator>
+                        <asp:CustomValidator ID="ValidarTelefono" runat="server"
+                            ValidateEmptyText="true"
+                            CssClass="text-danger"
+                            ControlToValidate="TelefonoTxt" OnServerValidate="ValidarTelefono_ServerValidate"
+                            ErrorMessage="CustomValidator"></asp:CustomValidator>
                     </div>
-                    <div class="mb-3">
+                    <div class="form-group">
                         <label class="form-label" for="DireccionTxt">Direccion</label>
                         <asp:TextBox ID="DireccionTxt" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Debe ingresar la dirección"
+                            ControlToValidate="DireccionTxt" CssClass="text-danger"></asp:RequiredFieldValidator>
                     </div>
-
                 </div>
                 <div class="card-footer d-grip gap-1 text-center">
-                    <asp:Button ID="GuardarBtn" runat="server" Text="Registrar"  CssClass="btn btn-danger" />
+                    <asp:Button ID="GuardarBtn" runat="server" Text="Registrar" CssClass="btn btn-danger" OnClick="GuardarBtn_Click" />
                 </div>
             </div>
         </div>

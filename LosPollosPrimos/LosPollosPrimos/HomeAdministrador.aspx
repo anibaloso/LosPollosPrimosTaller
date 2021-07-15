@@ -3,8 +3,31 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="btn-group position-absolute top-0 start-50 translate-middle btn-outline-warning position-absolute top-50 w-50 p-3" role="group" aria-label="Basic example">
-      <asp:Button ID="EmpleadosBtn" type="button" class="btn btn-dark" runat="server" Text="C.R.U.D Empleados" OnClick="EmpleadosBtn_Click"/>
-      <asp:Button ID="ProductosBtn" type="button" class="btn btn-dark" runat="server" Text="C.R.U.D Productos" OnClick="ProductosBtn_Click"/>
-</div>
+    <div class="mt-5 mx-5 p-2">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img src="Imagenes/Empleados.png" />
+                    </div>
+                    <div class="card-footer">
+                        <asp:Button ID="EmpleadosBtn" type="button" class="btn btn-dark" runat="server" Text="Empleados" OnClick="EmpleadosBtn_Click" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img src="Imagenes/Productos.jpg" />
+                    </div>
+
+                    <div class="card-footer">
+                        <asp:Button ID="ProductosBtn" type="button" class="btn btn-dark" runat="server" Text="Productos" OnClick="ProductosBtn_Click" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
 </asp:Content>

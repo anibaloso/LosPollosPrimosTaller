@@ -85,6 +85,8 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="CrearEmpleado.aspx" />
     <Content Include="CrearProducto.aspx" />
+    <Content Include="Imagenes\Empleados.png" />
+    <Content Include="Imagenes\Productos.jpg" />
     <Content Include="ModificarEmpleado.aspx" />
     <Content Include="ModificarProducto.aspx" />
     <Content Include="HomeAdministrador.aspx" />

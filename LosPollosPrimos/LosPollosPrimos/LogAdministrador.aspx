@@ -13,31 +13,23 @@
                     <div class="mb-3 ">
                         <label class="form-label" for="UsuarioAdministradorTxt">Usuario Administrador</label>
                         <asp:TextBox ID="UsuarioAdministradorTxt" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                            ControlToValidate="UsuarioAdministradorTxt" CssClass="text-danger" ErrorMessage="Ingrese el usuario"></asp:RequiredFieldValidator>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="ClaveTxt">Clave</label>
                         <asp:TextBox ID="ClaveTxt" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
+                           <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                            ControlToValidate="ClaveTxt" CssClass="text-danger" ErrorMessage="Ingrese la contraseña"></asp:RequiredFieldValidator>
+                         <asp:CustomValidator ID="ClaveCV" runat="server"
+                            ValidateEmptyText="true"
+                            CssClass="text-danger"
+                            ControlToValidate="ClaveTxt" OnServerValidate="ClaveCV_ServerValidate"
+                            ErrorMessage="CustomValidator"></asp:CustomValidator>
                     </div>
-
                     <div class="card-footer d-grip gap-1 text-center">
-                        <asp:Button runat="server" CssClass="btn btn-danger" ID="BtnAcceder" Text="Acceder" OnClick="BtnAcceder_Click"/>
+                        <asp:Button runat="server" CssClass="btn btn-danger" ID="BtnAcceder" Text="Acceder" OnClick="BtnAcceder_Click" />
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Error</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <asp:Label runat="server" ID="LB"></asp:Label>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

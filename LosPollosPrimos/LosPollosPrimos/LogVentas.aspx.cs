@@ -10,28 +10,46 @@ namespace LosPollosPrimos.Paginas
     public partial class LogVentas : System.Web.UI.Page
     {
         private String usuario = "Venta";
-        private String contraseña = "1234";
+        private int contraseña = 1234;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
 
+            }
         }
 
         protected void AccederBtn_Click(object sender, EventArgs e)
         {
-            String mensaje = "Los campos no deben estar vacíos";
 
-            if (UsuarioVentasTxt.Text.ToString() == String.Empty && ClaveTxt.Text == String.Empty)
+            if (Page.IsValid)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('" + mensaje + "');", true);
-            }
-            else if (UsuarioVentasTxt.Text != usuario && ClaveTxt.Text != contraseña)
-            {
-                mensaje = "Ingrese correctamente los datos";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('" + mensaje + "');", true);
+                Response.Redirect("PantallaVenta.aspx");
             }
             else
             {
-                Response.Redirect("PantallaVenta.aspx");
+            }
+        }
+
+        protected void ClaveCV_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            try
+            {
+                int clave = Convert.ToInt32(ClaveTxt.Text);
+                string usuarioTxt = UsuarioVentasTxt.Text;
+                if (clave == contraseña && usuarioTxt == usuario)
+                {
+                    args.IsValid = true;
+                }
+                else
+                {
+                    args.IsValid = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ClaveCV.ErrorMessage = "El usuario o la clave no coinciden";
+                args.IsValid = false;
             }
 
         }
