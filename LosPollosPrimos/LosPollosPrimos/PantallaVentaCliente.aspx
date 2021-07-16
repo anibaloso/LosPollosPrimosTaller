@@ -1,16 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PantallaVentas.aspx.cs" Inherits="LosPollosPrimos.PantallaVentas" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PantallaVentaCliente.aspx.cs" Inherits="LosPollosPrimos.PantallaVentaCliente" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link href="Style.css" rel="stylesheet" />
-</head>
-<body>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+        
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link
       rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"/>
@@ -21,7 +14,7 @@
             <div class="col-9">
                 <div class="card bg-dark">
                     <div class="card-header  bg-warning text-white text-center">
-                        <h1><strong>Pantalla ventas</strong></h1>
+                        <h1><strong>Pantalla ventas Cliente</strong></h1>
                     </div>
                     <div class="card-body align-content-around p-5 text-center text-white bg-light">
                         <div class="row p-1 bg-secondary">
@@ -76,7 +69,7 @@
                 <div class="card float-end text-center m-0" >
                     <div class="card-header text-center">
                         <button id="btn-armado-confirmar"type="button">Confirmar</button>
-                        <button  id="btn-armado" >Borrar todo</button>
+                        <button  id="btn-armado" class="float-end">Borrar todo</button>
                         
                         
                         <h3>Compra</h3>
@@ -86,6 +79,7 @@
                         <thead>
                             
                             <tr>
+                                <th scope="col"></th>
                                 <th scope="col">Producto</th>
                                 <th scope="col">Cantidad</th>
                                 <th scope="col">Valor</th>
@@ -93,12 +87,15 @@
                         </thead>
                         <tbody>
                             <tr>
-                            <th scope="col"id="totales">Totales</th>
+                            
+                                <th scope="col"></th>
+                                <th scope="col"id="totales">Totales</th>
                                 <td><p id="areaContadorCantidad"></p></td>
                                 <td><p id="resultadoVentaTotales"></p></td>
                             </tr>
                             
                             <tr>
+                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar1()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
                                 <th scope="col "id="coca"></th>
                                 <td><p id="areaContador"></p></td>
                                 <td><p id="resultado-venta"></p></td>
@@ -118,11 +115,20 @@
                                         pElement.textContent = contador;
                                         vElement.textContent = valor;
                                     }
+                                    function restar1() {
+                                        if (contador > 0) {
+                                            contador = contador - 1;
+                                            valor = 1000 * contador;
+                                            pElement.textContent = contador;
+                                            vElement.textContent = valor;
+                                        }
+                                    }
                                 </script>
 
 
                             </tr>
                             <tr>
+                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar2()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
                                 <th scope="col "id="sprite"></th>
                                 <td><p id="areaContadorSprite"></p></td>
                                 <td><p id="resultadoVentaSprite"></p></td>
@@ -142,11 +148,20 @@
                                         pElementS.textContent = contador2;
                                         vElementS.textContent = valor2;
                                     }
+                                    function restar2() {
+                                        if (contador2 > 0) {
+                                            contador2 = contador2 - 1;
+                                            valor2 = 1000 * contador2;
+                                            pElementS.textContent = contador2;
+                                            vElementS.textContent = valor2;
+                                        }
+                                    }
                                 </script>
 
 
                             </tr>
                             <tr>
+                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar3()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
                                 <th scope="col" id="fanta"></th>
                                 <td><p id="areaContadorFanta"></p></td>
                                 <td><p id="resultadoVentaFanta"></p></td>
@@ -165,9 +180,18 @@
                                         pElementF.textContent = contador3;
                                         vElementF.textContent = valor3;
                                     }
+                                    function restar3() {
+                                        if (contador3 > 0) {
+                                            contador3 = contador3 - 1;
+                                            valor3 = 1000 * contador3;
+                                            pElementF.textContent = contador3;
+                                            vElementF.textContent = valor3;
+                                        }
+                                    }
                                 </script>
                             </tr>
                             <tr>
+                                <th ><p ><button type="button" id="btn-4"><img class="card-img" onclick="restar4()" src="Imagenes/minus.png"  /></button></p></th>
                                 <th scope="col"id="pepsi"></th>
                                 <td><p id="areaContadorPepsi"></p></td>
                                 <td><p id="resultadoVentaPepsi"></p></td>
@@ -186,9 +210,18 @@
                                         pElementP.textContent = contador4;
                                         vElementP.textContent = valor4;
                                     }
+                                    function restar4() {
+                                        if (contador4 > 0) {
+                                            contador4 = contador4 - 1;
+                                            valor4 = 1000 * contador4;
+                                            pElementP.textContent = contador4;
+                                            vElementP.textContent = valor4;
+                                        }
+                                    }
                                 </script>
                             </tr>
                             <tr>
+                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar5()" src="Imagenes/minus.png" /></button></p></th>
                                 <th scope="col"id="crush"></th>
                                 <td><p id="areaContadorCrush"></p></td>
                                 <td><p id="resultadoVentaCrush"></p></td>
@@ -207,9 +240,18 @@
                                         pElementC.textContent = contador5;
                                         vElementC.textContent = valor5;
                                     }
+                                    function restar5() {
+                                        if (contador5 > 0) {
+                                            contador5 = contador5 - 1;
+                                            valor5 = 1000 * contador5;
+                                            pElementC.textContent = contador5;
+                                            vElementC.textContent = valor5;
+                                        }
+                                    }
                                 </script>
                             </tr>
                             <tr>
+                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar6()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
                                 <th scope="col"id="seven"></th>
                                 <td><p id="areaContadorSeven"></p></td>
                                 <td><p id="resultadoVentaSeven"></p></td>
@@ -228,10 +270,19 @@
                                         pElementSe.textContent = contador6;
                                         vElementSe.textContent = valor6;
                                     }
+                                    function restar6() {
+                                        if (contador6 > 0) {
+                                            contador6 = contador6- 1;
+                                            valor6 = 1000 * contador6;
+                                            pElementSe.textContent = contador6;
+                                            vElementSe.textContent = valor6;
+                                        }
+                                    }
                                 </script>
 
                             </tr>
                             <tr>
+                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar7()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
                                 <th scope="col"id="pollo4"></th>
                                 <td><p id="areaContadorPollo4"></p></td>
                                 <td><p id="resultadoVentaPollo4"></p></td>
@@ -250,9 +301,18 @@
                                         pElementP4.textContent = contador7;
                                         vElementP4.textContent = valor7;
                                     }
+                                    function restar7() {
+                                        if (contador7 > 0) {
+                                            contador7 = contador7 - 1;
+                                            valor7 = 2500 * contador7;
+                                            pElementP4.textContent = contador7;
+                                            vElementP4.textContent = valor7;
+                                        }
+                                    }
                                 </script>
                             </tr>
                             <tr>
+                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar8()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
                                 <th scope="col"id="pollo2"></th>
                                 <td><p id="areaContadorPollo2"></p></td>
                                 <td><p id="resultadoVentaPollo2"></p></td>
@@ -271,9 +331,18 @@
                                         pElementP2.textContent = contador8;
                                         vElementP2.textContent = valor8;
                                     }
+                                    function restar8() {
+                                        if (contador8 > 0) {
+                                            contador8 = contador8 - 1;
+                                            valor8 = 4500 * contador8;
+                                            pElementP2.textContent = contador8;
+                                            vElementP2.textContent = valor8;
+                                        }
+                                    }
                                 </script>
                             </tr>
                             <tr>
+                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar9()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
                                 <th scope="col"id="pollo"></th>
                                 <td><p id="areaContadorPollo"></p></td>
                                 <td><p id="resultadoVentaPollo"></p></td>
@@ -292,10 +361,19 @@
                                         pElementPollo.textContent = contador9;
                                         vElementPollo.textContent = valor9;
                                     }
+                                    function restar9() {
+                                        if (contador9 > 0) {
+                                            contador9 = contador9 - 1;
+                                            valor9 = 7000 * contador9;
+                                            pElementPollo.textContent = contador9;
+                                            vElementPollo.textContent = valor9;
+                                        }
+                                    }
                                 </script>
                             </tr>
                             <tr>
                                 
+                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar10()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
                                 <th scope="col"id="hot"></th>
                                 <td><p id="areaContadorHot"></p></td>
                                 <td><p id="resultadoVentaHot"></p></td>
@@ -314,10 +392,19 @@
                                         pElementHot.textContent = contador10;
                                         vElementHot.textContent = valor10;
                                     }
+                                    function restar10() {
+                                        if (contador10 > 0) {
+                                            contador10 = contador10 - 1;
+                                            valor10 = 1500 * contador10;
+                                            pElementHot.textContent = contador10;
+                                            vElementHot.textContent = valor10;
+                                        }
+                                    }
                                     </script>
                             </tr>
                             <tr>
                                 
+                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar11()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
                                 <th scope="col"id="tomate"></th>
                                 <td><p id="areaContadorTomate"></p></td>
                                 <td><p id="resultadoVentaTomate"></p></td>
@@ -336,10 +423,19 @@
                                         pElementTomate.textContent = contador11;
                                         vElementTomate.textContent = valor11;
                                     }
+                                    function restar11() {
+                                        if (contador11 > 0) {
+                                            contador11 = contador11 - 1;
+                                            valor11 = 1500 * contador11;
+                                            pElementTomate.textContent = contador11;
+                                            vElementTomate.textContent = valor11;
+                                        }
+                                    }
                                     </script>
                             </tr>
                             <tr>
                                 
+                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar12()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
                                 <th scope="col"id="comp"></th>
                                 <td><p id="areaContadorComp"></p></td>
                                 <td><p id="resultadoVentaComp"></p></td>
@@ -358,9 +454,18 @@
                                         pElementComp.textContent = contador12;
                                         vElementComp.textContent = valor12;
                                     }
+                                    function restar12() {
+                                        if (contador12 > 0) {
+                                            contador12 = contador12 - 1;
+                                            valor12 = 1500 * contador12;
+                                            pElementComp.textContent = contador12;
+                                            vElementComp.textContent = valor12;
+                                        }
+                                    }
                                     </script>
                             </tr>
                             <tr>
+                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar13()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
                                 <th scope="col"id="papas4"></th>
                                 <td><p id="areaContadorPapas4"></p></td>
                                 <td><p id="resultadoVentaPapas4"></p></td>
@@ -379,9 +484,18 @@
                                         pElementPapas4.textContent = contador13;
                                         vElementPapas4.textContent = valor13;
                                     }
+                                    function restar13() {
+                                        if (contador13 > 0) {
+                                            contador13 = contador13 - 1;
+                                            valor13 = 1500 * contador13;
+                                            pElementPapas4.textContent = contador13;
+                                            vElementPapas4.textContent = valor13;
+                                        }
+                                    }
                                     </script>
                             </tr>
                             <tr>
+                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar14()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
                                 <th scope="col"id="papas2"></th>
                                 <td><p id="areaContadorPapas2"></p></td>
                                 <td><p id="resultadoVentaPapas2"></p></td>
@@ -400,14 +514,24 @@
                                         pElementPapas2.textContent = contador14;
                                         vElementPapas2.textContent = valor14;
                                     }
+                                    function restar14() {
+                                        if (contador14 > 0) {
+                                            contador14 = contador14 - 1;
+                                            valor14 = 2500 * contador14;
+                                            pElementPapas2.textContent = contador14;
+                                            vElementPapas2.textContent = valor14;
+                                        }
+                                    }
                                     </script>
                             </tr>
                             <tr>
+                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar15()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
                                 <th scope="col"id="papas"></th>
                                 <td><p id="areaContadorPapas"></p></td>
                                 <td><p id="resultadoVentaPapas"></p></td>
                                 <script type="text/javascript">
                                     var botonElement = document.getElementById("btn-venta-papas");
+                                    var btnBorrar19 = document.getElementById("btn-19");
                                     var nElementPapas= document.getElementById("papas");
                                     var pElementPapas = document.getElementById("areaContadorPapas");
                                     var vElementPapas = document.getElementById("resultadoVentaPapas");
@@ -421,10 +545,19 @@
                                         pElementPapas.textContent = contador15;
                                         vElementPapas.textContent = valor15;
                                     }
+                                    function restar15() {
+                                        if (contador15 > 0) {
+                                            contador15 = contador15 - 1;
+                                            valor15 = 3500 * contador15;
+                                            pElementPapas.textContent = contador15;
+                                            vElementPapas.textContent = valor15;
+                                        }
+                                    }
                                     </script>
                             </tr>
                             <tr>
                                 
+                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar16()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
                                 <th scope="col"id="pollo4-papas"></th>
                                 <td><p id="areaContadorPollo4Papas"></p></td>
                                 <td><p id="resultadoVentaPollo4Papas"></p></td>
@@ -443,9 +576,18 @@
                                         pElementPollo4Papas.textContent = contador16;
                                         vElementPollo4Papas.textContent = valor16;
                                     }
+                                    function restar16() {
+                                        if (contador16 > 0) {
+                                            contador16 = contador16 - 1;
+                                            valor16 = 1000 * contador16;
+                                            pElementPollo4Papas.textContent = contador16;
+                                            vElementPollo4Papas.textContent = valor16;
+                                        }
+                                    }
                                     </script>
                             </tr>
                             <tr>
+                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar17()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
                                 <th scope="col"id="pollo2-papas"></th>
                                 <td><p id="areaContadorPollo2Papas"></p></td>
                                 <td><p id="resultadoVentaPollo2Papas"></p></td>
@@ -464,14 +606,24 @@
                                         pElementPollo2Papas.textContent = contador17;
                                         vElementPollo2Papas.textContent = valor17;
                                     }
+                                    function restar17() {
+                                        if (contador17 > 0) {
+                                            contador17 = contador17 - 1;
+                                            valor17 = 5500 * contador17;
+                                            pElementPollo2Papas.textContent = contador17;
+                                            vElementPollo2Papas.textContent = valor17;
+                                        }
+                                    }
                                     </script>
                             </tr>
                             <tr>
+                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar18()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
                                 <th scope="col"id="pollo-papas"></th>
                                 <td><p id="areaContadorPolloPapas"></p></td>
                                 <td><p id="resultadoVentaPolloPapas"></p></td>
                                 <script type="text/javascript">
                                     var botonElement = document.getElementById("btn-venta-pollo-papas");
+                                    var btnBorrar18 = document.getElementById("btn-18");
                                     var nElementPolloPapas= document.getElementById("pollo-papas");
                                     var pElementPolloPapas = document.getElementById("areaContadorPolloPapas");
                                     var vElementPolloPapas = document.getElementById("resultadoVentaPolloPapas");
@@ -485,20 +637,33 @@
                                         pElementPolloPapas.textContent = contador18;
                                         vElementPolloPapas.textContent = valor18;
                                     }
+                                    function restar18() {
+                                        if (contador18 > 0) {
+                                            contador18 = contador18 - 1;
+                                            valor18 = 10000 * contador18;
+                                            pElementPolloPapas.textContent = contador18;
+                                            vElementPolloPapas.textContent = valor18;
+                                        }
+                                    }
                                     </script>
                             </tr>
                             <tr>
+                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar19()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
                                 <th scope="col"id="comp-papas"></th>
                                 <td><p id="areaContadorCompPapas"></p></td>
                                 <td><p id="resultadoVentaCompPapas"></p></td>
+                                
+                                 
                                 <script type="text/javascript">
                                     var botonElement = document.getElementById("btn-venta-comp-papas");
-                                    var nElementCompPapas= document.getElementById("comp-papas");
+                                    var btnBorrar19 = document.getElementById("btn-19");
+                                    var nElementCompPapas = document.getElementById("comp-papas");
                                     var pElementCompPapas = document.getElementById("areaContadorCompPapas");
                                     var vElementCompPapas = document.getElementById("resultadoVentaCompPapas");
                                     var contador19 = 0;
                                     var valor19 = 0;
                                     
+
                                     botonElement.onclick = function () {
                                         contador19++;
                                         valor19 = 2500 * contador19;
@@ -508,7 +673,18 @@
                                         
                                     }
                                     
-                                    </script>
+                                    function restar19() {
+                                        if (contador19 > 0) {
+                                            contador19 = contador19 - 1;
+                                            valor19 = 2500 * contador19;
+                                            pElementCompPapas.textContent = contador19;
+                                            vElementCompPapas.textContent = valor19;
+                                        }
+                                    }
+                                    
+                                    
+                                    
+                                </script>
                                 </tr>
                             
                         </tbody>
@@ -543,5 +719,4 @@
             
         </div>
     </div>
-</body>
-</html>
+</asp:Content>

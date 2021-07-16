@@ -1,6 +1,8 @@
-﻿using System;
+﻿using LosPollosPrimos.Conexion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -9,6 +11,8 @@ namespace LosPollosPrimos.Paginas
 {
     public partial class CrearCuenta : System.Web.UI.Page
     {
+        ConexionBD conexion = new ConexionBD();
+
         private bool verificaRut(int rut, string dv)
         {
             int Digito;
@@ -72,12 +76,14 @@ namespace LosPollosPrimos.Paginas
             {
                 String[] rutArray = rut.Split('-');
                 bool validacion = false;
-                if (rutArray[1] == "k")
-                {
-                    rutArray[1] = "K";
-                }
+                
                 try
                 {
+                    if (rutArray[1] == "k")
+                    {
+                        rutArray[1] = "K";
+                    }
+
                     validacion = verificaRut(Convert.ToInt32(rutArray[0]), rutArray[1]);
                     if (validacion == true)
                     {
@@ -103,7 +109,23 @@ namespace LosPollosPrimos.Paginas
         {
             if (Page.IsValid)
             {
-                Response.Redirect("Menu.aspx");
+                string rut = RutTxt.Text.Trim();
+                string nombre = NombreTxt.Text.Trim();
+                string dieccion = DireccionTxt.Text.Trim();
+                string contraseña = ContraseñaTxt.Text.Trim();
+                string telefono = TelefonoTxt.Text;
+                string correo = CorreoTxt.Text;
+
+                if (conexion.IngresarCliente(rut, nombre, dieccion, contraseña, telefono, correo))
+                {
+                    Response.Redirect("PantallaVentaCliente.aspx");
+                }
+                else
+                {
+                    RutTxt.Text = "Error al ingresar Cliente";
+                }
+
+                //Response.Redirect("Menu.aspx");
             }
             else
             {
@@ -136,5 +158,30 @@ namespace LosPollosPrimos.Paginas
                 args.IsValid = false;
             }
         }
+
+        protected void ValidarCorreo_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            String expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(CorreoTxt.Text, expresion))
+            {
+                if (Regex.Replace(CorreoTxt.Text, expresion, String.Empty).Length == 0)
+                {
+                    
+                    args.IsValid= true;
+                }
+                else
+                {
+                    ValidarCorreov.ErrorMessage = "Ingrese un correo valido";
+                    args.IsValid= false;
+                }
+            }
+            else
+            {
+                ValidarCorreov.ErrorMessage = "Ingrese un correo valido";
+                args.IsValid= false;
+            }
+        }
+
     }
 }

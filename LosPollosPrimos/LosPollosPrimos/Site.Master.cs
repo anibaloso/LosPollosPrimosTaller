@@ -9,11 +9,17 @@ using LosPollosPrimos.Conexion;
 namespace LosPollosPrimos
 {
     public partial class Site : System.Web.UI.MasterPage
-    {
+    {        
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            ConexionBD conexion = new ConexionBD();
-            conexion.conectar();
+            if (!IsPostBack)
+            {
+                ConexionBD conexion = new ConexionBD();
+                conexion.conectar();                
+            }
+            
         }
+
     }
 }

@@ -68,6 +68,14 @@
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Debe ingresar la dirección"
                             ControlToValidate="DireccionTxt" CssClass="text-danger"></asp:RequiredFieldValidator>
                     </div>
+                    <div class="form-group">
+                        <label class="form-label" for="CorreoTxt">Correo</label>
+                        <asp:TextBox ID="CorreoTxt" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Necesita Ingresa un correo" 
+                            ControlToValidate="CorreoTxt" CssClass="text-danger"></asp:RequiredFieldValidator>
+                        <asp:CustomValidator ID="ValidarCorreov" runat="server" 
+                            ControlToValidate="CorreoTxt" CssClass="text-danger" OnServerValidate="ValidarCorreo_ServerValidate"></asp:CustomValidator>
+                    </div>
                 </div>
                 <div class="card-footer d-grip gap-1 text-center">
                     <asp:Button ID="GuardarBtn" runat="server" Text="Registrar" CssClass="btn btn-danger" OnClick="GuardarBtn_Click" />

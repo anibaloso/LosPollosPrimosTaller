@@ -292,5 +292,72 @@ namespace LosPollosPrimos.Conexion
         }
 
 
+        //---------------------------- SQL PARA Cliente ------------------------------------------------------------------------------------
+
+        public Boolean IngresarCliente(string rut, string nombre, string direccion, string contrasña, string telefono, string correo)
+        {
+            Boolean e = true;
+            conectar();
+            string sentencia = "INSERT INTO cliente VALUES ('" + rut + "','"
+                + nombre + "','"
+                + direccion + "','"
+                + contrasña + "','"
+                + telefono + "','"
+                + correo + "')";
+
+            SqlCommand ejecutar = new SqlCommand(sentencia, conectarBD);
+            if (ejecutar.ExecuteNonQuery() == 1)
+            {
+                e = true;
+            }
+            else
+            {
+                e = false;
+            }
+
+            CerrarConexion();
+            return e;
+        }
+
+
+        public Boolean VerificarCliente(string rut, string contraseña)
+        {
+            Boolean e = false;
+            try
+            {                
+                conectar();
+                SqlCommand ejecutar = new SqlCommand("Select contraseñaCliente from cliente where rutCliente = '" + rut + "'", conectarBD);
+                SqlDataReader registro = ejecutar.ExecuteReader();
+
+                if (registro.HasRows)
+                {
+                    while (registro.Read())
+                    {
+                        string con = registro["contraseñaCliente"].ToString();
+                        if (con == contraseña)
+                        {
+                            e = true;
+                        }
+                        else
+                        {
+                            e = false;
+                        }
+                    }             
+
+                }
+                else
+                {
+                    e = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+               e = false;
+            }
+            CerrarConexion();
+            return e;
+        }
+
     }
 }

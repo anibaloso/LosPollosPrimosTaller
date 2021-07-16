@@ -1,6 +1,8 @@
-﻿using System;
+﻿using LosPollosPrimos.Conexion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -9,6 +11,9 @@ namespace LosPollosPrimos.Paginas
 {
     public partial class LogCliente : System.Web.UI.Page
     {
+        ConexionBD conexion = new ConexionBD();
+        Site master = new Site();
+
         private bool verificaRut(int rut, string dv)
         {
             int Digito;
@@ -57,53 +62,27 @@ namespace LosPollosPrimos.Paginas
         {
             if (!IsPostBack)
             {
-                TextBox2.Text = "+56";
+               
             }
-        }
+        }       
 
-        protected void rutCV_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            String rut = RutTxt.Text.Trim();
-            if (rut == string.Empty)
-            {
-                args.IsValid = false;
-            }
-            else
-            {
-                String[] rutArray = rut.Split('-');
-                bool validacion = false;
-                if (rutArray[1] == "k")
-                {
-                    rutArray[1] = "K";
-                }
-                try
-                {
-                    validacion = verificaRut(Convert.ToInt32(rutArray[0]), rutArray[1]);
-                    if (validacion == true)
-                    {
-                        args.IsValid = true;
-                    }
-                    else
-                    {
-                        rutCV.ErrorMessage = "Rut invalido";
-                        args.IsValid = false;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    rutCV.ErrorMessage = "El rut debe contener solo números y 1 guión";
-                    args.IsValid = false;
-                }
 
-            }
-
-        }
-
-        protected void GuardarBtn_Click(object sender, EventArgs e)
+        protected void AccederBtn_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
             {
-                Response.Redirect("Menu.aspx");
+                string rut = RutIngresoTxt.Text.Trim();                
+                string contraseña = ContraseñaIngresoTxt.Text.Trim();
+
+                if (conexion.VerificarCliente(rut, contraseña))
+                {                   
+                    Response.Redirect("PantallaVentaCliente.aspx");
+                   
+                }
+                else
+                {
+                    errorTxt.InnerText = "Error Rut o Contraseña no coinciden";
+                }
             }
             else
             {
@@ -111,30 +90,5 @@ namespace LosPollosPrimos.Paginas
             }
         }
 
-        protected void ContraseñaValidacion_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            string contraseña = ContraseñaTxt.Text.ToString().Trim();
-            string contraseñaVal = ConfirmarContraseñaTxt.Text.ToString().Trim();
-
-            if (contraseña == contraseñaVal)
-            {
-                args.IsValid = true;
-            }
-            else
-            {
-                ContraseñaValidacion.ErrorMessage = "Las contraseñas no coinciden";
-                args.IsValid = false;
-            }
-        }
-
-        protected void ValidarTelefono_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            int telefono = Convert.ToInt32(TelefonoTxt.Text);
-            if (telefono < 0)
-            {
-                ValidarTelefono.ErrorMessage = "Ingrese correctamente";
-                args.IsValid = false;
-            }
-        }
     }
 }

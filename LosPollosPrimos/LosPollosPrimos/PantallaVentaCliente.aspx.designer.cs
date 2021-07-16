@@ -10,6 +10,6 @@
 namespace LosPollosPrimos {
     
     
-    public partial class PantallaVentas {
+    public partial class PantallaVentaCliente {
     }
 }
