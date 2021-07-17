@@ -13,6 +13,15 @@ namespace LosPollosPrimos {
     public partial class EditarEmpleado {
         
         /// <summary>
+        /// Control errorTxt.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorTxt;
+        
+        /// <summary>
         /// Control r.
         /// </summary>
         /// <remarks>

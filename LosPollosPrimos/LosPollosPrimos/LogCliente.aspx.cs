@@ -4,15 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace LosPollosPrimos.Paginas
 {
     public partial class LogCliente : System.Web.UI.Page
-    {
+    {    
         ConexionBD conexion = new ConexionBD();
-        Site master = new Site();
+       
 
         private bool verificaRut(int rut, string dv)
         {
@@ -71,13 +72,13 @@ namespace LosPollosPrimos.Paginas
         {
             if (Page.IsValid)
             {
-                string rut = RutIngresoTxt.Text.Trim();                
+                string rut = RutIngresoTxt.Text.Trim();
                 string contraseña = ContraseñaIngresoTxt.Text.Trim();
 
                 if (conexion.VerificarCliente(rut, contraseña))
-                {                   
+                {
                     Response.Redirect("PantallaVentaCliente.aspx");
-                   
+
                 }
                 else
                 {
@@ -88,7 +89,8 @@ namespace LosPollosPrimos.Paginas
             {
 
             }
-        }
+        }      
+
 
     }
 }

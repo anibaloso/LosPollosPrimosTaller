@@ -36,21 +36,29 @@ namespace LosPollosPrimos
 
         protected void ModificarBtn_Click(object sender, EventArgs e)
         {
-            string rut = rutBox.Value.ToString();
-            string nombre = nombreTxt.Value.ToString();
-            int telefono = Int32.Parse(TelefonoTxt.Value.ToString());
-            string contraseña = ContraseñaTxt.Value.ToString();
-            int local = (LocalBox.SelectedIndex);
-            int cargo = (CargoBox.SelectedIndex);
-            Boolean confirmacion = conexion.modificarPersonal(rut, nombre, telefono, contraseña, local, cargo);
+            try
+            {
+                string rut = rutBox.Value.ToString();
+                string nombre = nombreTxt.Value.ToString();
+                int telefono = Int32.Parse(TelefonoTxt.Value.ToString());
+                string contraseña = ContraseñaTxt.Value.ToString();
+                int local = (LocalBox.SelectedIndex);
+                int cargo = (CargoBox.SelectedIndex);
+                Boolean confirmacion = conexion.modificarPersonal(rut, nombre, telefono, contraseña, local, cargo);
 
-            if (confirmacion)
-            {
-                nombreTxt.Value = "Actualizado con exito";
+                if (confirmacion)
+                {
+                    errorTxt.InnerText = "Actualizado Exitosamente";
+                    Response.Redirect("VerEmpleados.aspx");
+                }
+                else
+                {
+                    errorTxt.InnerText = "Error al modificar ingrese datos correctamente";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                nombreTxt.Value = "Error";
+                errorTxt.InnerText="Error al modificar ingrese datos correctamente";
             }
 
         }
@@ -78,11 +86,12 @@ namespace LosPollosPrimos
             Boolean confirmacion = conexion.eliminarPersonal(rut);
             if (confirmacion)
             {
-                nombreTxt.Value = "Eliminado con exito";
+                errorTxt.InnerText = "Eliminado Exitosamente";
+                Response.Redirect("VerEmpleados.aspx");
             }
             else
             {
-                nombreTxt.Value = "Error";
+                errorTxt.InnerText = "Error al eliminar";
             }
         }
 

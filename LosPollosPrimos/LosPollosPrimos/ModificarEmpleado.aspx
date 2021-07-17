@@ -7,7 +7,7 @@
         <div class="col-5 col-md-6 col-lg-4 mx-auto">
             <div class="card">
 
-                
+                <label class="form-label h3 text-danger" runat="server" id="errorTxt" ></label>
 
                 <div class="card-header text-center bg-warning text-dark">
                     <h3 class="p-2">Modificar Empleado</h3>

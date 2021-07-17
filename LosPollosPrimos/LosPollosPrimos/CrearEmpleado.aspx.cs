@@ -36,15 +36,13 @@ namespace LosPollosPrimos
                 Personal p = new Personal(rut, nombre, telefono, contraseña, local, cargo);
                 PersonalDAO pDao = new PersonalDAO();
 
-                //cargamos los datos para ser enviados a la sentencia SQL y sale bien vamos a la pagina de empleados
+                //cargamos los datos para ser enviados a la sentencia SQL si sale bien vamos a la pagina de empleados
                 pDao.cargarBDPersonal(p);
                 Response.Redirect("VerEmpleados.aspx");
             }
             catch (Exception ex)
             {
-                //errorTxt.CssClass = "alert alert-info";
-                //errorTxt.Text = ex.ToString();
-                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+                errorTxt.InnerText ="Error al agregar un empleado verifique los datos";
             }
             
 

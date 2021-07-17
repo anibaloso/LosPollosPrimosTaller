@@ -15,8 +15,7 @@ namespace LosPollosPrimos
         {
             if (!IsPostBack)
             {
-                ConexionBD conexion = new ConexionBD();
-                conexion.conectar();                
+                          
             }
             
         }

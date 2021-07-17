@@ -10,69 +10,60 @@
 namespace LosPollosPrimos {
     
     
-    public partial class CrearEmpleado {
+    public partial class ConfirmarPagoCliente {
         
         /// <summary>
-        /// Control errorTxt.
+        /// Control ValorTotal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorTxt;
+        protected global::System.Web.UI.WebControls.TextBox ValorTotal;
         
         /// <summary>
-        /// Control rutTxt.
+        /// Control ListaTipoPago.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText rutTxt;
+        protected global::System.Web.UI.WebControls.DropDownList ListaTipoPago;
         
         /// <summary>
-        /// Control nombreTxt.
+        /// Control DetallePago.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText nombreTxt;
+        protected global::System.Web.UI.WebControls.GridView DetallePago;
         
         /// <summary>
-        /// Control TelefonoTxt.
+        /// Control RadioButtonList1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl TelefonoTxt;
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
         
         /// <summary>
-        /// Control ContraseñaTxt.
+        /// Control SeleccionRetiro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword ContraseñaTxt;
+        protected global::System.Web.UI.WebControls.DropDownList SeleccionRetiro;
         
         /// <summary>
-        /// Control LocalBox.
+        /// Control BtnPago.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect LocalBox;
-        
-        /// <summary>
-        /// Control CargoBox.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect CargoBox;
+        protected global::System.Web.UI.WebControls.Button BtnPago;
     }
 }

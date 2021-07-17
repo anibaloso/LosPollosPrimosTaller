@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LosPollosPrimos.Conexion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,9 @@ namespace LosPollosPrimos.Paginas
     public partial class LogVentas : System.Web.UI.Page
     {
         private String usuario = "Venta";
-        private int contraseña = 1234;
+        private String contraseña = "1234";
+        ConexionBD conexion = new ConexionBD();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -35,7 +38,7 @@ namespace LosPollosPrimos.Paginas
         {
             try
             {
-                int clave = Convert.ToInt32(ClaveTxt.Text);
+                string clave = ClaveTxt.Text;
                 string usuarioTxt = UsuarioVentasTxt.Text;
                 if (clave == contraseña && usuarioTxt == usuario)
                 {
@@ -43,7 +46,15 @@ namespace LosPollosPrimos.Paginas
                 }
                 else
                 {
-                    args.IsValid = false;
+                    if (conexion.VerificarAdminVenta(usuarioTxt, clave))
+                    {
+                        args.IsValid = true;
+                    }
+                    else
+                    {
+                        args.IsValid = false;
+                        ClaveCV.ErrorMessage = "El usuario o la clave no coinciden, o puede que no tenga privilegios para esta seccion";
+                    }
                 }
             }
             catch (Exception ex)

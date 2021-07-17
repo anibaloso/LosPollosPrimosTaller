@@ -10,7 +10,9 @@ namespace LosPollosPrimos.Conexion
 {
     public class ConexionBD
     {
-        string cadena = "Server=LAPTOP-HQ9K3UO6\\POLLOSPRIMOS;Database=pollosprimos;Trusted_Connection=True;";
+        string cadena = "Server=190.101.201.155\\POLLOSPRIMOS;Database=pollosprimos;Trusted_Connection=True;";
+        //"Server=LAPTOP-HQ9K3UO6\\POLLOSPRIMOS;Database=pollosprimos;Trusted_Connection=True;";
+        //"Server=pollosprimos.chfijzj3jkur.us-east-2.rds.amazonaws.com:1433;Database=pollosprimos;Trusted_Connection=True;";
 
         public SqlConnection conectarBD = new SqlConnection();
 
@@ -57,7 +59,9 @@ namespace LosPollosPrimos.Conexion
                 new DataColumn("Rut", typeof(string)),
                 new DataColumn("Nombre", typeof(string)),
                 new DataColumn("Telefono", typeof(string)),
-                new DataColumn("Contraseña", typeof(string))
+                new DataColumn("Contraseña", typeof(string)),
+                new DataColumn("Cargo", typeof(string)),
+                new DataColumn("Local", typeof(string))
             });
             conectar();
             SqlCommand ejecutar = new SqlCommand("Select * from personal", conectarBD);
@@ -67,11 +71,42 @@ namespace LosPollosPrimos.Conexion
             {
                 while (registro.Read())
                 {
+                    string cargo = null;
+                    string local = null;
+                    string idLocal = registro["local_idLocal"].ToString();
+                    string idcargo = registro["cargo_idCargo"].ToString();
+                    switch (idcargo)
+                    {
+                        case "1":
+                            cargo = "Administrador";
+                            break;
+                        case "2":
+                            cargo = "Vendedor";
+                            break;
+                        case "3":
+                            cargo = "Cocinero";
+                            break;
+                        case "4":
+                            cargo = "Repartidor";
+                            break;
+                    }
+                    switch (idLocal)
+                    {
+                        case "1":
+                            local = "Pollos Primos Viña";
+                            break;
+                        case "2":
+                            local = "Pollos primos Valparaiso";
+                            break;                        
+                    }
+
                     tabla.Rows.Add(
                         registro["rutPersonal"].ToString(),
                         registro["nombrePersonal"].ToString(),
                         registro["telefonoPersonal"].ToString(),
-                        registro["contraseñaPersonal"].ToString()
+                        registro["contraseñaPersonal"].ToString(),
+                        cargo,
+                        local
                         );
                 }
             }
@@ -149,6 +184,98 @@ namespace LosPollosPrimos.Conexion
                 e = true;
             }
             else
+            {
+                e = false;
+            }
+            CerrarConexion();
+            return e;
+        }
+
+        public Boolean VerificarAdmin(string rut, string contraseña)
+        {
+            Boolean e = false;
+            try
+            {
+                conectar();
+                SqlCommand ejecutar = new SqlCommand("Select contraseñaPersonal, cargo_idCargo from personal where rutPersonal = '" + rut + "'", conectarBD);
+                SqlDataReader registro = ejecutar.ExecuteReader();
+
+                if (registro.HasRows)
+                {
+                    while (registro.Read())
+                    {
+                        string con = registro["contraseñaPersonal"].ToString();
+                        string car = registro["cargo_idCargo"].ToString();
+                        if(car == "1")
+                        {
+                            if (con == contraseña)
+                            {
+                                e = true;
+                            }
+                            else
+                            {
+                                e = false;
+                            }
+                        }
+                        else
+                        {
+                            e = false;
+                        }                        
+                    }
+                }
+                else
+                {
+                    e = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                e = false;
+            }
+            CerrarConexion();
+            return e;
+        }
+
+        public Boolean VerificarAdminVenta(string rut, string contraseña)
+        {
+            Boolean e = false;
+            try
+            {
+                conectar();
+                SqlCommand ejecutar = new SqlCommand("Select contraseñaPersonal, cargo_idCargo from personal where rutPersonal = '" + rut + "'", conectarBD);
+                SqlDataReader registro = ejecutar.ExecuteReader();
+
+                if (registro.HasRows)
+                {
+                    while (registro.Read())
+                    {
+                        string con = registro["contraseñaPersonal"].ToString();
+                        string car = registro["cargo_idCargo"].ToString();
+                        if (car == "1" || car =="2")
+                        {
+                            if (con == contraseña)
+                            {
+                                e = true;
+                            }
+                            else
+                            {
+                                e = false;
+                            }
+                        }
+                        else
+                        {
+                            e = false;
+                        }
+                    }
+                }
+                else
+                {
+                    e = false;
+                }
+
+            }
+            catch (Exception ex)
             {
                 e = false;
             }

@@ -7,7 +7,7 @@
         <div class="col-5 col-md-6 col-lg-4 mx-auto">
             <div class="card">
                 <div class="card-header bg-warning text-dark text-center">
-                    <h3 class="p-2">Acceder</h3>
+                    <h3 class="p-2">Acceder Ventas</h3>
                 </div>
                 <div class="card-body text-center">
                     <div class="form-group">

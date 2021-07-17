@@ -7,7 +7,7 @@
         <div class="col-5 col-md-6 col-lg-4 mx-auto">
             <div class="card text-center">
                 <div class="card-header bg-warning text-dark">
-                    <h3 class="p-2">Acceder</h3>
+                    <h3 class="p-2">Acceder Administrador</h3>
                 </div>
                 <div class="card-body">
                     <div class="mb-3 ">

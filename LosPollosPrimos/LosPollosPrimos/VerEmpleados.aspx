@@ -17,6 +17,8 @@
                 <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
                 <asp:BoundField HeaderText="Telefono" DataField="Telefono" />
                 <asp:BoundField HeaderText="Contraseña" DataField="Contraseña" />
+                <asp:BoundField HeaderText="Cargo" DataField="Cargo" />
+                <asp:BoundField HeaderText="Local" DataField="Local" />
             </Columns>
 
         </asp:Gridview>

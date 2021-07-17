@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PantallaVentaCliente.aspx.cs" Inherits="LosPollosPrimos.PantallaVentaCliente" %>
+﻿ <%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PantallaVentaCliente.aspx.cs" Inherits="LosPollosPrimos.PantallaVentaCliente" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         
@@ -14,53 +14,61 @@
             <div class="col-9">
                 <div class="card bg-dark">
                     <div class="card-header  bg-warning text-white text-center">
-                        <h1><strong>Pantalla ventas Cliente</strong></h1>
+                        <h1><strong>Pantalla ventas</strong></h1>
                     </div>
                     <div class="card-body align-content-around p-5 text-center text-white bg-light">
                         <div class="row p-1 bg-secondary">
                             <div class="col-3 bg-secondary">
                                 <h5 id="textoVentas">Bebidas</h5>
                             </div>
-                            <button type="button" id="btn-venta">Coca cola 1/2 lt.<img class="card-img " src="Imagenes/coca-cola.jpg" /></button>
+                            
+                            
+                        <asp:ImageButton  ID="cocaCola" runat="server" ImageUrl="~/Imagenes/coca-cola.jpg" Width="150" Height="150" OnClick="cocaCola_Click" BorderStyle="Double"/>
+                        <asp:ImageButton  ID="sprite" runat="server" ImageUrl="~/Imagenes/sprite.jpg" Width="150" Height="150" OnClick="sprite_Click" BorderStyle="Double"/>
+                        <asp:ImageButton  ID="fanta" runat="server" ImageUrl="~/Imagenes/fanta.jpg" Width="150" Height="150" OnClick="fanta_Click" BorderStyle="Double"/>
+                        <asp:ImageButton  ID="pepsi" runat="server" ImageUrl="~/Imagenes/pepsi.jpg" Width="150" Height="150" OnClick="pepsi_Click" BorderStyle="Double"/>
+                        <asp:ImageButton  ID="orange" runat="server" ImageUrl="~/Imagenes/orange.jpg" Width="150" Height="150" OnClick="orange_Click" BorderStyle="Double"/>
+                        <asp:ImageButton  ID="seven" runat="server" ImageUrl="~/Imagenes/seven-up.jpg" Width="150" Height="150" OnClick="seven_Click" BorderStyle="Double"/>
 
-                            <button type="button" id="btn-venta-sprite">Sprite 1/2 lt.<img class="card-img" src="Imagenes/sprite.jpg" /></button>
-                            <button type="button" id="btn-venta-fanta">Fanta 1/2 lt.<img class="card-img" src="Imagenes/fanta.jpg" /></button>
-                            <button type="button" id="btn-venta-pepsi">Pepsi 1/2 lt.<img class="card-img" src="Imagenes/pepsi.jpg" /></button>
-                            <button type="button" id="btn-venta-crush">Crush 1/2 lt.<img class="card-img" src="Imagenes/orange.jpg" /></button>
-                            <button type="button" id="btn-venta-seven">Seven Up 1/2 lt.<img class="card-img" src="Imagenes/seven-up.jpg" /></button>
                         </div>
                         <div class="row p-1 bg-secondary">
                             <div class="col-3 bg-secondary p-1">
                                 <h5 id="textoVentas">Pollos</h5>
                             </div>
-                            <button type="button" id="btn-venta-pollo4">1/4 Pollo Asado<img class="card-img" src="Imagenes/Pollo-asado-1-4.jpg" /></button>
-                            <button type="button" id="btn-venta-pollo2">1/2 Pollo Asado<img class="card-img" src="Imagenes/Pollo-asado-medio.jpg" /></button>
-                            <button type="button" id="btn-venta-pollo">1 Pollo Asado<img class="card-img" src="Imagenes/Pollo-asado-entero.jpg" /></button>
+                        <asp:ImageButton  ID="polloCuarto" runat="server" ImageUrl="~/Imagenes/Pollo-asado-1-4.jpg" Width="150" Height="150" OnClick="polloCuarto_Click" BorderStyle="Double"/>
+                            <asp:ImageButton  ID="polloMedio" runat="server" ImageUrl="~/Imagenes/Pollo-asado-medio.jpg" Width="150" Height="150" OnClick="polloMedio_Click" BorderStyle="Double"/>
+                            <asp:ImageButton  ID="polloKilo" runat="server" ImageUrl="~/Imagenes/Pollo-asado-entero.jpg" Width="150" Height="150" OnClick="polloKilo_Click" BorderStyle="Double"/>
                         </div>
                         <div class="row p-1 bg-secondary">
                             <div class="col-3 bg-secondary">
                                 <h5 id="textoVentas">Completos</h5>
                             </div>
-                            <button type="button" id="btn-venta-hot">Hot Dog<img class="card-img" src="Imagenes/hot-dog.jpg" /></button>
-                            <button type="button" id="btn-venta-tomate">Hot Dog Tomate<img class="card-img" src="Imagenes/completo-sin-palta.jpg" /></button>
-                            <button type="button" id="btn-venta-comp">Completo Italiano<img class="card-img" src="Imagenes/completo.jpg" /></button>
+                        <asp:ImageButton  ID="hotdog" runat="server" ImageUrl="~/Imagenes/hot-dog.jpg" Width="150" Height="150" OnClick="hotdog_Click" BorderStyle="Double"/>
+                        <asp:ImageButton  ID="sinPalta" runat="server" ImageUrl="~/Imagenes/completo-sin-palta.jpg" Width="150" Height="150" OnClick="sinPalta_Click" BorderStyle="Double"/>
+                        <asp:ImageButton  ID="completo" runat="server" ImageUrl="~/Imagenes/completo.jpg" Width="150" Height="150" OnClick="completo_Click" BorderStyle="Double"/>
+                        
                         </div>
                         <div class="row p-1 bg-secondary">
                             <div class="col-3 bg-secondary">
                                 <h5 id="textoVentas">Papas Fritas</h5>
                             </div>
-                            <button type="button" id="btn-venta-papas4">1/4 Kg de Papas Fritas<img class="card-img" src="Imagenes/papas-fritas.jpg" /></button>
-                            <button type="button" id="btn-venta-papas2">1/2 Kg de Papas Fritas<img class="card-img" src="Imagenes/papas-fritas.jpg" /></button>
-                            <button type="button" id="btn-venta-papas">1 Kg de Papas Fritas<img class="card-img" src="Imagenes/papas-fritas.jpg" /></button>
+                            
+                            <asp:ImageButton ID="papasCuarto" runat="server" ImageUrl="~/Imagenes/papas-fritas.jpg" Width="150" Height="150" OnClick="papasCuarto_Click" BorderStyle="Double"/>
+                            <asp:ImageButton  ID="papasMedio" runat="server" ImageUrl="~/Imagenes/papas-fritas.jpg" Width="150" Height="150" OnClick="papasMedio_Click" BorderStyle="Double"/>
+                            <asp:ImageButton  ID="papasKilo" runat="server" ImageUrl="~/Imagenes/papas-fritas.jpg" Width="150" Height="150" OnClick="papasKilo_Click" BorderStyle="Double"/>
+
                         </div>
-                        <div class="row p-1 bg-secondary">
+                        <div class="row p-1 bg-secondary" >
+                            
                             <div class="col-3 bg-secondary">
                                 <h5 id="textoVentas">Menus</h5>
                             </div>
-                            <button type="button"id="btn-venta-pollo4-papas">1/4 Pollo + Papas<img class="card-img" src="Imagenes/1-4pollo-papas.jpg" /></button>
-                            <button type="button"id="btn-venta-pollo2-papas">1/2 Pollo + Papas<img class="card-img" src="Imagenes/pollo-medio-papas-fritas.jpg" /></button>
-                            <button type="button"id="btn-venta-pollo-papas">1 Pollo + Papas<img class="card-img" src="Imagenes/pollo-entero-papas-fritas.jpg" /></button>
-                            <button type="button"id="btn-venta-comp-papas">Completo + Papas<img class="card-img" src="Imagenes/completo-con-papas.jpg" /></button>
+                            <asp:ImageButton  ID="polloPapasCuarto" runat="server" ImageUrl="~/Imagenes/1-4pollo-papas.jpg" Width="150" Height="150" OnClick="polloPapasCuarto_Click" BorderStyle="Double"/>
+                            <asp:ImageButton  ID="polloPapasMedio" runat="server" ImageUrl="~/Imagenes/pollo-medio-papas-fritas.jpg" Width="150" Height="150" OnClick="polloPapasMedio_Click" BorderStyle="Double"/>
+                            <asp:ImageButton  ID="polloPapasEntero" runat="server" ImageUrl="~/Imagenes/pollo-entero-papas-fritas.jpg" Width="150" Height="150" OnClick="polloPapasEntero_Click" BorderStyle="Double"/>
+                            <asp:ImageButton  ID="completoPapas" runat="server" ImageUrl="~/Imagenes/completo-con-papas.jpg" Width="150" Height="150" OnClick="completoPapas_Click" BorderStyle="Double"/>
+                                
+
                         </div>
                     </div>
                 </div>
@@ -68,648 +76,38 @@
             <div class="col-3 ">
                 <div class="card float-end text-center m-0" >
                     <div class="card-header text-center">
-                        <button id="btn-armado-confirmar"type="button">Confirmar</button>
-                        <button  id="btn-armado" class="float-end">Borrar todo</button>
+                        <%-- botones de confirmar y borrar --%>
                         
+                        <asp:Button runat="server" ID="BtnPagar" CssClass="btn-warning btn" Text="Confirmar" OnClick="btnPagar_Click"/>
+                        <asp:Button runat="server" ID="BtnEliminar" CssClass="btn-warning btn" Text="Borrar todo" OnClick="BtnEliminar_Click"/>
                         
-                        <h3>Compra</h3>
                     </div>
+                    <div class="text-center">
+                        
                     
-                    <table class="table table-striped">
-                        <thead>
+                    </div>
+                    <asp:GridView ID="tablaCompra" runat="server" AutoGenerateColumns="false"
+                        CssClass="table table-hover" OnRowCommand="tablaCompra_RowCommand">
+                        
+                        <Columns>
+                            <asp:TemplateField HeaderText="Acciones">
+                                <ItemTemplate>
+                                    <asp:Button ID="btnEliminar" runat="server" Text="-" CssClass="btn btn-danger" 
+                                     CommandName="eliminar" CommandArgument='<%# Eval("nombreProducto") %>'/>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:BoundField HeaderText="Producto" DataField="nombreProducto"/>
+                            <asp:BoundField HeaderText="Cantidad" DataField="cantidad" />
+                            <asp:BoundField HeaderText="Valor Total" DataField="valorTotal" />
                             
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col">Producto</th>
-                                <th scope="col">Cantidad</th>
-                                <th scope="col">Valor</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            
-                                <th scope="col"></th>
-                                <th scope="col"id="totales">Totales</th>
-                                <td><p id="areaContadorCantidad"></p></td>
-                                <td><p id="resultadoVentaTotales"></p></td>
-                            </tr>
-                            
-                            <tr>
-                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar1()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
-                                <th scope="col "id="coca"></th>
-                                <td><p id="areaContador"></p></td>
-                                <td><p id="resultado-venta"></p></td>
-
-                                <script type="text/javascript">
-                                    var botonElement = document.getElementById("btn-venta");
-                                    var nElement = document.getElementById("coca");
-                                    var pElement = document.getElementById("areaContador");
-                                    var vElement = document.getElementById("resultado-venta");
-                                    var contador = 0;
-                                    var valor = 0;
-                                    
-                                    botonElement.onclick = function () {
-                                        contador++;
-                                        valor = 1000 * contador;
-                                        nElement.textContent = "Coca Cola 1/2";
-                                        pElement.textContent = contador;
-                                        vElement.textContent = valor;
-                                    }
-                                    function restar1() {
-                                        if (contador > 0) {
-                                            contador = contador - 1;
-                                            valor = 1000 * contador;
-                                            pElement.textContent = contador;
-                                            vElement.textContent = valor;
-                                        }
-                                    }
-                                </script>
-
-
-                            </tr>
-                            <tr>
-                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar2()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
-                                <th scope="col "id="sprite"></th>
-                                <td><p id="areaContadorSprite"></p></td>
-                                <td><p id="resultadoVentaSprite"></p></td>
-                                <script type="text/javascript">
-
-                                    var botonElement = document.getElementById("btn-venta-sprite");
-                                    var nElementS = document.getElementById("sprite");
-                                    var pElementS = document.getElementById("areaContadorSprite");
-                                    var vElementS = document.getElementById("resultadoVentaSprite");
-                                    var contador2 = 0;
-                                    var valor2 = 0;
-                                    
-                                    botonElement.onclick = function () {
-                                        contador2++;
-                                        valor2 = 1000 * contador2;
-                                        nElementS.textContent = "Sprite 1/2";
-                                        pElementS.textContent = contador2;
-                                        vElementS.textContent = valor2;
-                                    }
-                                    function restar2() {
-                                        if (contador2 > 0) {
-                                            contador2 = contador2 - 1;
-                                            valor2 = 1000 * contador2;
-                                            pElementS.textContent = contador2;
-                                            vElementS.textContent = valor2;
-                                        }
-                                    }
-                                </script>
-
-
-                            </tr>
-                            <tr>
-                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar3()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
-                                <th scope="col" id="fanta"></th>
-                                <td><p id="areaContadorFanta"></p></td>
-                                <td><p id="resultadoVentaFanta"></p></td>
-                                <script type="text/javascript">
-                                    var botonElement = document.getElementById("btn-venta-fanta");
-                                    var nElementF = document.getElementById("fanta");
-                                    var pElementF = document.getElementById("areaContadorFanta");
-                                    var vElementF = document.getElementById("resultadoVentaFanta");
-                                    var contador3 = 0;
-                                    var valor3 = 0;
-                                    
-                                    botonElement.onclick = function () {
-                                        contador3++;
-                                        valor3 = 1000 * contador3;
-                                        nElementF.textContent="Fanta 1/2";
-                                        pElementF.textContent = contador3;
-                                        vElementF.textContent = valor3;
-                                    }
-                                    function restar3() {
-                                        if (contador3 > 0) {
-                                            contador3 = contador3 - 1;
-                                            valor3 = 1000 * contador3;
-                                            pElementF.textContent = contador3;
-                                            vElementF.textContent = valor3;
-                                        }
-                                    }
-                                </script>
-                            </tr>
-                            <tr>
-                                <th ><p ><button type="button" id="btn-4"><img class="card-img" onclick="restar4()" src="Imagenes/minus.png"  /></button></p></th>
-                                <th scope="col"id="pepsi"></th>
-                                <td><p id="areaContadorPepsi"></p></td>
-                                <td><p id="resultadoVentaPepsi"></p></td>
-                                <script type="text/javascript">
-                                    var botonElement = document.getElementById("btn-venta-pepsi");
-                                    var nElementP = document.getElementById("pepsi");
-                                    var pElementP = document.getElementById("areaContadorPepsi");
-                                    var vElementP = document.getElementById("resultadoVentaPepsi");
-                                    var contador4 = 0;
-                                    var valor4 = 0;
-                                    
-                                    botonElement.onclick = function () {
-                                        contador4++;
-                                        valor4 = 1000 * contador4;
-                                        nElementP.textContent = "Pepsi 1 / 2";
-                                        pElementP.textContent = contador4;
-                                        vElementP.textContent = valor4;
-                                    }
-                                    function restar4() {
-                                        if (contador4 > 0) {
-                                            contador4 = contador4 - 1;
-                                            valor4 = 1000 * contador4;
-                                            pElementP.textContent = contador4;
-                                            vElementP.textContent = valor4;
-                                        }
-                                    }
-                                </script>
-                            </tr>
-                            <tr>
-                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar5()" src="Imagenes/minus.png" /></button></p></th>
-                                <th scope="col"id="crush"></th>
-                                <td><p id="areaContadorCrush"></p></td>
-                                <td><p id="resultadoVentaCrush"></p></td>
-                                <script type="text/javascript">
-                                    var botonElement = document.getElementById("btn-venta-crush");
-                                    var nElementC = document.getElementById("crush");
-                                    var pElementC = document.getElementById("areaContadorCrush");
-                                    var vElementC = document.getElementById("resultadoVentaCrush");
-                                    var contador5 = 0;
-                                    var valor5 = 0;
-                                    
-                                    botonElement.onclick = function () {
-                                        contador5++;
-                                        valor5 = 1000 * contador5;
-                                        nElementC.textContent = "Crush 1/2";
-                                        pElementC.textContent = contador5;
-                                        vElementC.textContent = valor5;
-                                    }
-                                    function restar5() {
-                                        if (contador5 > 0) {
-                                            contador5 = contador5 - 1;
-                                            valor5 = 1000 * contador5;
-                                            pElementC.textContent = contador5;
-                                            vElementC.textContent = valor5;
-                                        }
-                                    }
-                                </script>
-                            </tr>
-                            <tr>
-                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar6()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
-                                <th scope="col"id="seven"></th>
-                                <td><p id="areaContadorSeven"></p></td>
-                                <td><p id="resultadoVentaSeven"></p></td>
-                                <script type="text/javascript">
-                                    var botonElement = document.getElementById("btn-venta-seven");
-                                    var nElementSe = document.getElementById("seven");
-                                    var pElementSe = document.getElementById("areaContadorSeven");
-                                    var vElementSe = document.getElementById("resultadoVentaSeven");
-                                    var contador6 = 0;
-                                    var valor6 = 0;
-                                    
-                                    botonElement.onclick = function () {
-                                        contador6++;
-                                        valor6 = 1000 * contador6;
-                                        nElementSe.textContent = "Seven UP 1/2";
-                                        pElementSe.textContent = contador6;
-                                        vElementSe.textContent = valor6;
-                                    }
-                                    function restar6() {
-                                        if (contador6 > 0) {
-                                            contador6 = contador6- 1;
-                                            valor6 = 1000 * contador6;
-                                            pElementSe.textContent = contador6;
-                                            vElementSe.textContent = valor6;
-                                        }
-                                    }
-                                </script>
-
-                            </tr>
-                            <tr>
-                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar7()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
-                                <th scope="col"id="pollo4"></th>
-                                <td><p id="areaContadorPollo4"></p></td>
-                                <td><p id="resultadoVentaPollo4"></p></td>
-                                <script type="text/javascript">
-                                    var botonElement = document.getElementById("btn-venta-pollo4");
-                                    var nElementP4 = document.getElementById("pollo4");
-                                    var pElementP4 = document.getElementById("areaContadorPollo4");
-                                    var vElementP4 = document.getElementById("resultadoVentaPollo4");
-                                    var contador7 = 0;
-                                    var valor7 = 0;
-                                    
-                                    botonElement.onclick = function () {
-                                        contador7++;
-                                        valor7 = 2500 * contador7;
-                                        nElementP4.textContent = "1/4 Pollo";
-                                        pElementP4.textContent = contador7;
-                                        vElementP4.textContent = valor7;
-                                    }
-                                    function restar7() {
-                                        if (contador7 > 0) {
-                                            contador7 = contador7 - 1;
-                                            valor7 = 2500 * contador7;
-                                            pElementP4.textContent = contador7;
-                                            vElementP4.textContent = valor7;
-                                        }
-                                    }
-                                </script>
-                            </tr>
-                            <tr>
-                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar8()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
-                                <th scope="col"id="pollo2"></th>
-                                <td><p id="areaContadorPollo2"></p></td>
-                                <td><p id="resultadoVentaPollo2"></p></td>
-                                <script type="text/javascript">
-                                    var botonElement = document.getElementById("btn-venta-pollo2");
-                                    var nElementP2 = document.getElementById("pollo2");
-                                    var pElementP2 = document.getElementById("areaContadorPollo2");
-                                    var vElementP2 = document.getElementById("resultadoVentaPollo2");
-                                    var contador8 = 0;
-                                    var valor8 = 0;
-                                    
-                                    botonElement.onclick = function () {
-                                        contador8++;
-                                        valor8 = 4500 * contador8;
-                                        nElementP2.textContent = "1/2 Pollo";
-                                        pElementP2.textContent = contador8;
-                                        vElementP2.textContent = valor8;
-                                    }
-                                    function restar8() {
-                                        if (contador8 > 0) {
-                                            contador8 = contador8 - 1;
-                                            valor8 = 4500 * contador8;
-                                            pElementP2.textContent = contador8;
-                                            vElementP2.textContent = valor8;
-                                        }
-                                    }
-                                </script>
-                            </tr>
-                            <tr>
-                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar9()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
-                                <th scope="col"id="pollo"></th>
-                                <td><p id="areaContadorPollo"></p></td>
-                                <td><p id="resultadoVentaPollo"></p></td>
-                                <script type="text/javascript">
-                                    var botonElement = document.getElementById("btn-venta-pollo");
-                                    var nElementPollo = document.getElementById("pollo");
-                                    var pElementPollo = document.getElementById("areaContadorPollo");
-                                    var vElementPollo = document.getElementById("resultadoVentaPollo");
-                                    var contador9 = 0;
-                                    var valor9 = 0;
-                                    
-                                    botonElement.onclick = function () {
-                                        contador9++;
-                                        valor9 = 7000 * contador9;
-                                        nElementPollo.textContent = "1 Pollo ";
-                                        pElementPollo.textContent = contador9;
-                                        vElementPollo.textContent = valor9;
-                                    }
-                                    function restar9() {
-                                        if (contador9 > 0) {
-                                            contador9 = contador9 - 1;
-                                            valor9 = 7000 * contador9;
-                                            pElementPollo.textContent = contador9;
-                                            vElementPollo.textContent = valor9;
-                                        }
-                                    }
-                                </script>
-                            </tr>
-                            <tr>
-                                
-                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar10()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
-                                <th scope="col"id="hot"></th>
-                                <td><p id="areaContadorHot"></p></td>
-                                <td><p id="resultadoVentaHot"></p></td>
-                                <script type="text/javascript">
-                                    var botonElement = document.getElementById("btn-venta-hot");
-                                    var nElementHot = document.getElementById("hot");
-                                    var pElementHot = document.getElementById("areaContadorHot");
-                                    var vElementHot = document.getElementById("resultadoVentaHot");
-                                    var contador10 = 0;
-                                    var valor10 = 0;
-                                    
-                                    botonElement.onclick = function () {
-                                        contador10++;
-                                        valor10 = 1500 * contador10;
-                                        nElementHot.textContent = "1 HotDog ";
-                                        pElementHot.textContent = contador10;
-                                        vElementHot.textContent = valor10;
-                                    }
-                                    function restar10() {
-                                        if (contador10 > 0) {
-                                            contador10 = contador10 - 1;
-                                            valor10 = 1500 * contador10;
-                                            pElementHot.textContent = contador10;
-                                            vElementHot.textContent = valor10;
-                                        }
-                                    }
-                                    </script>
-                            </tr>
-                            <tr>
-                                
-                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar11()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
-                                <th scope="col"id="tomate"></th>
-                                <td><p id="areaContadorTomate"></p></td>
-                                <td><p id="resultadoVentaTomate"></p></td>
-                                <script type="text/javascript">
-                                    var botonElement = document.getElementById("btn-venta-tomate");
-                                    var nElementTomate = document.getElementById("tomate");
-                                    var pElementTomate = document.getElementById("areaContadorTomate");
-                                    var vElementTomate = document.getElementById("resultadoVentaTomate");
-                                    var contador11 = 0;
-                                    var valor11 = 0;
-                                    
-                                    botonElement.onclick = function () {
-                                        contador11++;
-                                        valor11 = 1500 * contador11;
-                                        nElementTomate.textContent = "Hot dog S/palta";
-                                        pElementTomate.textContent = contador11;
-                                        vElementTomate.textContent = valor11;
-                                    }
-                                    function restar11() {
-                                        if (contador11 > 0) {
-                                            contador11 = contador11 - 1;
-                                            valor11 = 1500 * contador11;
-                                            pElementTomate.textContent = contador11;
-                                            vElementTomate.textContent = valor11;
-                                        }
-                                    }
-                                    </script>
-                            </tr>
-                            <tr>
-                                
-                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar12()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
-                                <th scope="col"id="comp"></th>
-                                <td><p id="areaContadorComp"></p></td>
-                                <td><p id="resultadoVentaComp"></p></td>
-                                <script type="text/javascript">
-                                    var botonElement = document.getElementById("btn-venta-comp");
-                                    var nElementComp = document.getElementById("comp");
-                                    var pElementComp = document.getElementById("areaContadorComp");
-                                    var vElementComp = document.getElementById("resultadoVentaComp");
-                                    var contador12 = 0;
-                                    var valor12 = 0;
-                                    
-                                    botonElement.onclick = function () {
-                                        contador12++;
-                                        valor12 = 1500 * contador12;
-                                        nElementComp.textContent = "Italiano";
-                                        pElementComp.textContent = contador12;
-                                        vElementComp.textContent = valor12;
-                                    }
-                                    function restar12() {
-                                        if (contador12 > 0) {
-                                            contador12 = contador12 - 1;
-                                            valor12 = 1500 * contador12;
-                                            pElementComp.textContent = contador12;
-                                            vElementComp.textContent = valor12;
-                                        }
-                                    }
-                                    </script>
-                            </tr>
-                            <tr>
-                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar13()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
-                                <th scope="col"id="papas4"></th>
-                                <td><p id="areaContadorPapas4"></p></td>
-                                <td><p id="resultadoVentaPapas4"></p></td>
-                                <script type="text/javascript">
-                                    var botonElement = document.getElementById("btn-venta-papas4");
-                                    var nElementPapas4= document.getElementById("papas4");
-                                    var pElementPapas4 = document.getElementById("areaContadorPapas4");
-                                    var vElementPapas4 = document.getElementById("resultadoVentaPapas4");
-                                    var contador13 = 0;
-                                    var valor13 = 0;
-                                    
-                                    botonElement.onclick = function () {
-                                        contador13++;
-                                        valor13 = 1500 * contador13;
-                                        nElementPapas4.textContent = "1/4 Papas";
-                                        pElementPapas4.textContent = contador13;
-                                        vElementPapas4.textContent = valor13;
-                                    }
-                                    function restar13() {
-                                        if (contador13 > 0) {
-                                            contador13 = contador13 - 1;
-                                            valor13 = 1500 * contador13;
-                                            pElementPapas4.textContent = contador13;
-                                            vElementPapas4.textContent = valor13;
-                                        }
-                                    }
-                                    </script>
-                            </tr>
-                            <tr>
-                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar14()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
-                                <th scope="col"id="papas2"></th>
-                                <td><p id="areaContadorPapas2"></p></td>
-                                <td><p id="resultadoVentaPapas2"></p></td>
-                                <script type="text/javascript">
-                                    var botonElement = document.getElementById("btn-venta-papas2");
-                                    var nElementPapas2= document.getElementById("papas2");
-                                    var pElementPapas2 = document.getElementById("areaContadorPapas2");
-                                    var vElementPapas2 = document.getElementById("resultadoVentaPapas2");
-                                    var contador14 = 0;
-                                    var valor14 = 0;
-                                    
-                                    botonElement.onclick = function () {
-                                        contador14++;
-                                        valor14 = 2500 * contador14;
-                                        nElementPapas2.textContent = "1/2 Papas";
-                                        pElementPapas2.textContent = contador14;
-                                        vElementPapas2.textContent = valor14;
-                                    }
-                                    function restar14() {
-                                        if (contador14 > 0) {
-                                            contador14 = contador14 - 1;
-                                            valor14 = 2500 * contador14;
-                                            pElementPapas2.textContent = contador14;
-                                            vElementPapas2.textContent = valor14;
-                                        }
-                                    }
-                                    </script>
-                            </tr>
-                            <tr>
-                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar15()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
-                                <th scope="col"id="papas"></th>
-                                <td><p id="areaContadorPapas"></p></td>
-                                <td><p id="resultadoVentaPapas"></p></td>
-                                <script type="text/javascript">
-                                    var botonElement = document.getElementById("btn-venta-papas");
-                                    var btnBorrar19 = document.getElementById("btn-19");
-                                    var nElementPapas= document.getElementById("papas");
-                                    var pElementPapas = document.getElementById("areaContadorPapas");
-                                    var vElementPapas = document.getElementById("resultadoVentaPapas");
-                                    var contador15 = 0;
-                                    var valor15 = 0;
-                                    
-                                    botonElement.onclick = function () {
-                                        contador15++;
-                                        valor15 = 3500 * contador15;
-                                        nElementPapas.textContent = "1K Papas";
-                                        pElementPapas.textContent = contador15;
-                                        vElementPapas.textContent = valor15;
-                                    }
-                                    function restar15() {
-                                        if (contador15 > 0) {
-                                            contador15 = contador15 - 1;
-                                            valor15 = 3500 * contador15;
-                                            pElementPapas.textContent = contador15;
-                                            vElementPapas.textContent = valor15;
-                                        }
-                                    }
-                                    </script>
-                            </tr>
-                            <tr>
-                                
-                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar16()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
-                                <th scope="col"id="pollo4-papas"></th>
-                                <td><p id="areaContadorPollo4Papas"></p></td>
-                                <td><p id="resultadoVentaPollo4Papas"></p></td>
-                                <script type="text/javascript">
-                                    var botonElement = document.getElementById("btn-venta-pollo4-papas");
-                                    var nElementPollo4Papas= document.getElementById("pollo4-papas");
-                                    var pElementPollo4Papas = document.getElementById("areaContadorPollo4Papas");
-                                    var vElementPollo4Papas = document.getElementById("resultadoVentaPollo4Papas");
-                                    var contador16 = 0;
-                                    var valor16 = 0;
-                                    
-                                    botonElement.onclick = function () {
-                                        contador16++;
-                                        valor16 = 1000 * contador16;
-                                        nElementPollo4Papas.textContent = "1/4 Pollo+Papas";
-                                        pElementPollo4Papas.textContent = contador16;
-                                        vElementPollo4Papas.textContent = valor16;
-                                    }
-                                    function restar16() {
-                                        if (contador16 > 0) {
-                                            contador16 = contador16 - 1;
-                                            valor16 = 1000 * contador16;
-                                            pElementPollo4Papas.textContent = contador16;
-                                            vElementPollo4Papas.textContent = valor16;
-                                        }
-                                    }
-                                    </script>
-                            </tr>
-                            <tr>
-                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar17()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
-                                <th scope="col"id="pollo2-papas"></th>
-                                <td><p id="areaContadorPollo2Papas"></p></td>
-                                <td><p id="resultadoVentaPollo2Papas"></p></td>
-                                <script type="text/javascript">
-                                    var botonElement = document.getElementById("btn-venta-pollo2-papas");
-                                    var nElementPollo2Papas= document.getElementById("pollo2-papas");
-                                    var pElementPollo2Papas = document.getElementById("areaContadorPollo2Papas");
-                                    var vElementPollo2Papas = document.getElementById("resultadoVentaPollo2Papas");
-                                    var contador17 = 0;
-                                    var valor17 = 0;
-                                    
-                                    botonElement.onclick = function () {
-                                        contador17++;
-                                        valor17 = 5500 * contador17;
-                                        nElementPollo2Papas.textContent = "1/2 Pollo+Papas";
-                                        pElementPollo2Papas.textContent = contador17;
-                                        vElementPollo2Papas.textContent = valor17;
-                                    }
-                                    function restar17() {
-                                        if (contador17 > 0) {
-                                            contador17 = contador17 - 1;
-                                            valor17 = 5500 * contador17;
-                                            pElementPollo2Papas.textContent = contador17;
-                                            vElementPollo2Papas.textContent = valor17;
-                                        }
-                                    }
-                                    </script>
-                            </tr>
-                            <tr>
-                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar18()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
-                                <th scope="col"id="pollo-papas"></th>
-                                <td><p id="areaContadorPolloPapas"></p></td>
-                                <td><p id="resultadoVentaPolloPapas"></p></td>
-                                <script type="text/javascript">
-                                    var botonElement = document.getElementById("btn-venta-pollo-papas");
-                                    var btnBorrar18 = document.getElementById("btn-18");
-                                    var nElementPolloPapas= document.getElementById("pollo-papas");
-                                    var pElementPolloPapas = document.getElementById("areaContadorPolloPapas");
-                                    var vElementPolloPapas = document.getElementById("resultadoVentaPolloPapas");
-                                    var contador18 = 0;
-                                    var valor18 = 0;
-                                    
-                                    botonElement.onclick = function () {
-                                        contador18++;
-                                        valor18 = 10000 * contador18;
-                                        nElementPolloPapas.textContent = "1K Pollo+Papas";
-                                        pElementPolloPapas.textContent = contador18;
-                                        vElementPolloPapas.textContent = valor18;
-                                    }
-                                    function restar18() {
-                                        if (contador18 > 0) {
-                                            contador18 = contador18 - 1;
-                                            valor18 = 10000 * contador18;
-                                            pElementPolloPapas.textContent = contador18;
-                                            vElementPolloPapas.textContent = valor18;
-                                        }
-                                    }
-                                    </script>
-                            </tr>
-                            <tr>
-                                <th ><p ><button type="button"id="btn-4"><img class="card-img" onclick="restar19()" src="Imagenes/minus.png" width="" height="" /></button></p></th>
-                                <th scope="col"id="comp-papas"></th>
-                                <td><p id="areaContadorCompPapas"></p></td>
-                                <td><p id="resultadoVentaCompPapas"></p></td>
-                                
-                                 
-                                <script type="text/javascript">
-                                    var botonElement = document.getElementById("btn-venta-comp-papas");
-                                    var btnBorrar19 = document.getElementById("btn-19");
-                                    var nElementCompPapas = document.getElementById("comp-papas");
-                                    var pElementCompPapas = document.getElementById("areaContadorCompPapas");
-                                    var vElementCompPapas = document.getElementById("resultadoVentaCompPapas");
-                                    var contador19 = 0;
-                                    var valor19 = 0;
-                                    
-
-                                    botonElement.onclick = function () {
-                                        contador19++;
-                                        valor19 = 2500 * contador19;
-                                        nElementCompPapas.textContent = "Italiano+Papas";
-                                        pElementCompPapas.textContent = contador19;
-                                        vElementCompPapas.textContent = valor19;
-                                        
-                                    }
-                                    
-                                    function restar19() {
-                                        if (contador19 > 0) {
-                                            contador19 = contador19 - 1;
-                                            valor19 = 2500 * contador19;
-                                            pElementCompPapas.textContent = contador19;
-                                            vElementCompPapas.textContent = valor19;
-                                        }
-                                    }
-                                    
-                                    
-                                    
-                                </script>
-                                </tr>
-                            
-                        </tbody>
-
-                    </table>
+                        </Columns>
+                        
+                    </asp:GridView>
+                    <label id="totalTxt" runat="server" class="h4 text-center text-dark">Total: $</label>
                     <div class="card-body">
-                        <%--<button id="btn-armado-confirmar"type="button">Confirmar</button>
-                        <button  id="btn-armado" class="float-end">Borrar todo</button>
-                        --%>
-                        <script type="text/javascript">
-                            var botonConfirmar = document.getElementById("btn-armado-confirmar");
-                            var pElementTotal = document.getElementById("areaContadorCantidad");
-                            var vElementTotal = document.getElementById("resultadoVentaTotales");
-                            var contadorTotal = 0;
-                            var valorTotal = 0;
-                            botonConfirmar.onclick = function () {
-
-                                contadorTotal = contador + contador2 + contador3 + contador4 + contador5 + contador6 + contador7 + contador8 + contador9 +
-                                    contador10 + contador11 + contador12 + contador13 + contador14 + contador15 + contador16 + contador17 + contador18 + contador19;
-                                valorTotal = valor + valor2 + valor3 + valor4 + valor5 + valor6 + valor7 + valor8 + valor9 + valor10 + valor11 + valor12 +
-                                    valor13 + valor14+ valor15 + valor16 + valor17 + valor18 + valor19;
-                                pElementTotal.textContent = contadorTotal;
-                                vElementTotal.textContent = valorTotal;
-                                    }
-                            </script>
+                        
+                        
+                        
                     </div>
 
                 </div>
