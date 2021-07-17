@@ -43,8 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion\ConexionBD.cs" />
+    <Compile Include="DAO\DetalleVentaDAO.cs" />
     <Compile Include="DAO\PersonalDAO.cs" />
+    <Compile Include="DAO\TipoPAgoDAO.cs" />
+    <Compile Include="DTO\DetalleVenta.cs" />
     <Compile Include="DTO\Personal.cs" />
+    <Compile Include="DTO\TipoPago.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ticket.cs" />
   </ItemGroup>

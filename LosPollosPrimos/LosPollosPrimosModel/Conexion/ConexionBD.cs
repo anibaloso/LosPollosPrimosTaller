@@ -10,7 +10,8 @@ namespace LosPollosPrimos.Conexion
 {
     public class ConexionBD
     {
-        string cadena = "Server=190.101.201.155\\POLLOSPRIMOS;Database=pollosprimos;Trusted_Connection=True;";
+        string cadena = "Server=LAPTOP-HQ9K3UO6\\POLLOSPRIMOS;Database=pollosprimos;Trusted_Connection=True;";
+            // "Server=190.101.201.155\\POLLOSPRIMOS;Database=pollosprimos;Trusted_Connection=True;";
         //"Server=LAPTOP-HQ9K3UO6\\POLLOSPRIMOS;Database=pollosprimos;Trusted_Connection=True;";
         //"Server=pollosprimos.chfijzj3jkur.us-east-2.rds.amazonaws.com:1433;Database=pollosprimos;Trusted_Connection=True;";
 

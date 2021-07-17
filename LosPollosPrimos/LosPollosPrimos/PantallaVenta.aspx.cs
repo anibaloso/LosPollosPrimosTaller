@@ -14,8 +14,10 @@ namespace LosPollosPrimos
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {
+                new DetalleVentaDAO().EliminarTodo();
                 CargarTabla(new DetalleVentaDAO().GetAll());
                 totalTxt.InnerText = "total: $ " + new DetalleVentaDAO().GetAllValores();
             }

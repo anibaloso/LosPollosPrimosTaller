@@ -14,12 +14,14 @@ namespace LosPollosPrimos
     {
         List<DetalleVenta> detallesList = new DetalleVentaDAO().GetAll();  // en teoria deberia guardar la lista aqui
         double IVA = 1.19;
+        int Vtotal; 
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 ValorTotal.Text = "$ " + new DetalleVentaDAO().GetAllValores().ToString();
+                
                 List<TipoPago> tipoPagos = new TipoPagoDAO().GetAll();                
                 ListaTipoPago.DataSource = tipoPagos;
                 ListaTipoPago.DataTextField = "formaPago";
@@ -69,7 +71,7 @@ namespace LosPollosPrimos
             foreach (var v in detallesList)
             {
                 //Console.WriteLine("Element = {0}", v);
-                ticket.AddItem(v.Cantidad, v.NombreProducto, v.ValorTotal);  // en teoria deberia funcionar xD
+                ticket.AddItem(v.Cantidad.ToString(), v.NombreProducto, "$ " + v.ValorTotal.ToString());  // en teoria deberia funcionar xD
             }
 
             //ticket.AddItem("1", "Articulo Prueba", "15.00");
@@ -79,13 +81,14 @@ namespace LosPollosPrimos
 
             //AGREGAR DESDE LA LISTA
 
-            int total = Int32.Parse(ValorTotal.Text);
-            Double totalSinIva = (total/IVA);
+            //int total = Int32.Parse(ValorTotal.Text);
+            Vtotal = new DetalleVentaDAO().GetAllValores();
+            Double totalSinIva = (Vtotal/IVA);
             
 
-            ticket.AddTotal("SUBTOTAL", ((Int32)totalSinIva).ToString());
-            ticket.AddTotal("IVA", (total - (Int32)totalSinIva).ToString());
-            ticket.AddTotal("TOTAL", total.ToString());
+            ticket.AddTotal("SUBTOTAL","$ "+ ((Int32)totalSinIva).ToString());
+            ticket.AddTotal("IVA", "$ " + (Vtotal - (Int32)totalSinIva).ToString());
+            ticket.AddTotal("TOTAL", "$ " + Vtotal.ToString());
             ticket.AddTotal("", ""); //Ponemos un total en blanco que sirve de espacio
             //ticket.AddTotal("RECIBIDO", "50.00");
             //ticket.AddTotal("CAMBIO", "15.00");
@@ -100,6 +103,7 @@ namespace LosPollosPrimos
             //Y por ultimo llamamos al metodo PrintTicket para imprimir el ticket, este metodo necesita un
             //parametro de tipo string que debe de ser el nombre de la impresora.
             ticket.PrintTicket("Microsoft Print to PDF");
+            Response.Redirect("PantallaVenta.aspx");
         }
     }
 }
