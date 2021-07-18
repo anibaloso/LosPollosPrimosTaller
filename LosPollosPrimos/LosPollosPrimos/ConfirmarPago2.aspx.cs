@@ -56,8 +56,28 @@ namespace LosPollosPrimos
 
         protected void BtnPago_Click(object sender, EventArgs e)
         {
-            ImprimirBoleta();
-            Response.Redirect("PantallaVenta2.aspx?id=" + rut);
+            try
+            {
+                foreach (var v in detallesList)
+                {
+                    conexion.IngresardetallePedido(v.Cantidad, v.ValorTotal, v.NombreProducto);
+                }
+
+                conexion.IngresarPedido("Pedido Hecho por Internet", conexion.ultimoIdDetallePedido(), rut, 1);
+
+
+                conexion.IngresarBoleta(conexion.ultimoIdPedido(), conexion.ultimoIdDetallePedido(), rut, 1, conexion.SelectLocalPersonalPorRut(rut), conexion.SelectLocalPersonalPorRut(rut));
+
+                ImprimirBoleta();
+                Response.Redirect("PantallaVenta2.aspx?id=" + rut);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        
+            
         }
 
         protected void ImprimirBoleta()
@@ -137,7 +157,7 @@ namespace LosPollosPrimos
                     break;
             }
             return local;
-        }
+        }         
 
     }  
 
