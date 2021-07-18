@@ -40,13 +40,13 @@ namespace LosPollosPrimos.Conexion
         }
 
 
-        //public void EjecutarQuerySQL(string dato)
-        //{
-        //    conectar();
-        //    SqlCommand ejecutar = new SqlCommand(dato, conectarBD);
-        //    ejecutar.ExecuteNonQuery();
-        //    conectarBD.Close();
-        //}
+        public void EjecutarQuerySQL(string dato)
+        {
+            conectar();
+            SqlCommand ejecutar = new SqlCommand(dato, conectarBD);
+            ejecutar.ExecuteNonQuery();
+            conectarBD.Close();
+        }
 
 
         //---------------------------- SQL PARA PERSONAL ------------------------------------------------------------------------------------
@@ -160,9 +160,6 @@ namespace LosPollosPrimos.Conexion
             return lista;
         }
 
-<<<<<<< HEAD
-        public Boolean eliminarPersonal(string rut)
-=======
         public int SelectLocalPersonalPorRut(string rut)
         {
             int idLocal = 0;
@@ -201,7 +198,6 @@ namespace LosPollosPrimos.Conexion
 
 
         public Boolean  eliminarPersonal (string rut)
->>>>>>> 040295b... mejoramiento de boleta y de conexiones
         {
             Boolean e = true;
             conectar();
