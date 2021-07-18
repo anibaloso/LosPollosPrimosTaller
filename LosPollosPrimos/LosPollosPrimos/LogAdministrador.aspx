@@ -9,23 +9,20 @@
                 <div class="card-header bg-warning text-dark">
                     <h3 class="p-2">Acceder Administrador</h3>
                 </div>
-                <div class="card-body">
-                    <div class="mb-3 ">
-                        <label class="form-label" for="UsuarioAdministradorTxt">Usuario Administrador</label>
-                        <asp:TextBox ID="UsuarioAdministradorTxt" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
-                            ControlToValidate="UsuarioAdministradorTxt" CssClass="text-danger" ErrorMessage="Ingrese el usuario"></asp:RequiredFieldValidator>
-                    </div>
+                <div class="card-body text-center">
                     <div class="mb-3">
-                        <label class="form-label" for="ClaveTxt">Clave</label>
-                        <asp:TextBox ID="ClaveTxt" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
-                           <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
-                            ControlToValidate="ClaveTxt" CssClass="text-danger" ErrorMessage="Ingrese la contraseña"></asp:RequiredFieldValidator>
-                         <asp:CustomValidator ID="ClaveCV" runat="server"
+                        <label class="form-label" for="UsuarioAdministradorTxt">Usuario Administrador</label>
+                        <input runat="server" type="password" class="form-control" id="UsuarioAdministradorTxt" required>
+                        <div class="form-group">
+                            <label class="form-label" for="ClaveTxt">Clave</label>
+                            <input runat="server" type="password" class="form-control" id="ClaveTxt" required>
+                             <asp:CustomValidator ID="ClaveCV" runat="server"
                             ValidateEmptyText="true"
                             CssClass="text-danger"
                             ControlToValidate="ClaveTxt" OnServerValidate="ClaveCV_ServerValidate"
                             ErrorMessage="CustomValidator"></asp:CustomValidator>
+                        </div>
+                       
                     </div>
                     <div class="card-footer d-grip gap-1 text-center">
                         <asp:Button runat="server" CssClass="btn btn-danger" ID="BtnAcceder" Text="Acceder" OnClick="BtnAcceder_Click" />

@@ -13,15 +13,6 @@ namespace LosPollosPrimos {
     public partial class CrearEmpleado {
         
         /// <summary>
-        /// Control errorTxt.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorTxt;
-        
-        /// <summary>
         /// Control rutTxt.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,15 @@ namespace LosPollosPrimos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText rutTxt;
+        
+        /// <summary>
+        /// Control RutCV.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator RutCV;
         
         /// <summary>
         /// Control nombreTxt.
@@ -47,6 +47,15 @@ namespace LosPollosPrimos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl TelefonoTxt;
+        
+        /// <summary>
+        /// Control ValidacionTelefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator ValidacionTelefono;
         
         /// <summary>
         /// Control ContraseñaTxt.

@@ -3,6 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+        <div class="text-center mt-2">
+                    <asp:Button ID="VolverBtn" OnClick="VolverBtn_Click" runat="server" Text="Volver" CssClass="btn btn-danger" />
+    </div>
     <div class="row mt-5">
         <div class="col-5 col-md-6 col-lg-4 mx-auto">
             <div class="card">
@@ -22,9 +25,8 @@
                         <label class="form-label" for="a">Url Imagen</label>
                         <input runat="server" type="text" class="form-control" id="urlTxt" required>
                     </div>
-                    <div class="card-footer d-grid gap-4 text-center">
+                    <div class="card-footer text-center">
                         <asp:Button ID="AgregarBtn" OnClick="CrearBtn_Click" runat ="server" Text="Agregar" CssClass="btn btn-success" />
-                        <asp:Button ID="VolverBtn" OnClick="VolverBtn_Click" runat="server" Text="Volver" CssClass="btn btn-danger" />
                     </div>
                 </div>
             </div>

@@ -15,7 +15,10 @@ namespace LosPollosPrimos
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
 
+            }
         }
 
         protected void CrearBtn_Click(object sender, EventArgs e)
@@ -47,6 +50,7 @@ namespace LosPollosPrimos
 
         protected void VolverBtn_Click(object sender, EventArgs e)
         {
+            
             Response.Redirect("VerProductos.aspx");
         }
     }

@@ -17,7 +17,7 @@ namespace LosPollosPrimosModel.DAO
         {
             string sentencia;
 
-            sentencia = "INSERT INTO personal VALUES ('" + p.Rut + "','" 
+            sentencia = "INSERT INTO personal VALUES ('" + p.Rut + "','"
                 + p.Nombre + "',"
                 + p.Telefono + ",'"
                 + p.Contraseña + "',"

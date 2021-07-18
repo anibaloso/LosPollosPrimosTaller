@@ -22,8 +22,8 @@ namespace LosPollosPrimos
             dt = conexion.SelectSQLPersonal();
 
             GVVista.DataSource = dt;
-            GVVista.DataBind();            
-            
+            GVVista.DataBind();
+
         }
 
         protected void AgregarEmpBtn_Click(object sender, EventArgs e)

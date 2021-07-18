@@ -40,13 +40,13 @@ namespace LosPollosPrimos.Conexion
         }
 
 
-        public void EjecutarQuerySQL(string dato)
-        {
-            conectar();
-            SqlCommand ejecutar = new SqlCommand(dato, conectarBD);
-            ejecutar.ExecuteNonQuery();
-            conectarBD.Close();
-        }
+        //public void EjecutarQuerySQL(string dato)
+        //{
+        //    conectar();
+        //    SqlCommand ejecutar = new SqlCommand(dato, conectarBD);
+        //    ejecutar.ExecuteNonQuery();
+        //    conectarBD.Close();
+        //}
 
 
         //---------------------------- SQL PARA PERSONAL ------------------------------------------------------------------------------------
@@ -98,7 +98,7 @@ namespace LosPollosPrimos.Conexion
                             break;
                         case "2":
                             local = "Pollos primos Valparaiso";
-                            break;                        
+                            break;
                     }
 
                     tabla.Rows.Add(
@@ -113,12 +113,12 @@ namespace LosPollosPrimos.Conexion
             }
             CerrarConexion();
             return tabla;
-            
+
         }
 
         public List<String> SelectRutPersonal()
         {
-            List<String> lista = new List<string>();            
+            List<String> lista = new List<string>();
             conectar();
             SqlCommand ejecutar = new SqlCommand("Select * from personal", conectarBD);
             SqlDataReader registro = ejecutar.ExecuteReader();
@@ -159,7 +159,7 @@ namespace LosPollosPrimos.Conexion
             return lista;
         }
 
-        public Boolean  eliminarPersonal (string rut)
+        public Boolean eliminarPersonal(string rut)
         {
             Boolean e = true;
             conectar();
@@ -167,7 +167,8 @@ namespace LosPollosPrimos.Conexion
             if (ejecutar.ExecuteNonQuery() == 1)
             {
                 e = true;
-            }else
+            }
+            else
             {
                 e = false;
             }

@@ -41,8 +41,8 @@ namespace LosPollosPrimos.Paginas
         {
             try
             {
-                string clave = ClaveTxt.Text;
-                string usuarioTxt = UsuarioAdministradorTxt.Text;
+                string clave = ClaveTxt.Value;
+                string usuarioTxt = UsuarioAdministradorTxt.Value;
                 if (clave == contraseña && usuarioTxt == usuario)
                 {
                     args.IsValid = true;
