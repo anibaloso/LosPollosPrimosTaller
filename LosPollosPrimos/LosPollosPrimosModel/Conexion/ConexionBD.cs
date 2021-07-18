@@ -136,6 +136,7 @@ namespace LosPollosPrimos.Conexion
             return lista;
         }
 
+
         public List<String> SelectPersonalPorRut(string rut)
         {
             List<String> lista = new List<string>();
@@ -159,7 +160,48 @@ namespace LosPollosPrimos.Conexion
             return lista;
         }
 
+<<<<<<< HEAD
         public Boolean eliminarPersonal(string rut)
+=======
+        public int SelectLocalPersonalPorRut(string rut)
+        {
+            int idLocal = 0;
+            conectar();
+            SqlCommand ejecutar = new SqlCommand("Select local_idLocal from personal where rutPersonal = '" + rut + "'", conectarBD);
+            SqlDataReader registro = ejecutar.ExecuteReader();
+
+            if (registro.HasRows)
+            {
+                while (registro.Read())
+                {                   
+                    idLocal = Int32.Parse(registro["local_idLocal"].ToString());
+                }
+            }
+            CerrarConexion();
+            return idLocal;
+        }
+
+        public string SelectNombrePersonalPorRut(string rut)
+        {
+            string nombre = string.Empty;
+            conectar();
+            SqlCommand ejecutar = new SqlCommand("Select nombrePersonal from personal where rutPersonal = '" + rut + "'", conectarBD);
+            SqlDataReader registro = ejecutar.ExecuteReader();
+
+            if (registro.HasRows)
+            {
+                while (registro.Read())
+                {
+                    nombre = registro["nombrePersonal"].ToString();
+                }
+            }
+            CerrarConexion();
+            return nombre;
+        }
+
+
+        public Boolean  eliminarPersonal (string rut)
+>>>>>>> 040295b... mejoramiento de boleta y de conexiones
         {
             Boolean e = true;
             conectar();
@@ -486,6 +528,196 @@ namespace LosPollosPrimos.Conexion
             }
             CerrarConexion();
             return e;
+        }
+
+        public String nombrePorRutCliente(string rut)
+        {
+            List<String> lista = new List<string>();
+            conectar();
+            string nombre = "";
+            SqlCommand ejecutar = new SqlCommand("Select nombreCliente from cliente where rutCliente = '" + rut + "'", conectarBD);
+            SqlDataReader registro = ejecutar.ExecuteReader();
+
+            if (registro.HasRows)
+            {
+                while (registro.Read())
+                {
+                    nombre = registro["nombreCliente"].ToString();                    
+                }
+            }
+            CerrarConexion();
+            return nombre;
+        }
+
+        public String direccionPorRutCliente(string rut)
+        {           
+            conectar();
+            string direccion = "";
+            SqlCommand ejecutar = new SqlCommand("Select direccionCliente from cliente where rutCliente = '" + rut + "'", conectarBD);
+            SqlDataReader registro = ejecutar.ExecuteReader();
+
+            if (registro.HasRows)
+            {
+                while (registro.Read())
+                {
+                    direccion = registro["direccionCliente"].ToString();
+                }
+            }
+            CerrarConexion();
+            return direccion;
+        }
+
+        public String correoPorRutCliente(string rut)
+        {
+            
+            conectar();
+            string nombre = "";
+            SqlCommand ejecutar = new SqlCommand("Select correoCliente from cliente where rutCliente = '" + rut + "'", conectarBD);
+            SqlDataReader registro = ejecutar.ExecuteReader();
+
+            if (registro.HasRows)
+            {
+                while (registro.Read())
+                {
+                    nombre = registro["correoCliente"].ToString();
+                }
+            }
+            CerrarConexion();
+            return nombre;
+        }
+
+
+
+        //------------------------------------ SQL BOLETA -------------------------------
+
+        public void IngresardetallePedido(int cantidad, int total, string nombreProducto)
+        {
+            Boolean e = true;
+            conectar();
+            string sentencia = "INSERT INTO detallePedido VALUES (" + cantidad + ","
+                + total + ",'"              
+                + nombreProducto + "')";
+
+            SqlCommand ejecutar = new SqlCommand(sentencia, conectarBD);
+            if (ejecutar.ExecuteNonQuery() == 1)
+            {
+                e = true;
+            }
+            else
+            {
+                e = false;
+            }
+
+            CerrarConexion();
+            //return e;
+        }
+
+        public void IngresarPedido(string Observaciones, int dePedido, string rutCliente, int tipoEntrega)
+        {
+            Boolean e = true;
+            conectar();
+            string sentencia = "INSERT INTO pedido VALUES ('" + Observaciones + "',"
+                + dePedido + ",'"
+                + rutCliente + "',"
+                + tipoEntrega + ")";
+
+            SqlCommand ejecutar = new SqlCommand(sentencia, conectarBD);
+            if (ejecutar.ExecuteNonQuery() == 1)
+            {
+                e = true;
+            }
+            else
+            {
+                e = false;
+            }
+
+            CerrarConexion();
+            //return e;
+        }
+
+        public void IngresarBoleta(int idPedido, int dePedido, string rut, int tipoEntrega, int local, int comuna)
+        {
+            Boolean e = true;
+            conectar();
+            string sentencia = "INSERT INTO boleta VALUES (" + idPedido + ","
+                + dePedido + ",'"
+                + rut + "',"
+                + tipoEntrega + ","
+                + local + ","
+                + comuna + ")";
+
+            SqlCommand ejecutar = new SqlCommand(sentencia, conectarBD);
+            if (ejecutar.ExecuteNonQuery() == 1)
+            {
+                e = true;
+            }
+            else
+            {
+                e = false;
+            }
+
+            CerrarConexion();
+            //return e;
+        }
+
+        public int ultimoIdDetallePedido()
+        {
+            int ultimo;
+            List<String> lista = new List<string>();
+            conectar();
+            SqlCommand ejecutar = new SqlCommand("Select idDetallePedido from detallePedido", conectarBD);
+            SqlDataReader registro = ejecutar.ExecuteReader();
+
+            if (registro.HasRows)
+            {
+                while (registro.Read())
+                {
+                    lista.Add(registro["idDetallePedido"].ToString());
+                }
+            }
+            CerrarConexion();
+            ultimo = lista.Count();
+            return ultimo;
+        }
+
+        public int ultimoIdPedido()
+        {
+            int ultimo;
+            List<String> lista = new List<string>();
+            conectar();
+            SqlCommand ejecutar = new SqlCommand("Select idPedido from Pedido", conectarBD);
+            SqlDataReader registro = ejecutar.ExecuteReader();
+
+            if (registro.HasRows)
+            {
+                while (registro.Read())
+                {
+                    lista.Add(registro["idPedido"].ToString());
+                }
+            }
+            CerrarConexion();
+            ultimo = lista.Count();
+            return ultimo;
+        }
+
+        public int ultimoIdBoleta()
+        {
+            int ultimo;
+            List<String> lista = new List<string>();
+            conectar();
+            SqlCommand ejecutar = new SqlCommand("Select idBoleta from boleta", conectarBD);
+            SqlDataReader registro = ejecutar.ExecuteReader();
+
+            if (registro.HasRows)
+            {
+                while (registro.Read())
+                {
+                    lista.Add(registro["idBoleta"].ToString());
+                }
+            }
+            CerrarConexion();
+            ultimo = lista.Count();
+            return ultimo;
         }
 
     }

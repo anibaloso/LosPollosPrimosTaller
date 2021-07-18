@@ -77,7 +77,7 @@ namespace LosPollosPrimos.Paginas
 
                 if (conexion.VerificarCliente(rut, contraseña))
                 {
-                    Response.Redirect("PantallaVentaCliente.aspx");
+                    Response.Redirect("PantallaVentaCliente2.aspx?id="+ rut);
 
                 }
                 else

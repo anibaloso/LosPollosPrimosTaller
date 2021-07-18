@@ -1,10 +1,20 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ConfirmarPago.aspx.cs" Inherits="LosPollosPrimos.ConfirmarPago" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ConfirmarPago2.aspx.cs" Inherits="LosPollosPrimos.ConfirmarPago2" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<!DOCTYPE html>
 
-    <div class="row mt-5">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <link
+      rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"/>
+    <script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+
+        <div class="row mt-5">
         <div class="col-5 col-md-6 col-lg-4 mx-auto">
             <div class="card">
                 <div class="card-header bg-warning text-black text-center">
@@ -45,4 +55,6 @@
             </div>
         </div>
     </div>
-</asp:Content>
+    </form>
+</body>
+</html>

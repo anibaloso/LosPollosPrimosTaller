@@ -27,7 +27,7 @@ namespace LosPollosPrimos.Paginas
 
             if (Page.IsValid)
             {
-                Response.Redirect("PantallaVenta.aspx");
+                Response.Redirect("PantallaVenta2.aspx?id=" + UsuarioVentasTxt.Text);
             }
             else
             {

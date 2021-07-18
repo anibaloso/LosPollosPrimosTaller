@@ -1,10 +1,15 @@
-﻿ <%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PantallaVentaCliente.aspx.cs" Inherits="LosPollosPrimos.PantallaVentaCliente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PantallaVentaCliente2.aspx.cs" Inherits="LosPollosPrimos.PantallaVentaCliente2" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+       <link
       rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"/>
     <script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
@@ -14,7 +19,17 @@
             <div class="col-9">
                 <div class="card bg-dark">
                     <div class="card-header  bg-warning text-white text-center">
-                        <h1><strong>Pantalla ventas</strong></h1>
+                        <div class="row gx-5">
+                                <div class="col">
+                                    <div class="pr-5 h2" >
+                                        <asp:Button ID="cerrarSesion" runat="server" Text="CerrarSesion" CssClass="btn btn-danger " OnClick="cerrarSesion_Click" />
+                                        <strong class="p-5">Pantalla de Compra Cliente</strong>
+                                        <asp:Label ID="VendodorTxt" runat="server" Text="Bienvenido" CssClass="p-5"></asp:Label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        
                     </div>
                     <div class="card-body align-content-around p-5 text-center text-white bg-light">
                         <div class="row p-1 bg-secondary">
@@ -117,4 +132,6 @@
             
         </div>
     </div>
-</asp:Content>
+    </form>
+</body>
+</html>

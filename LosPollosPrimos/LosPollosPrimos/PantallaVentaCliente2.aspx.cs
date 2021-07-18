@@ -1,4 +1,5 @@
-﻿using LosPollosPrimosModel.DAO;
+﻿using LosPollosPrimos.Conexion;
+using LosPollosPrimosModel.DAO;
 using LosPollosPrimosModel.DTO;
 using System;
 using System.Collections.Generic;
@@ -9,26 +10,40 @@ using System.Web.UI.WebControls;
 
 namespace LosPollosPrimos
 {
-    public partial class PantallaVentaCliente : System.Web.UI.Page
+    public partial class PantallaVentaCliente2 : System.Web.UI.Page
     {
-
+        ConexionBD conexion = new ConexionBD();
+        string rut;
+        string rut2;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if(Request.QueryString["id"] == null)
             {
-                CargarTabla(new DetalleVentaDAO().GetAll());
-                totalTxt.InnerText = "total: $ " + new DetalleVentaDAO().GetAllValores();
+                Response.Redirect("LogCliente.aspx");
+            }
+            else
+            {
+                rut = Request.QueryString["id"].ToString();
+                if (!IsPostBack)
+                {
+                    new DetalleVentaDAO().EliminarTodo();
+                    //rut = Request.QueryString["id"].ToString();
+                    VendodorTxt.Text = "Bienvenido " + conexion.nombrePorRutCliente(rut);
+                    CargarTabla(new DetalleVentaDAO().GetAll());
+                    totalTxt.InnerText = "total: $ " + new DetalleVentaDAO().GetAllValores();
+                }
             }
         }
         private void CargarTabla(List<DetalleVenta> detalleVentas)
         {
             tablaCompra.DataSource = detalleVentas;
             tablaCompra.DataBind();
+            rut2 = rut;
         }
 
         protected void btnPagar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ConfirmarPagoCliente.aspx");
+            Response.Redirect("ConfirmarPagoCliente2.aspx?id=" + rut);
 
         }
 
@@ -41,7 +56,7 @@ namespace LosPollosPrimos
 
         protected void tablaCompra_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            
+
             if (e.CommandName == "eliminar")
             {
                 String nombreProducto = e.CommandArgument.ToString();
@@ -53,7 +68,7 @@ namespace LosPollosPrimos
         }
 
 
-        int cantidadProducto= 0;
+        int cantidadProducto = 0;
         int valorProducto = 0;
         String etiqueta = null;
 
@@ -72,7 +87,7 @@ namespace LosPollosPrimos
         //    detalleVentaDAO.Add(d);
 
         //    CargarTabla(new DetalleVentaDAO().GetAll());
-            
+
 
         //}
 
@@ -418,6 +433,9 @@ namespace LosPollosPrimos
             totalTxt.InnerText = "total: $ " + new DetalleVentaDAO().GetAllValores();
         }
 
-
+        protected void cerrarSesion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LogCliente.aspx");
+        }
     }
 }

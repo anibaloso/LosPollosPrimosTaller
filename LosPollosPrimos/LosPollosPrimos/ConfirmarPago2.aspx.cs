@@ -1,4 +1,5 @@
-﻿using LosPollosPrimosModel;
+﻿using LosPollosPrimos.Conexion;
+using LosPollosPrimosModel;
 using LosPollosPrimosModel.DAO;
 using LosPollosPrimosModel.DTO;
 using System;
@@ -10,25 +11,33 @@ using System.Web.UI.WebControls;
 
 namespace LosPollosPrimos
 {
-    public partial class ConfirmarPago : System.Web.UI.Page
+    public partial class ConfirmarPago2 : System.Web.UI.Page
     {
+        ConexionBD conexion = new ConexionBD();
         List<DetalleVenta> detallesList = new DetalleVentaDAO().GetAll();  // en teoria deberia guardar la lista aqui
         double IVA = 1.19;
-        int Vtotal; 
+        int Vtotal;
+        string rut;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Request.QueryString["id"] == null)
             {
-                ValorTotal.Text = "$ " + new DetalleVentaDAO().GetAllValores().ToString();
-                
-                List<TipoPago> tipoPagos = new TipoPagoDAO().GetAll();                
-                ListaTipoPago.DataSource = tipoPagos;
-                ListaTipoPago.DataTextField = "formaPago";
-                ListaTipoPago.DataBind();
-                CargarTabla(new DetalleVentaDAO().GetAll());
-                
+                Response.Redirect("LogVentas.aspx");
             }
+            else
+            {
+                rut = Request.QueryString["id"].ToString();
+                if (!IsPostBack)
+                {
+                    ValorTotal.Text = "$ " + new DetalleVentaDAO().GetAllValores().ToString();
+                    List<TipoPago> tipoPagos = new TipoPagoDAO().GetAll();
+                    ListaTipoPago.DataSource = tipoPagos;
+                    ListaTipoPago.DataTextField = "formaPago";
+                    ListaTipoPago.DataBind();
+                    CargarTabla(new DetalleVentaDAO().GetAll());
+                }
+            }                
         }
         private void CargarTabla(List<DetalleVenta> detalleVentas)
         {
@@ -47,19 +56,25 @@ namespace LosPollosPrimos
 
         protected void BtnPago_Click(object sender, EventArgs e)
         {
+            ImprimirBoleta();
+            Response.Redirect("PantallaVenta2.aspx?id=" + rut);
+        }
+
+        protected void ImprimirBoleta()
+        {
             Ticket ticket = new Ticket();
-            
 
             ticket.AddHeaderLine("POLLOS PRIMOS");
-            ticket.AddHeaderLine("EXPEDIDO EN:");
-            ticket.AddHeaderLine("LOCAL VIÑA DEL MAR");
+            ticket.AddHeaderLine("ATENDIDO EN:");
+            ticket.AddHeaderLine("LOCAL " + saberLocal());
+            ticket.AddHeaderLine("POR " + conexion.SelectNombrePersonalPorRut(rut));
 
             //El metodo AddSubHeaderLine es lo mismo al de AddHeaderLine con la diferencia
             //de que al final de cada linea agrega una linea punteada "=========="
 
             //AGREGAR ALA BASE DE DATOS
-            ticket.AddSubHeaderLine("Caja # 1 - Ticket # 1");
-            
+            ticket.AddSubHeaderLine("Caja # 1 - Boleta # " + conexion.ultimoIdBoleta());
+
             ticket.AddSubHeaderLine(DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString());
 
             //El metodo AddItem requeire 3 parametros, el primero es cantidad, el segundo es la descripcion
@@ -83,15 +98,15 @@ namespace LosPollosPrimos
 
             //int total = Int32.Parse(ValorTotal.Text);
             Vtotal = new DetalleVentaDAO().GetAllValores();
-            Double totalSinIva = (Vtotal/IVA);
-            
+            Double totalSinIva = (Vtotal / IVA);
 
-            ticket.AddTotal("SUBTOTAL","$ "+ ((Int32)totalSinIva).ToString());
+
+            ticket.AddTotal("SUBTOTAL", "$ " + ((Int32)totalSinIva).ToString());
             ticket.AddTotal("IVA", "$ " + (Vtotal - (Int32)totalSinIva).ToString());
             ticket.AddTotal("TOTAL", "$ " + Vtotal.ToString());
             ticket.AddTotal("", ""); //Ponemos un total en blanco que sirve de espacio
-            //ticket.AddTotal("RECIBIDO", "50.00");
-            //ticket.AddTotal("CAMBIO", "15.00");
+                                     //ticket.AddTotal("RECIBIDO", "50.00");
+                                     //ticket.AddTotal("CAMBIO", "15.00");
             ticket.AddTotal("", "");// Ponemos un total en blanco que sirve de espacio
 
             ticket.AddTotal("METODO PAGO", ListaTipoPago.Text);
@@ -103,7 +118,27 @@ namespace LosPollosPrimos
             //Y por ultimo llamamos al metodo PrintTicket para imprimir el ticket, este metodo necesita un
             //parametro de tipo string que debe de ser el nombre de la impresora.
             ticket.PrintTicket("Microsoft Print to PDF");
-            Response.Redirect("PantallaVenta.aspx");
         }
-    }
+
+        protected string saberLocal()
+        {
+            string local;
+            int id = conexion.SelectLocalPersonalPorRut(rut);
+            switch (id)
+            {
+                case 1:
+                    local = "Viña del Mar";
+                    break;
+                case 2:
+                    local = "Valparaiso";
+                    break;
+                default:
+                    local = "";
+                    break;
+            }
+            return local;
+        }
+
+    }  
+
 }

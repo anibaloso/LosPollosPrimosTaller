@@ -118,7 +118,7 @@ namespace LosPollosPrimos.Paginas
 
                 if (conexion.IngresarCliente(rut, nombre, dieccion, contraseña, telefono, correo))
                 {
-                    Response.Redirect("PantallaVentaCliente.aspx");
+                    Response.Redirect("PantallaVentaCliente2.aspx");
                 }
                 else
                 {

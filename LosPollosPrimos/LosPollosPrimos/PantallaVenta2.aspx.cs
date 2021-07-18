@@ -1,4 +1,5 @@
-﻿using LosPollosPrimosModel.DAO;
+﻿using LosPollosPrimos.Conexion;
+using LosPollosPrimosModel.DAO;
 using LosPollosPrimosModel.DTO;
 using System;
 using System.Collections.Generic;
@@ -9,18 +10,31 @@ using System.Web.UI.WebControls;
 
 namespace LosPollosPrimos
 {
-    public partial class PantallaVenta : System.Web.UI.Page
+    public partial class PantallaVenta2 : System.Web.UI.Page
     {
+        ConexionBD conexion = new ConexionBD();
+        string rut;
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (!IsPostBack)
+            if (Request.QueryString["id"] == null)
             {
-                new DetalleVentaDAO().EliminarTodo();
-                CargarTabla(new DetalleVentaDAO().GetAll());
-                totalTxt.InnerText = "total: $ " + new DetalleVentaDAO().GetAllValores();
+                Response.Redirect("LogVentas.aspx");
             }
+            else
+            {
+                rut = Request.QueryString["id"].ToString();
+                if (!IsPostBack)
+                {
+                    TextTxt.InnerText = "Pantalla de Ventas Local " + saberLocal() ;
+                    new DetalleVentaDAO().EliminarTodo();
+                    CargarTabla(new DetalleVentaDAO().GetAll());
+                    totalTxt.InnerText = "total: $ " + new DetalleVentaDAO().GetAllValores();
+                }
+            }
+
+               
         }
         private void CargarTabla(List<DetalleVenta> detalleVentas)
         {
@@ -30,7 +44,7 @@ namespace LosPollosPrimos
 
         protected void btnPagar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ConfirmarPago.aspx");
+            Response.Redirect("ConfirmarPago2.aspx?id=" + rut);
 
         }
 
@@ -43,7 +57,7 @@ namespace LosPollosPrimos
 
         protected void tablaCompra_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            
+
             if (e.CommandName == "eliminar")
             {
                 String nombreProducto = e.CommandArgument.ToString();
@@ -54,8 +68,27 @@ namespace LosPollosPrimos
             }
         }
 
+        protected string saberLocal()
+        {
+            string local;
+            int id = conexion.SelectLocalPersonalPorRut(rut);
+            switch (id)
+            {
+                case 1:
+                    local = "Viña del Mar";
+                    break;
+                case 2:
+                    local = "Valparaiso";
+                    break;
+                default:
+                    local = "";
+                    break;
+            }
+            return local;
+        }
 
-        int cantidadProducto= 0;
+
+        int cantidadProducto = 0;
         int valorProducto = 0;
         String etiqueta = null;
 
@@ -74,7 +107,7 @@ namespace LosPollosPrimos
         //    detalleVentaDAO.Add(d);
 
         //    CargarTabla(new DetalleVentaDAO().GetAll());
-            
+
 
         //}
 
@@ -420,6 +453,9 @@ namespace LosPollosPrimos
             totalTxt.InnerText = "total: $ " + new DetalleVentaDAO().GetAllValores();
         }
 
-
+        protected void cerrarSesion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LogVentas.aspx");
+        }
     }
 }
