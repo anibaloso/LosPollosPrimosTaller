@@ -20,11 +20,15 @@
 
                     <div class="mb-3 ">
                         <label class="form-label" for="a">Nombre</label>
-                        <input runat="server" type="text" class="form-control" id="nombreTxt" required>
+                        <input runat="server" type="text" class="form-control" id="nombreTxt">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe ingresar el nombre"
+                            ControlToValidate="nombreTxt" CssClass="text-danger"></asp:RequiredFieldValidator>
                     </div>
                     <div class="mb-3 ">
                         <label class="form-label" for="a">Valor</label>
-                         <input runat="server" type="number" class="form-control" id="valorTxt" required>
+                         <input runat="server" type="number" class="form-control" id="valorTxt">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Debe ingresar el valor"
+                            ControlToValidate="valorTxt" CssClass="text-danger"></asp:RequiredFieldValidator>
                          <asp:CustomValidator ID="ValidacionValor" runat="server"
                             ValidateEmptyText="true"
                             CssClass="text-danger"
@@ -33,7 +37,9 @@
                     </div>
                     <div class="mb-3 ">
                         <label class="form-label" for="a">Url</label>
-                         <input runat="server" type="text" class="form-control" id="urlTxt" required>
+                         <input runat="server" type="text" class="form-control" id="urlTxt">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Debe ingresar la url"
+                            ControlToValidate="urlTxt" CssClass="text-danger"></asp:RequiredFieldValidator>
                     </div>
                     <div class="card-footer d-grip gap-3 text-center">
                         <asp:Button ID="ActualizarBtn" OnClick="ActualizarBtn_Click" runat="server" Text="Actualizar" CssClass="btn btn-success" />

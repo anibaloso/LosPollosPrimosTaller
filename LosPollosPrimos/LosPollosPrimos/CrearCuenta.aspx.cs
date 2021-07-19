@@ -146,11 +146,19 @@ namespace LosPollosPrimos.Paginas
 
         protected void ValidarTelefono_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            int telefono = Convert.ToInt32(TelefonoTxt.Text);
-            if (telefono < 0)
+            if (TelefonoTxt.Text.Length >= 10 || TelefonoTxt.Text.Length < 9)
             {
-                ValidarTelefono.ErrorMessage = "Ingrese correctamente";
+                ValidarTelefono.ErrorMessage = "El largo debe ser de 9 digitos";
                 args.IsValid = false;
+            }
+            else if (Convert.ToInt32(TelefonoTxt.Text) < 0)
+            {
+                ValidarTelefono.ErrorMessage = "No se permiten números negativos";
+                args.IsValid = false;
+            }
+            else
+            {
+                args.IsValid = true;
             }
         }
 

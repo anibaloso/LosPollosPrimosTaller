@@ -74,7 +74,8 @@
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Necesita Ingresa un correo" 
                             ControlToValidate="CorreoTxt" CssClass="text-danger"></asp:RequiredFieldValidator>
                         <asp:CustomValidator ID="ValidarCorreov" runat="server" 
-                            ControlToValidate="CorreoTxt" CssClass="text-danger" OnServerValidate="ValidarCorreo_ServerValidate"></asp:CustomValidator>
+                            ControlToValidate="CorreoTxt" CssClass="text-danger" OnServerValidate="ValidarCorreo_ServerValidate"
+                            ErrorMessage="CustomValidator" ValidateEmptyText="true"></asp:CustomValidator>
                     </div>
                 </div>
                 <div class="card-footer d-grip gap-1 text-center">

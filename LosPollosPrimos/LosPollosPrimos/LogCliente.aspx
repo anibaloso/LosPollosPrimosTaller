@@ -22,6 +22,11 @@
                     <div class="mb-3">
                         <label class="form-label" for="ContraseñaTxt">Contraseña</label>
                         <input runat="server" type="password" class="form-control" id="ContraseñaIngresoTxt" required> 
+                        <asp:CustomValidator ID="ContraseñaValidacion" runat="server"
+                            ValidateEmptyText="true"
+                            CssClass="text-danger"
+                            ControlToValidate="ContraseñaTxt" OnServerValidate="ContraseñaValidacion_ServerValidate"
+                            ErrorMessage="CustomValidator"></asp:CustomValidator>
                     </div>
                     <div class="card-footer d-grip gap-1 text-center">
                         <asp:Button ID="AccederBtn" runat="server" Text="Acceder" CssClass="btn btn-danger" OnClick="AccederBtn_Click" />

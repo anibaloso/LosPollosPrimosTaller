@@ -73,17 +73,7 @@ namespace LosPollosPrimos.Paginas
             if (Page.IsValid)
             {
                 string rut = RutIngresoTxt.Value.Trim();
-                string contraseña = ContraseñaIngresoTxt.Value.Trim();
-
-                if (conexion.VerificarCliente(rut, contraseña))
-                {
-                    Response.Redirect("PantallaVentaCliente2.aspx?id=" + rut);
-
-                }
-                else
-                {
-                    RutCV.ErrorMessage = "Error Rut o Contraseña no coinciden";
-                }
+                Response.Redirect("PantallaVentaCliente2.aspx?id=" + rut);
             }
             else
             {
@@ -127,6 +117,22 @@ namespace LosPollosPrimos.Paginas
                     args.IsValid = false;
                 }
 
+            }
+        }
+
+        protected void ContraseñaValidacion_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            string rut = RutIngresoTxt.Value.Trim();
+            string contraseña = ContraseñaIngresoTxt.Value.Trim();
+
+            if (conexion.VerificarCliente(rut, contraseña))
+            {
+                args.IsValid = true;
+            }
+            else
+            {
+                ContraseñaValidacion.ErrorMessage = "Error Rut o Contraseña no coinciden";
+                args.IsValid = false;
             }
         }
     }
