@@ -75,11 +75,6 @@ namespace LosPollosPrimos
             CargoBox.SelectedIndex = Int32.Parse(list2[5]);
         }
 
-        protected void VolverBtn_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("VerEmpleados.aspx");
-        }
-
         protected void Eliminar_Click(Object sender, EventArgs e)
         {
             string rut = rutBox.Value.ToString();
@@ -95,8 +90,22 @@ namespace LosPollosPrimos
             }
         }
 
-
-
-
+        protected void ValidacionTelefono_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (TelefonoTxt.Value.Length >= 10)
+            {
+                ValidacionTelefono.ErrorMessage = "El largo debe ser de 9 digitos";
+                args.IsValid = false;
+            }
+            else if (Convert.ToInt32(TelefonoTxt.Value) < 0)
+            {
+                ValidacionTelefono.ErrorMessage = "No se permiten números negativos";
+                args.IsValid = false;
+            }
+            else
+            {
+                args.IsValid = true;
+            }
+        }
     }
 }

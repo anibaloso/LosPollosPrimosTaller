@@ -19,7 +19,7 @@ namespace LosPollosPrimos.Paginas {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword UsuarioAdministradorTxt;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText UsuarioAdministradorTxt;
         
         /// <summary>
         /// Control ClaveTxt.

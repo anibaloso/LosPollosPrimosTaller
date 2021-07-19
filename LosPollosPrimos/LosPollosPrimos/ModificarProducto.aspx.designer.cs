@@ -37,7 +37,7 @@ namespace LosPollosPrimos {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreTxt;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText nombreTxt;
         
         /// <summary>
         /// Control valorTxt.
@@ -46,7 +46,16 @@ namespace LosPollosPrimos {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox valorTxt;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl valorTxt;
+        
+        /// <summary>
+        /// Control ValidacionValor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator ValidacionValor;
         
         /// <summary>
         /// Control urlTxt.
@@ -55,7 +64,7 @@ namespace LosPollosPrimos {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox urlTxt;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText urlTxt;
         
         /// <summary>
         /// Control ActualizarBtn.
@@ -67,21 +76,12 @@ namespace LosPollosPrimos {
         protected global::System.Web.UI.WebControls.Button ActualizarBtn;
         
         /// <summary>
-        /// Control EliminarBtn.
+        /// Control Button1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EliminarBtn;
-        
-        /// <summary>
-        /// Control VolverBtn.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button VolverBtn;
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

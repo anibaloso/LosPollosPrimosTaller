@@ -27,12 +27,6 @@ namespace LosPollosPrimos
                 }
             }
         }
-
-        protected void VolverBtn_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("VerProductos.aspx");
-        }
-
         public void llenarDatos(object sender, EventArgs e)
         {
             string id = idBox.Value.ToString();
@@ -42,9 +36,9 @@ namespace LosPollosPrimos
             List<string> list2 = new List<string>();
             list2 = conexion.SelectProductoPorId(id2);
 
-            nombreTxt.Text = list2[1];
-            valorTxt.Text = list2[2];
-            urlTxt.Text = list2[3];
+            nombreTxt.Value = list2[1];
+            valorTxt.Value = list2[2];
+            urlTxt.Value = list2[3];
         }
 
         protected void ActualizarBtn_Click(object sender, EventArgs e)
@@ -53,18 +47,18 @@ namespace LosPollosPrimos
             string[] cadena = id.Split(' ');
             int id2 = Int32.Parse(cadena[0]);
             
-            string nombre = nombreTxt.Text.ToString();
-            int valor = Int32.Parse(valorTxt.Text.ToString());
-            string url = urlTxt.Text.ToString();
+            string nombre = nombreTxt.Value.ToString();
+            int valor = Int32.Parse(valorTxt.Value.ToString());
+            string url = urlTxt.Value.ToString();
             Boolean confirmacion = conexion.modificarProducto(id2, nombre, valor, url);
 
             if (confirmacion)
             {
-                nombreTxt.Text = "Actualizado con exito";
+                nombreTxt.Value = "Actualizado con exito";
             }
             else
             {
-                nombreTxt.Text = "Error";
+                nombreTxt.Value = "Error";
             }
         }
 
@@ -79,11 +73,24 @@ namespace LosPollosPrimos
 
             if (confirmacion)
             {
-                nombreTxt.Text = "Eliminado con exito";
+                nombreTxt.Value = "Eliminado con exito";
             }
             else
             {
-                nombreTxt.Text = "Error";
+                nombreTxt.Value = "Error";
+            }
+        }
+
+        protected void ValidacionValor_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (Convert.ToInt32(valorTxt.Value) <= 0)
+            {
+                ValidacionValor.ErrorMessage = "No se pueden ingresar números negativos";
+                args.IsValid = false;
+            }
+            else
+            {
+                args.IsValid = true;
             }
         }
     }

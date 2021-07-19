@@ -23,35 +23,36 @@ namespace LosPollosPrimos
 
         protected void CrearBtn_Click(object sender, EventArgs e)
         {
-            try
+            if (Page.IsValid)
             {
                 string nombre = nombreTxt.Value.ToString().Trim();
                 int valor = int.Parse(valorTxt.Value.ToString().Trim());
                 string url = urlTxt.Value.ToString().Trim();
-
                 Boolean ejecutar = conexion.IngresarProducto(nombre, valor, url);
                 if (ejecutar)
                 {
+
                     Response.Redirect("VerProductos.aspx");
                 }
-                else
-                {
-                    nombreTxt.Value = "No Ingreso";
-                }
-                
             }
-            catch (Exception ex)
+            else
             {
-                //errorTxt.CssClass = "alert alert-info";
-                //errorTxt.Text = ex.ToString();
-                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+
+            }
+        }
+        protected void ValidacionValor_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (Convert.ToInt32(valorTxt.Value) <= 0)
+            {
+                ValidacionValor.ErrorMessage = "No se pueden ingresar números negativos";
+                args.IsValid = false;
+            }
+            else
+            {
+                args.IsValid = true;
             }
         }
 
-        protected void VolverBtn_Click(object sender, EventArgs e)
-        {
-            
-            Response.Redirect("VerProductos.aspx");
-        }
+
     }
 }

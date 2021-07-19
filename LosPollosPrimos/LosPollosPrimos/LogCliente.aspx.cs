@@ -72,25 +72,62 @@ namespace LosPollosPrimos.Paginas
         {
             if (Page.IsValid)
             {
-                string rut = RutIngresoTxt.Text.Trim();
-                string contraseña = ContraseñaIngresoTxt.Text.Trim();
+                string rut = RutIngresoTxt.Value.Trim();
+                string contraseña = ContraseñaIngresoTxt.Value.Trim();
 
                 if (conexion.VerificarCliente(rut, contraseña))
                 {
-                    Response.Redirect("PantallaVentaCliente2.aspx?id="+ rut);
+                    Response.Redirect("PantallaVentaCliente2.aspx?id=" + rut);
 
                 }
                 else
                 {
-                    errorTxt.InnerText = "Error Rut o Contraseña no coinciden";
+                    RutCV.ErrorMessage = "Error Rut o Contraseña no coinciden";
                 }
             }
             else
             {
 
             }
-        }      
+        }
 
+        protected void RutCV_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            String rut = RutIngresoTxt.Value.Trim();
+            if (rut == string.Empty)
+            {
+                args.IsValid = false;
+            }
+            else
+            {
+                String[] rutArray = rut.Split('-');
+                bool validacion = false;
 
+                try
+                {
+                    if (rutArray[1] == "k")
+                    {
+                        rutArray[1] = "K";
+                    }
+
+                    validacion = verificaRut(Convert.ToInt32(rutArray[0]), rutArray[1]);
+                    if (validacion == true)
+                    {
+                        args.IsValid = true;
+                    }
+                    else
+                    {
+                        RutCV.ErrorMessage = "Rut invalido";
+                        args.IsValid = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    RutCV.ErrorMessage = "El rut debe contener solo números y 1 guión";
+                    args.IsValid = false;
+                }
+
+            }
+        }
     }
 }

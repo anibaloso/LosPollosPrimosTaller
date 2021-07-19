@@ -64,13 +64,6 @@ namespace LosPollosPrimos
 
             }
         }
-
-        protected void VolverBtn_Click(object sender, EventArgs e)
-        {
-                Response.Redirect("VerEmpleados.aspx");
-
-        }
-
         protected void Validar_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)

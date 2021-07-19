@@ -12,17 +12,16 @@
                 <div class="card-body text-center">
                     <div class="mb-3">
                         <label class="form-label" for="UsuarioAdministradorTxt">Usuario Administrador</label>
-                        <input runat="server" type="password" class="form-control" id="UsuarioAdministradorTxt" required>
-                        <div class="form-group">
-                            <label class="form-label" for="ClaveTxt">Clave</label>
-                            <input runat="server" type="password" class="form-control" id="ClaveTxt" required>
-                             <asp:CustomValidator ID="ClaveCV" runat="server"
+                        <input runat="server" type="text" class="form-control" id="UsuarioAdministradorTxt" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ClaveTxt">Clave</label>
+                        <input runat="server" type="password" class="form-control" id="ClaveTxt" required>
+                        <asp:CustomValidator ID="ClaveCV" runat="server"
                             ValidateEmptyText="true"
                             CssClass="text-danger"
                             ControlToValidate="ClaveTxt" OnServerValidate="ClaveCV_ServerValidate"
                             ErrorMessage="CustomValidator"></asp:CustomValidator>
-                        </div>
-                       
                     </div>
                     <div class="card-footer d-grip gap-1 text-center">
                         <asp:Button runat="server" CssClass="btn btn-danger" ID="BtnAcceder" Text="Acceder" OnClick="BtnAcceder_Click" />

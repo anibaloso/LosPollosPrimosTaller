@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row mt-5">
+      <div class="row mt-5">
         <div class="col-5 col-md-6 col-lg-4 mx-auto">
             <div class="card">
 
@@ -24,17 +24,22 @@
 
                     <div class="mt-3">
                         <label for="validationCustom02" class="form-label">Nombre</label>
-                        <input runat="server" type="text" class="form-control" id="nombreTxt">
+                        <input runat="server" type="text" class="form-control" id="nombreTxt" required>
                     </div>
 
                     <div class="mt-3">
                         <label for="validationCustomUsername" class="form-label">Telefono</label>
-                        <input runat="server" type="number" class="form-control" id="TelefonoTxt" aria-describedby="inputGroupPrepend">
+                        <input runat="server" type="number" class="form-control" id="TelefonoTxt" aria-describedby="inputGroupPrepend" required>
+                         <asp:CustomValidator ID="ValidacionTelefono" runat="server"
+                            ValidateEmptyText="true"
+                            CssClass="text-danger"
+                            ControlToValidate="TelefonoTxt" OnServerValidate="ValidacionTelefono_ServerValidate"
+                            ErrorMessage="CustomValidator"></asp:CustomValidator>
                     </div>
 
                     <div class="mt-3">
                         <label for="validationCustom03" class="form-label">Contraseña</label>
-                        <input runat="server" type="text" class="form-control" id="ContraseñaTxt">
+                        <input runat="server" type="text" class="form-control" id="ContraseñaTxt" required>
                     </div>
 
                     <div class="mt-3">
@@ -44,7 +49,9 @@
                             <option>Pollos Primos Viña</option>
                             <option>Pollos Primos Valparaiso</option>
                         </select>
-
+                        <div class="invalid-feedback">
+                            Please select a valid state.
+                        </div>
                     </div>
 
                     <div class="mt-3">
@@ -56,7 +63,9 @@
                             <option>Cocinero</option>
                             <option>Repartidor</option>
                         </select>
-
+                         <div class="invalid-feedback">
+                            Please select a valid state.
+                        </div>
                     </div>
 
                     <div class="mt-3">
@@ -64,30 +73,27 @@
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Eliminar
                         </button>
-                        <div class="mt-3">
-                            <asp:Button runat="server" class="btn btn-primary" OnClick="VolverBtn_Click" type="submit" Text="Volver" CssClass="btn btn-warning"></asp:Button>
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Confirmar eliminación</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                    </div>
-                    <div class="modal-body">
-                        Está seguro que desea eliminar este usuario?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                        <asp:Button ID="Button1" OnClick="Eliminar_Click" CssClass="btn btn-success" runat="server" Text="Aceptar" />
-                    </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirmar eliminación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    Está seguro que desea eliminar este usuario?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <asp:Button ID="Button1" OnClick="Eliminar_Click" CssClass="btn btn-success" runat="server" Text="Aceptar" />
                 </div>
             </div>
         </div>
+    </div>
 </asp:Content>

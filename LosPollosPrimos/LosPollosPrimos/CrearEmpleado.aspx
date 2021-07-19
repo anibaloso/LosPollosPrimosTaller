@@ -10,7 +10,6 @@
                     <h3 class="p-2">Crear Empleado</h3>
                 </div>
                 <div class="card-body">
-
                     <div class="mt-3">
                         <label for="validationCustom01" class="form-label">Rut</label>
                         <input runat="server" type="text" class="form-control" id="rutTxt" required>
@@ -69,8 +68,9 @@
                         </div>
                     </div>
                 </div>
-                <asp:Button runat="server" class="btn btn-primary" OnClick="Validar_Click" type="submit" Text="Agregar"></asp:Button>
-                <asp:Button runat="server" class="btn btn-primary" OnClick="VolverBtn_Click" type="button" CssClass="btn btn-danger" Text="Volver"></asp:Button>
+                <div class="card-footer text-center ">
+                    <asp:Button runat="server" class="btn btn-success" OnClick="Validar_Click" Text="Agregar"></asp:Button>
+                </div>
             </div>
         </div>
     </div>

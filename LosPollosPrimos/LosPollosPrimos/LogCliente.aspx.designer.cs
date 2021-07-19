@@ -13,31 +13,22 @@ namespace LosPollosPrimos.Paginas {
     public partial class LogCliente {
         
         /// <summary>
-        /// Control errorTxt.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorTxt;
-        
-        /// <summary>
         /// Control RutIngresoTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox RutIngresoTxt;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText RutIngresoTxt;
         
         /// <summary>
-        /// Control RequiredFieldValidator7.
+        /// Control RutCV.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
+        protected global::System.Web.UI.WebControls.CustomValidator RutCV;
         
         /// <summary>
         /// Control ContraseñaIngresoTxt.
@@ -46,16 +37,7 @@ namespace LosPollosPrimos.Paginas {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ContraseñaIngresoTxt;
-        
-        /// <summary>
-        /// Control RequiredFieldValidator1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword ContraseñaIngresoTxt;
         
         /// <summary>
         /// Control AccederBtn.

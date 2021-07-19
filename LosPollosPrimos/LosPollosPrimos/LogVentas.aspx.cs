@@ -27,7 +27,7 @@ namespace LosPollosPrimos.Paginas
 
             if (Page.IsValid)
             {
-                Response.Redirect("PantallaVenta2.aspx?id=" + UsuarioVentasTxt.Text);
+                Response.Redirect("PantallaVenta2.aspx?id=" + UsuarioVentasTxt.Value);
             }
             else
             {
@@ -38,8 +38,8 @@ namespace LosPollosPrimos.Paginas
         {
             try
             {
-                string clave = ClaveTxt.Text;
-                string usuarioTxt = UsuarioVentasTxt.Text;
+                string clave = ClaveTxt.Value;
+                string usuarioTxt = UsuarioVentasTxt.Value;
                 if (clave == contraseña && usuarioTxt == usuario)
                 {
                     args.IsValid = true;

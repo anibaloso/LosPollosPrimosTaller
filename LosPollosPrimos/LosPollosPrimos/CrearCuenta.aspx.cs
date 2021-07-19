@@ -118,13 +118,8 @@ namespace LosPollosPrimos.Paginas
 
                 if (conexion.IngresarCliente(rut, nombre, dieccion, contraseña, telefono, correo))
                 {
-                    Response.Redirect("PantallaVentaCliente2.aspx");
+                    Response.Redirect("PantallaVentaCliente.aspx");
                 }
-                else
-                {
-                    RutTxt.Text = "Error al ingresar Cliente";
-                }
-
                 //Response.Redirect("Menu.aspx");
             }
             else

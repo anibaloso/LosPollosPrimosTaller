@@ -20,21 +20,43 @@
 
                     <div class="mb-3 ">
                         <label class="form-label" for="a">Nombre</label>
-                        <asp:TextBox ID="nombreTxt" runat="server" CssClass="form-control"></asp:TextBox>
+                        <input runat="server" type="text" class="form-control" id="nombreTxt" required>
                     </div>
                     <div class="mb-3 ">
                         <label class="form-label" for="a">Valor</label>
-                        <asp:TextBox ID="valorTxt" runat="server" CssClass="form-control"></asp:TextBox>
+                         <input runat="server" type="number" class="form-control" id="valorTxt" required>
+                         <asp:CustomValidator ID="ValidacionValor" runat="server"
+                            ValidateEmptyText="true"
+                            CssClass="text-danger"
+                            ControlToValidate="valorTxt" OnServerValidate="ValidacionValor_ServerValidate"
+                            ErrorMessage="CustomValidator"></asp:CustomValidator>
                     </div>
                     <div class="mb-3 ">
                         <label class="form-label" for="a">Url</label>
-                        <asp:TextBox ID="urlTxt" runat="server" CssClass="form-control"></asp:TextBox>
+                         <input runat="server" type="text" class="form-control" id="urlTxt" required>
                     </div>
                     <div class="card-footer d-grip gap-3 text-center">
                         <asp:Button ID="ActualizarBtn" OnClick="ActualizarBtn_Click" runat="server" Text="Actualizar" CssClass="btn btn-success" />
-                        <asp:Button ID="EliminarBtn" OnClick="EliminarBtn_Click" runat="server" Text="Eliminar" CssClass="btn btn-success" />
-                        <asp:Button ID="VolverBtn" OnClick="VolverBtn_Click" runat="server" Text="Volver" CssClass="btn btn-danger" />
+                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Eliminar</button>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirmar eliminación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    Está seguro que desea eliminar este usuario?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <asp:Button ID="Button1" OnClick="EliminarBtn_Click" CssClass="btn btn-success" runat="server" Text="Aceptar" />
                 </div>
             </div>
         </div>
