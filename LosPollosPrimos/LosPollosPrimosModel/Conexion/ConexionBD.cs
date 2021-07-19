@@ -464,26 +464,34 @@ namespace LosPollosPrimos.Conexion
         public Boolean IngresarCliente(string rut, string nombre, string direccion, string contrasña, string telefono, string correo)
         {
             Boolean e = true;
-            conectar();
-            string sentencia = "INSERT INTO cliente VALUES ('" + rut + "','"
-                + nombre + "','"
-                + direccion + "','"
-                + contrasña + "','"
-                + telefono + "','"
-                + correo + "')";
+            try
+            {               
+                conectar();
+                string sentencia = "INSERT INTO cliente VALUES ('" + rut + "','"
+                    + nombre + "','"
+                    + direccion + "','"
+                    + contrasña + "','"
+                    + telefono + "','"
+                    + correo + "')";
 
-            SqlCommand ejecutar = new SqlCommand(sentencia, conectarBD);
-            if (ejecutar.ExecuteNonQuery() == 1)
-            {
-                e = true;
+                SqlCommand ejecutar = new SqlCommand(sentencia, conectarBD);
+                if (ejecutar.ExecuteNonQuery() == 1)
+                {
+                    e = true;
+                }
+                else
+                {
+                    e = false;
+                }
+
+                CerrarConexion();
+                return e;
             }
-            else
+            catch (Exception ex)
             {
                 e = false;
+                return e;
             }
-
-            CerrarConexion();
-            return e;
         }
 
 
@@ -521,6 +529,32 @@ namespace LosPollosPrimos.Conexion
             catch (Exception ex)
             {
                e = false;
+            }
+            CerrarConexion();
+            return e;
+        }
+
+        public Boolean VerificarExisteCliente(string rut)
+        {
+            Boolean e = false;
+            try
+            {
+                conectar();
+                SqlCommand ejecutar = new SqlCommand("Select * from cliente where rutCliente = '" + rut + "'", conectarBD);
+                SqlDataReader registro = ejecutar.ExecuteReader();
+
+                if (registro.HasRows)
+                {
+                    e = true;
+                }
+                else
+                {
+                    e = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                e = false;
             }
             CerrarConexion();
             return e;
@@ -576,6 +610,25 @@ namespace LosPollosPrimos.Conexion
                 while (registro.Read())
                 {
                     nombre = registro["correoCliente"].ToString();
+                }
+            }
+            CerrarConexion();
+            return nombre;
+        }
+
+        public String contraseñaPorRutCliente(string rut)
+        {
+
+            conectar();
+            string nombre = "";
+            SqlCommand ejecutar = new SqlCommand("Select contraseñaCliente from cliente where rutCliente = '" + rut + "'", conectarBD);
+            SqlDataReader registro = ejecutar.ExecuteReader();
+
+            if (registro.HasRows)
+            {
+                while (registro.Read())
+                {
+                    nombre = registro["contraseñaCliente"].ToString();
                 }
             }
             CerrarConexion();

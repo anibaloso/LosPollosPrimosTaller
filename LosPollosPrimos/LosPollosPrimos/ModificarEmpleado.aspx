@@ -25,28 +25,31 @@
                     <div class="mt-3">
                         <label for="validationCustom02" class="form-label">Nombre</label>
                         <input runat="server" type="text" class="form-control" id="nombreTxt">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe ingresar el nombre"
-                            ControlToValidate="nombreTxt" CssClass="text-danger"></asp:RequiredFieldValidator>
+                        <label runat="server" id="errorNombre" class="form-label text-danger h5"></label>
+                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe ingresar el nombre"
+                            ControlToValidate="nombreTxt" CssClass="text-danger"></asp:RequiredFieldValidator>--%>
                     </div>
 
                     <div class="mt-3">
                         <label for="validationCustomUsername" class="form-label">Telefono</label>
                         <input runat="server" type="number" class="form-control" id="TelefonoTxt" aria-describedby="inputGroupPrepend">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Debe ingresar el número de telefono"
-                            ControlToValidate="TelefonoTxt" CssClass="text-danger"></asp:RequiredFieldValidator>
+                        <label runat="server" id="errorTelefono" class="form-label text-danger h5" ></label>
+                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Debe ingresar el número de telefono"
+                            ControlToValidate="TelefonoTxt" CssClass="text-danger"></asp:RequiredFieldValidator>--%>
                     </div>
-                    <asp:CustomValidator ID="ValidacionTelefono" runat="server"
+                    <%--<asp:CustomValidator ID="ValidacionTelefono" runat="server"
                         ValidateEmptyText="true"
                         CssClass="text-danger"
                         ControlToValidate="TelefonoTxt" OnServerValidate="ValidacionTelefono_ServerValidate"
-                        ErrorMessage="CustomValidator"></asp:CustomValidator>
+                        ErrorMessage="CustomValidator"></asp:CustomValidator>--%>
 
 
                     <div class="mt-3">
                         <label for="validationCustom03" class="form-label">Contraseña</label>
                         <input runat="server" type="text" class="form-control" id="ContraseñaTxt">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Debe ingresar la contraseña"
-                            ControlToValidate="ContraseñaTxt" CssClass="text-danger"></asp:RequiredFieldValidator>
+                        <label runat="server" id="errorContraseña" class="form-label text-danger h5" ></label>
+                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Debe ingresar la contraseña"
+                            ControlToValidate="ContraseñaTxt" CssClass="text-danger"></asp:RequiredFieldValidator>--%>
                     </div>
 
                     <div class="mt-3">
@@ -90,7 +93,7 @@
                     Está seguro que desea eliminar este usuario?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                     <asp:Button ID="Button1" OnClick="Eliminar_Click" CssClass="btn btn-success" runat="server" Text="Aceptar" />
                 </div>
             </div>

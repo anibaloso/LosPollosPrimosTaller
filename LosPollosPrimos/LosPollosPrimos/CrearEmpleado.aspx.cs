@@ -68,19 +68,26 @@ namespace LosPollosPrimos
         {
             if (Page.IsValid)
             {
-                string rut = rutTxt.Value.ToString().Trim();
-                string nombre = nombreTxt.Value.ToString().Trim();
-                int telefono = int.Parse(TelefonoTxt.Value.ToString().Trim());
-                string contraseña = ContraseñaTxt.Value.ToString().Trim();
-                int local = (LocalBox.SelectedIndex);
-                int cargo = (CargoBox.SelectedIndex);
+                try
+                {
+                    string rut = rutTxt.Value.ToString().Trim();
+                    string nombre = nombreTxt.Value.ToString().Trim();
+                    int telefono = int.Parse(TelefonoTxt.Value.ToString().Trim());
+                    string contraseña = ContraseñaTxt.Value.ToString().Trim();
+                    int local = (LocalBox.SelectedIndex);
+                    int cargo = (CargoBox.SelectedIndex);
 
-                Personal p = new Personal(rut, nombre, telefono, contraseña, local, cargo);
-                PersonalDAO pDao = new PersonalDAO();
+                    Personal p = new Personal(rut, nombre, telefono, contraseña, local, cargo);
+                    PersonalDAO pDao = new PersonalDAO();
 
-                //cargamos los datos para ser enviados a la sentencia SQL si sale bien vamos a la pagina de empleados
-                pDao.cargarBDPersonal(p);
-                Response.Redirect("VerEmpleados.aspx");
+                    //cargamos los datos para ser enviados a la sentencia SQL si sale bien vamos a la pagina de empleados
+                    pDao.cargarBDPersonal(p);
+                    Response.Redirect("VerEmpleados.aspx");
+                }
+                catch
+                {
+                    errorTxt.InnerText = "Rut ya esta ingresado";
+                }
             }
             else
             {

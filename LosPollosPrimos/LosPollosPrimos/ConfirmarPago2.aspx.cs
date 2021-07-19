@@ -63,12 +63,13 @@ namespace LosPollosPrimos
                     conexion.IngresardetallePedido(v.Cantidad, v.ValorTotal, v.NombreProducto);
                 }
 
-                conexion.IngresarPedido("Pedido Hecho por Internet", conexion.ultimoIdDetallePedido(), rut, 1);
+                conexion.IngresarPedido("Pedido Hecho en local", conexion.ultimoIdDetallePedido(), rut, 1);
 
 
                 conexion.IngresarBoleta(conexion.ultimoIdPedido(), conexion.ultimoIdDetallePedido(), rut, 1, conexion.SelectLocalPersonalPorRut(rut), conexion.SelectLocalPersonalPorRut(rut));
 
                 ImprimirBoleta();
+                ImprimirOrden();
                 Response.Redirect("PantallaVenta2.aspx?id=" + rut);
             }
             catch (Exception ex)
@@ -157,8 +158,31 @@ namespace LosPollosPrimos
                     break;
             }
             return local;
-        }         
+        }
 
+
+        protected void ImprimirOrden()
+        {
+            Ticket ticket = new Ticket();
+                       
+            //AGREGAR ALA BASE DE DATOS
+            ticket.AddSubHeaderLine("Boleta # " + conexion.ultimoIdBoleta());
+
+            ticket.AddSubHeaderLine(DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString());
+
+            //El metodo AddItem requeire 3 parametros, el primero es cantidad, el segundo es la descripcion
+            //del producto y el tercero es el precio
+
+            //AGREGAR DESDE LA LISTA
+
+            foreach (var v in detallesList)
+            {
+                //Console.WriteLine("Element = {0}", v);
+                ticket.AddItem(v.Cantidad.ToString(), v.NombreProducto, "$ " + v.ValorTotal.ToString());  // en teoria deberia funcionar xD
+            }
+            
+            ticket.PrintTicket("Microsoft Print to PDF");
+        }
     }  
 
 }

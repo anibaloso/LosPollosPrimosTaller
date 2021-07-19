@@ -36,29 +36,32 @@ namespace LosPollosPrimos
 
         protected void ModificarBtn_Click(object sender, EventArgs e)
         {
-            try
+            if (ValidarDatos())
             {
-                string rut = rutBox.Value.ToString();
-                string nombre = nombreTxt.Value.ToString();
-                int telefono = Int32.Parse(TelefonoTxt.Value.ToString());
-                string contraseña = ContraseñaTxt.Value.ToString();
-                int local = (LocalBox.SelectedIndex);
-                int cargo = (CargoBox.SelectedIndex);
-                Boolean confirmacion = conexion.modificarPersonal(rut, nombre, telefono, contraseña, local, cargo);
-
-                if (confirmacion)
+                try
                 {
-                    errorTxt.InnerText = "Actualizado Exitosamente";
-                    Response.Redirect("VerEmpleados.aspx");
+                    string rut = rutBox.Value.ToString();
+                    string nombre = nombreTxt.Value.ToString();
+                    int telefono = Int32.Parse(TelefonoTxt.Value.ToString());
+                    string contraseña = ContraseñaTxt.Value.ToString();
+                    int local = (LocalBox.SelectedIndex);
+                    int cargo = (CargoBox.SelectedIndex);
+                    Boolean confirmacion = conexion.modificarPersonal(rut, nombre, telefono, contraseña, local, cargo);
+
+                    if (confirmacion)
+                    {
+                        errorTxt.InnerText = "Actualizado Exitosamente";
+                        Response.Redirect("VerEmpleados.aspx");
+                    }
+                    else
+                    {
+                        errorTxt.InnerText = "Error al modificar ingrese datos correctamente";
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
                     errorTxt.InnerText = "Error al modificar ingrese datos correctamente";
                 }
-            }
-            catch (Exception ex)
-            {
-                errorTxt.InnerText="Error al modificar ingrese datos correctamente";
             }
 
         }
@@ -90,24 +93,67 @@ namespace LosPollosPrimos
             }
         }
 
-        protected void ValidacionTelefono_ServerValidate(object source, ServerValidateEventArgs args)
+        protected Boolean ValidacionTelefono()
         {
-            if (TelefonoTxt.Value.Length >= 10)
+            Boolean val;
+            if(TelefonoTxt.Value == string.Empty)
             {
-                ValidacionTelefono.ErrorMessage = "El largo debe ser de 9 digitos";
-                args.IsValid = false;
+                errorTelefono.InnerText = "Telefono no puede estar vacio";
+                val = false;
             }
-            else if (Convert.ToInt32(TelefonoTxt.Value) < 0)
+            else
+            {            
+
+                if (TelefonoTxt.Value.Length >= 10)
+                {
+                    errorTelefono.InnerText = "Telefono debe tener 9 digitos";
+                    val = false;
+                }
+                else if (Convert.ToInt32(TelefonoTxt.Value) < 0)
+                {
+                    errorTelefono.InnerText = "Telefono no puede ser negativo";
+                    val = false;
+                }
+                else
+                {
+                    val = true;
+                    errorTelefono.InnerText = "";
+                }
+            }
+            return val;
+        }
+
+        protected Boolean ValidarDatos()
+        {
+            Boolean res;
+            if(nombreTxt.Value.Trim() == string.Empty)
             {
-                ValidacionTelefono.ErrorMessage = "No se permiten números negativos";
-                args.IsValid = false;
+                errorNombre.InnerText = "Nombre no puede estar vacio";
+                res = false;
             }
             else
             {
-                args.IsValid = true;
+                errorNombre.InnerText = "";
+                if (ValidacionTelefono())
+                {
+                    if(ContraseñaTxt.Value.Trim() == string.Empty)
+                    {
+                        errorContraseña.InnerText = "Contraseña no puede estar vacio";
+                        res = false;
+                    }
+                    else
+                    {
+                        errorContraseña.InnerText = "";
+                        res = true;
+                    }
+                }
+                else
+                {
+                    res= false;
+                }
             }
+            return res;
         }
-
        
     }
 }

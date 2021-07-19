@@ -12,9 +12,34 @@
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+
+    <style>
+    .btn-whatsapp {
+       display:block;
+       width:70px;
+       height:70px;
+       color:#fff;
+       position: fixed;
+       right:20px;
+       bottom:20px;
+       border-radius:50%;
+       line-height:80px;
+       text-align:center;
+       z-index:999;
+    }
+    </style>
+
 </head>
 
 <body>
+
+    <div class="btn-whatsapp">
+    <a href="https://api.whatsapp.com/send?phone=5199999999" target="_blank">    
+    <img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt="">
+    </a>
+    </div>
+
+
     <header class="container-fluid  pt-2 pb-2 d-none d-lg-block p-3 bg-dark">
         
         <div class="row">

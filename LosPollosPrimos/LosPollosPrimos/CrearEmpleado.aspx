@@ -9,6 +9,7 @@
                 <div class="card-header text-center bg-warning text-dark">
                     <h3 class="p-2">Crear Empleado</h3>
                 </div>
+                <label runat="server" id="errorTxt" class="form-label text-danger h5" ></label>
                 <div class="card-body">
                     <div class="mt-3">
                         <label for="validationCustom01" class="form-label">Rut</label>

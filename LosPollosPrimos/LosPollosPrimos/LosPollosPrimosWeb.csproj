@@ -127,6 +127,7 @@
     <Content Include="Menu.aspx" />
     <Content Include="PantallaVenta2.aspx" />
     <Content Include="PantallaVentaCliente2.aspx" />
+    <Content Include="RecuperarContraseñaCliente.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -279,6 +280,13 @@
       <DependentUpon>PantallaVentaCliente2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecuperarContraseñaCliente.aspx.cs">
+      <DependentUpon>RecuperarContraseñaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecuperarContraseñaCliente.aspx.designer.cs">
+      <DependentUpon>RecuperarContraseñaCliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

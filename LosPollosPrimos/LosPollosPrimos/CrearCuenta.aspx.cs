@@ -109,18 +109,29 @@ namespace LosPollosPrimos.Paginas
         {
             if (Page.IsValid)
             {
-                string rut = RutTxt.Text.Trim();
-                string nombre = NombreTxt.Text.Trim();
-                string dieccion = DireccionTxt.Text.Trim();
-                string contraseña = ContraseñaTxt.Text.Trim();
-                string telefono = TelefonoTxt.Text;
-                string correo = CorreoTxt.Text;
-
-                if (conexion.IngresarCliente(rut, nombre, dieccion, contraseña, telefono, correo))
+                try
                 {
-                    Response.Redirect("PantallaVentaCliente.aspx");
+                    string rut = RutTxt.Text.Trim();
+                    string nombre = NombreTxt.Text.Trim();
+                    string dieccion = DireccionTxt.Text.Trim();
+                    string contraseña = ContraseñaTxt.Text.Trim();
+                    string telefono = TelefonoTxt.Text;
+                    string correo = CorreoTxt.Text;
+
+                    if (conexion.IngresarCliente(rut, nombre, dieccion, contraseña, telefono, correo))
+                    {
+                        Response.Redirect("PantallaVentaCliente2.aspx?id=" + rut);
+                    }
+                    else
+                    {
+                        errorTxt.InnerText = "Rut ya esta ingresado";
+                    }
                 }
-                //Response.Redirect("Menu.aspx");
+                catch (Exception ex)
+                {
+                    errorTxt.InnerText = "Rut ya esta ingresado";
+                }
+                
             }
             else
             {

@@ -40,13 +40,13 @@ namespace LosPollosPrimos {
         protected global::System.Web.UI.HtmlControls.HtmlInputText nombreTxt;
         
         /// <summary>
-        /// Control RequiredFieldValidator1.
+        /// Control errorNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorNombre;
         
         /// <summary>
         /// Control valorTxt.
@@ -58,22 +58,13 @@ namespace LosPollosPrimos {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl valorTxt;
         
         /// <summary>
-        /// Control RequiredFieldValidator2.
+        /// Control errorValor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
-        
-        /// <summary>
-        /// Control ValidacionValor.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator ValidacionValor;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorValor;
         
         /// <summary>
         /// Control urlTxt.
@@ -85,13 +76,13 @@ namespace LosPollosPrimos {
         protected global::System.Web.UI.HtmlControls.HtmlInputText urlTxt;
         
         /// <summary>
-        /// Control RequiredFieldValidator3.
+        /// Control errorUrl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorUrl;
         
         /// <summary>
         /// Control ActualizarBtn.

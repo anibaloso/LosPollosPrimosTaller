@@ -13,6 +13,15 @@ namespace LosPollosPrimos.Paginas {
     public partial class CrearCuenta {
         
         /// <summary>
+        /// Control errorTxt.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorTxt;
+        
+        /// <summary>
         /// Control RutTxt.
         /// </summary>
         /// <remarks>

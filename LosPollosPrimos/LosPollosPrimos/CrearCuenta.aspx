@@ -10,6 +10,7 @@
                     <h3 class="p-2">Registrar cliente</h3>
                 </div>
                 <div class="card-body">
+                    <label runat="server" id="errorTxt" class="form-label text-danger h5" ></label>
                     <div class="form-group">
                         <label class="form-label" for="RutTxt">Rut</label>
                         <asp:TextBox ID="RutTxt" runat="server" CssClass="form-control"></asp:TextBox>

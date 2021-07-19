@@ -43,22 +43,25 @@ namespace LosPollosPrimos
 
         protected void ActualizarBtn_Click(object sender, EventArgs e)
         {
-            string id = idBox.Value.ToString();
-            string[] cadena = id.Split(' ');
-            int id2 = Int32.Parse(cadena[0]);
-            
-            string nombre = nombreTxt.Value.ToString();
-            int valor = Int32.Parse(valorTxt.Value.ToString());
-            string url = urlTxt.Value.ToString();
-            Boolean confirmacion = conexion.modificarProducto(id2, nombre, valor, url);
+            if (ValidarDatos())
+            {
+                string id = idBox.Value.ToString();
+                string[] cadena = id.Split(' ');
+                int id2 = Int32.Parse(cadena[0]);
 
-            if (confirmacion)
-            {
-                nombreTxt.Value = "Actualizado con exito";
-            }
-            else
-            {
-                nombreTxt.Value = "Error";
+                string nombre = nombreTxt.Value.ToString();
+                int valor = Int32.Parse(valorTxt.Value.ToString());
+                string url = urlTxt.Value.ToString();
+                Boolean confirmacion = conexion.modificarProducto(id2, nombre, valor, url);
+
+                if (confirmacion)
+                {
+                    Response.Redirect("VerProductos.aspx");
+                }
+                else
+                {
+                    nombreTxt.Value = "Error";
+                }
             }
         }
 
@@ -73,7 +76,7 @@ namespace LosPollosPrimos
 
             if (confirmacion)
             {
-                nombreTxt.Value = "Eliminado con exito";
+                Response.Redirect("VerProductos.aspx");
             }
             else
             {
@@ -81,17 +84,57 @@ namespace LosPollosPrimos
             }
         }
 
-        protected void ValidacionValor_ServerValidate(object source, ServerValidateEventArgs args)
+        protected Boolean ValidacionValor()
         {
-            if (Convert.ToInt32(valorTxt.Value) <= 0)
+            Boolean res;
+            if(valorTxt.Value == string.Empty)
             {
-                ValidacionValor.ErrorMessage = "No se pueden ingresar números negativos";
-                args.IsValid = false;
+                errorValor.InnerText = "Valor no puede estar vacio";
+                res = false;
             }
             else
             {
-                args.IsValid = true;
+                if (Convert.ToInt32(valorTxt.Value) <= 0)
+                {
+                    errorValor.InnerText = "No se pueden ingresar números negativos";
+                    res = false;
+                }
+                else
+                {
+                    res = true;
+                }
             }
+            return res;           
+        }
+
+        protected Boolean ValidarDatos()
+        {
+            Boolean res;
+            if(nombreTxt.Value == string.Empty)
+            {
+                errorNombre.InnerText = "Nombre no puede estar vacio";
+                res = false;
+            }
+            else
+            {
+                if (ValidacionValor())
+                {
+                    if(urlTxt.Value == string.Empty)
+                    {
+                        errorUrl.InnerText = "URL no puede estar vacia";
+                        res = false;
+                    }
+                    else
+                    {
+                        res = true;
+                    }
+                }
+                else
+                {
+                    res = false;
+                }
+            }
+            return res;
         }
     }
 }

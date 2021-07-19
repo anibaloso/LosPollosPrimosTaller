@@ -33,58 +33,121 @@
                         </div>
                         <div class="card-body align-content-around p-5 text-center text-white bg-light">
                             <div class="row p-1 bg-secondary">
-                                <div class="col-3 bg-secondary">
+                                <div class="col bg-secondary">
                                     <h5 id="textoVentas">Bebidas</h5>
                                 </div>
-
-
+                                <div class="col">
+                                <p>Coca Cola 1/2</p>
                                 <asp:ImageButton ID="cocaCola" runat="server" ImageUrl="~/Imagenes/coca-cola.jpg" Width="150" Height="150" OnClick="cocaCola_Click" BorderStyle="Double" />
-                                <asp:ImageButton ID="sprite" runat="server" ImageUrl="~/Imagenes/sprite.jpg" Width="150" Height="150" OnClick="sprite_Click" BorderStyle="Double" />
-                                <asp:ImageButton ID="fanta" runat="server" ImageUrl="~/Imagenes/fanta.jpg" Width="150" Height="150" OnClick="fanta_Click" BorderStyle="Double" />
-                                <asp:ImageButton ID="pepsi" runat="server" ImageUrl="~/Imagenes/pepsi.jpg" Width="150" Height="150" OnClick="pepsi_Click" BorderStyle="Double" />
-                                <asp:ImageButton ID="orange" runat="server" ImageUrl="~/Imagenes/orange.jpg" Width="150" Height="150" OnClick="orange_Click" BorderStyle="Double" />
-                                <asp:ImageButton ID="seven" runat="server" ImageUrl="~/Imagenes/seven-up.jpg" Width="150" Height="150" OnClick="seven_Click" BorderStyle="Double" />
-
                             </div>
-                            <div class="row p-1 bg-secondary">
-                                <div class="col-3 bg-secondary p-1">
-                                    <h5 id="textoVentas">Pollos</h5>
-                                </div>
+                            <div class="col">
+                                <p>Sprite 1/2</p>
+                                <asp:ImageButton ID="sprite" runat="server" ImageUrl="~/Imagenes/sprite.jpg" Width="150" Height="150" OnClick="sprite_Click" BorderStyle="Double" />
+                            </div>
+                            <div class="col">
+                                <p>Fanta 1/2</p>
+                                <asp:ImageButton ID="fanta" runat="server" ImageUrl="~/Imagenes/fanta.jpg" Width="150" Height="150" OnClick="fanta_Click" BorderStyle="Double" />
+                            </div>
+                            <div class="col">
+                                <p>Pepsi 1/2</p>
+                                <asp:ImageButton ID="pepsi" runat="server" ImageUrl="~/Imagenes/pepsi.jpg" Width="150" Height="150" OnClick="pepsi_Click" BorderStyle="Double" />
+                            </div>
+                            <div class="col">
+                                <p>Orange 1/2</p>
+                                <asp:ImageButton ID="orange" runat="server" ImageUrl="~/Imagenes/orange.jpg" Width="150" Height="150" OnClick="orange_Click" BorderStyle="Double" />
+                            </div>
+                            <div class="col">
+                                <p>Seven-up 1/2</p>
+                                <asp:ImageButton ID="seven" runat="server" ImageUrl="~/Imagenes/seven-up.jpg" Width="150" Height="150" OnClick="seven_Click" BorderStyle="Double" />
+                            </div>
+                        </div>
+                        <div class="row p-1 bg-secondary">
+                            <div class="col bg-secondary">
+                                <h5 id="textoVentas">Pollos</h5>
+                            </div>
+                            <div class="col">
+                                <p>Pollo Asado 1/4</p>
                                 <asp:ImageButton ID="polloCuarto" runat="server" ImageUrl="~/Imagenes/Pollo-asado-1-4.jpg" Width="150" Height="150" OnClick="polloCuarto_Click" BorderStyle="Double" />
+                            </div>
+                            <div class="col">
+                                <p>Pollo Asado 1/2</p>
                                 <asp:ImageButton ID="polloMedio" runat="server" ImageUrl="~/Imagenes/Pollo-asado-medio.jpg" Width="150" Height="150" OnClick="polloMedio_Click" BorderStyle="Double" />
+                            </div>
+                            <div class="col">
+                                <p>Pollo Asado Entero</p>
                                 <asp:ImageButton ID="polloKilo" runat="server" ImageUrl="~/Imagenes/Pollo-asado-entero.jpg" Width="150" Height="150" OnClick="polloKilo_Click" BorderStyle="Double" />
                             </div>
-                            <div class="row p-1 bg-secondary">
-                                <div class="col-3 bg-secondary">
-                                    <h5 id="textoVentas">Completos</h5>
-                                </div>
+                            <div class="col"></div>
+                            <div class="col"></div>
+                            <div class="col"></div>
+                        </div>
+                        <div class="row p-1 bg-secondary">
+                            <div class="col bg-secondary">
+                                <h5 id="textoVentas">Completos</h5>
+                            </div>
+                            <div class="col">
+                                <p>Hot-Dog</p>
                                 <asp:ImageButton ID="hotdog" runat="server" ImageUrl="~/Imagenes/hot-dog.jpg" Width="150" Height="150" OnClick="hotdog_Click" BorderStyle="Double" />
+                            </div>
+                            <div class="col">
+                                <p>Hot-Dog S/Palta</p>
                                 <asp:ImageButton ID="sinPalta" runat="server" ImageUrl="~/Imagenes/completo-sin-palta.jpg" Width="150" Height="150" OnClick="sinPalta_Click" BorderStyle="Double" />
+                            </div>
+                            <div class="col">
+                                <p>Italiano</p>
                                 <asp:ImageButton ID="completo" runat="server" ImageUrl="~/Imagenes/completo.jpg" Width="150" Height="150" OnClick="completo_Click" BorderStyle="Double" />
-
                             </div>
-                            <div class="row p-1 bg-secondary">
-                                <div class="col-3 bg-secondary">
-                                    <h5 id="textoVentas">Papas Fritas</h5>
-                                </div>
-
+                            <div class="col"></div>
+                            <div class="col"></div>
+                            <div class="col"></div>
+                        </div>
+                        <div class="row p-1 bg-secondary">
+                            <div class="col bg-secondary">
+                                <h5 id="textoVentas">Papas Fritas</h5>
+                            </div>
+                            <div class="col">
+                                <p>Papas Fritas 1/4</p>
                                 <asp:ImageButton ID="papasCuarto" runat="server" ImageUrl="~/Imagenes/papas-fritas.jpg" Width="150" Height="150" OnClick="papasCuarto_Click" BorderStyle="Double" />
+                            </div>
+                            <div class="col">
+                                <p>Papas Fritas 1/2</p>
                                 <asp:ImageButton ID="papasMedio" runat="server" ImageUrl="~/Imagenes/papas-fritas.jpg" Width="150" Height="150" OnClick="papasMedio_Click" BorderStyle="Double" />
+                            </div>
+                            <div class="col">
+                                <p>Papas Fritas 1Kg</p>
                                 <asp:ImageButton ID="papasKilo" runat="server" ImageUrl="~/Imagenes/papas-fritas.jpg" Width="150" Height="150" OnClick="papasKilo_Click" BorderStyle="Double" />
-
                             </div>
-                            <div class="row p-1 bg-secondary">
+                            <div class="col"></div>
+                            <div class="col"></div>
+                            <div class="col"></div>
 
-                                <div class="col-3 bg-secondary">
-                                    <h5 id="textoVentas">Menus</h5>
+                        </div>
+                        <div class="row p-1 bg-secondary">
+
+                            <div class="col bg-secondary">
+                                <h5 id="textoVentas">Menus</h5>
+                            </div>
+                            
+                            <div class="col">
+                                <p>1/4 Pollo-Papas</p>
+                            <asp:ImageButton ID="polloPapasCuarto" runat="server" ImageUrl="~/Imagenes/1-4pollo-papas.jpg" Width="150" Height="150" OnClick="polloPapasCuarto_Click" BorderStyle="Double" />
+                            </div>
+                            <div class="col">
+                                <p>1/2 Pollo-Papas</p>
+                            <asp:ImageButton ID="polloPapasMedio" runat="server" ImageUrl="~/Imagenes/pollo-medio-papas-fritas.jpg" Width="150" Height="150" OnClick="polloPapasMedio_Click" BorderStyle="Double" />
+                            </div>
+                            <div class="col">
+                                <p>1 Entero Pollo-Papas</p>
+                            <asp:ImageButton ID="polloPapasEntero" runat="server" ImageUrl="~/Imagenes/pollo-entero-papas-fritas.jpg" Width="150" Height="150" OnClick="polloPapasEntero_Click" BorderStyle="Double" />
+                            </div>
+                            <div class="col">
+                                <p>Completo-Papas</p>
+                            <asp:ImageButton ID="completoPapas" runat="server" ImageUrl="~/Imagenes/completo-con-papas.jpg" Width="150" Height="150" OnClick="completoPapas_Click" BorderStyle="Double" />
                                 </div>
-                                <asp:ImageButton ID="polloPapasCuarto" runat="server" ImageUrl="~/Imagenes/1-4pollo-papas.jpg" Width="150" Height="150" OnClick="polloPapasCuarto_Click" BorderStyle="Double" />
-                                <asp:ImageButton ID="polloPapasMedio" runat="server" ImageUrl="~/Imagenes/pollo-medio-papas-fritas.jpg" Width="150" Height="150" OnClick="polloPapasMedio_Click" BorderStyle="Double" />
-                                <asp:ImageButton ID="polloPapasEntero" runat="server" ImageUrl="~/Imagenes/pollo-entero-papas-fritas.jpg" Width="150" Height="150" OnClick="polloPapasEntero_Click" BorderStyle="Double" />
-                                <asp:ImageButton ID="completoPapas" runat="server" ImageUrl="~/Imagenes/completo-con-papas.jpg" Width="150" Height="150" OnClick="completoPapas_Click" BorderStyle="Double" />
+                            <div class="col"></div>
+                            <div class="col"></div>
+                        </div>
 
-
-                            </div>
                         </div>
                     </div>
                 </div>
